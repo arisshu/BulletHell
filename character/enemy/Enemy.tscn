@@ -1,27 +1,38 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Textures/Ships/ship_0017.png" type="Texture" id=1]
 [ext_resource path="res://character/enemy/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://character/enemy/HealthBarTheme.tres" type="Theme" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14, 9.5 )
+extents = Vector2( 30.5, 16.5 )
 
 [node name="Enemy" type="Area2D" groups=["damagable"]]
 script = ExtResource( 2 )
-speed = 50.0
+speed = 200.0
 health = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -0.5 )
+position = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 flip_v = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -7.15256e-07, -0.5 )
-scale = Vector2( 1.4, 0.95 )
+position = Vector2( -3.8147e-06, 1 )
+scale = Vector2( 3.775, 2.23125 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -18.0
+margin_top = -24.0
+margin_right = 19.0
+margin_bottom = -21.0
+theme = ExtResource( 3 )
+value = 60.0
+percent_visible = false
 
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

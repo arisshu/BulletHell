@@ -32,7 +32,7 @@ position = Vector2( 257, 511 )
 speed = 300.0
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 202, 18 )
+position = Vector2( 207, 21 )
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2( 257, 157 )

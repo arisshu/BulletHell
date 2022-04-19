@@ -5,8 +5,14 @@ class_name Enemy
 export var speed := 10.0
 export var health: int = 20
 
+func _ready():
+	$ProgressBar.max_value = health
+
 func _physics_process(delta):
 	position.y += speed * delta
+	
+func _process(delta):
+	$ProgressBar.value = health
 	
 func damage(amount: int):
 	health -= amount
