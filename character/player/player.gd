@@ -7,6 +7,8 @@ onready var firingPositions := $FiringPositions
 onready var fireDelayTimer := $FireDelayTimer
 onready var invulTimer := $InvulTimer
 
+onready var anim = $AnimationPlayer
+
 
 # use colon to specify type
 export var speed:float = 100.0
@@ -19,6 +21,8 @@ export var invulTime:float = 0.5
 var vel:= Vector2(0,0)
 
 func _ready():
+	invulTimer.start(invulTime)
+	anim.play("New Anim")
 	pass
 
 func _process(delta):
@@ -51,10 +55,13 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0, viewRect.size.y)
 	
 func damage(amount: int):
+	print("Life =" + str(life))
 	if !invulTimer.is_stopped():
 		return
 	
 	invulTimer.start(invulTime)
+	anim.play("New Anim")
+	
 	life -= amount
 
 	if life <= 0:

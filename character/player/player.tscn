@@ -1,16 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Textures/Ships/ship_0000.png" type="Texture" id=1]
 [ext_resource path="res://character/player/player.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Animation/invulAni.tres" type="Animation" id=3]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+	
+uniform float hit_opacity = 1;
+
+void fragment() {
+	COLOR.rgb = texture(TEXTURE, UV).rgb * (1.0 - hit_opacity) + vec3(1,1,1) * hit_opacity;
+	COLOR.a = texture(TEXTURE, UV).a ;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/hit_opacity = 1.0
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 7.0
 height = 16.0
 
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
 [node name="Player" type="Area2D"]
 script = ExtResource( 2 )
+invulTime = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 4 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
@@ -30,3 +62,8 @@ one_shot = true
 
 [node name="InvulTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+"anims/New Anim" = ExtResource( 3 )
+anims/RESET = SubResource( 6 )
