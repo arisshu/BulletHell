@@ -4,23 +4,17 @@ var preloadedEnemies := [
 	preload("res://character/enemy/Enemy.tscn"),
 	preload("res://character/enemy/EnemyFast.tscn")
 ]
+export (int, 0, 4) var enemy = 0
+export var speed = 100
 
-onready var spawnTimer := $SpawnTime
+func _physics_process(delta):
+	position.y += speed * delta
 
-export var nextSpawnTime := 2
-
-func _ready():
-	randomize()
-	spawnTimer.start(nextSpawnTime)
-
-
-func _on_SpawnTime_timeout():
-	var viewRect := get_viewport_rect()
-	var xPosition := rand_range(viewRect.position.x, viewRect.end.x)
-
-	var preloadEnemy = preloadedEnemies[randi() % preloadedEnemies.size()]
+func _on_VisibilityNotifier2D_screen_entered():
+	var preloadEnemy = preloadedEnemies[enemy]
 	var enemy: Enemy = preloadEnemy.instance()
-	enemy.position = Vector2(xPosition, 0)
+	enemy.position = Vector2(global_position.x, 0)
 	get_tree().current_scene.add_child(enemy)
 	
-	spawnTimer.start(nextSpawnTime)
+	queue_free()
+

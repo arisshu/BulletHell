@@ -30,6 +30,10 @@ config/name="BulletHell"
 run/main_scene="res://Main Scenes/FirstLevel.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Signals="*res://AutoLoads/signals.gd"
+
 [display]
 
 window/size/width=500
