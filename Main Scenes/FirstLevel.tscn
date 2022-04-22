@@ -251,6 +251,63 @@ spawnInterval = 0.3
 [node name="SpawnTimer" type="Timer" parent="L3/EnemySpawner15"]
 one_shot = true
 
+[node name="L4" type="Node" parent="."]
+
+[node name="EnemySpawner16" parent="L4" instance=ExtResource( 4 )]
+position = Vector2( 280, -3428 )
+enemySpeed = 400
+enemyHealth = 6
+amount = 0
+sineAmplitude = 250.0
+spawnInterval = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="L4/EnemySpawner16"]
+one_shot = true
+
+[node name="EnemySpawner17" parent="L4" instance=ExtResource( 4 )]
+position = Vector2( 96, -3525 )
+enemySpeed = 400
+enemyHealth = 6
+amount = 0
+sineAmplitude = 250.0
+spawnInterval = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="L4/EnemySpawner17"]
+one_shot = true
+
+[node name="EnemySpawner18" parent="L4" instance=ExtResource( 4 )]
+position = Vector2( 460, -3781 )
+enemySpeed = 400
+enemyHealth = 6
+amount = 0
+sineAmplitude = 250.0
+spawnInterval = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="L4/EnemySpawner18"]
+one_shot = true
+
+[node name="EnemySpawner19" parent="L4" instance=ExtResource( 4 )]
+position = Vector2( 332, -3900 )
+enemySpeed = 400
+enemyHealth = 6
+amount = 0
+sineAmplitude = 250.0
+spawnInterval = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="L4/EnemySpawner19"]
+one_shot = true
+
+[node name="EnemySpawner20" parent="L4" instance=ExtResource( 4 )]
+position = Vector2( 286, -3633 )
+enemy = 2
+enemySpeed = 200
+amount = 3
+sineAmplitude = 250.0
+spawnInterval = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="L4/EnemySpawner20"]
+one_shot = true
+
 [connection signal="timeout" from="L1/EnemySpawner/SpawnTimer" to="L1/EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="L1/EnemySpawner2/SpawnTimer" to="L1/EnemySpawner2" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="L1/EnemySpawner4/SpawnTimer" to="L1/EnemySpawner4" method="_on_SpawnTimer_timeout"]
@@ -268,3 +325,8 @@ one_shot = true
 [connection signal="timeout" from="L3/EnemySpawner13/SpawnTimer" to="L3/EnemySpawner13" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="L3/EnemySpawner14/SpawnTimer" to="L3/EnemySpawner14" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="L3/EnemySpawner15/SpawnTimer" to="L3/EnemySpawner15" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="L4/EnemySpawner16/SpawnTimer" to="L4/EnemySpawner16" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="L4/EnemySpawner17/SpawnTimer" to="L4/EnemySpawner17" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="L4/EnemySpawner18/SpawnTimer" to="L4/EnemySpawner18" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="L4/EnemySpawner19/SpawnTimer" to="L4/EnemySpawner19" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="L4/EnemySpawner20/SpawnTimer" to="L4/EnemySpawner20" method="_on_SpawnTimer_timeout"]
