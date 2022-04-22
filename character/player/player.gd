@@ -2,6 +2,7 @@ extends Area2D
 class_name Player
 
 var plBullet := preload("res://Bullet/PlayerBullet.tscn")
+var plExplosion := preload("res://Resources/Animation/DeathEffect.tscn")
 
 onready var firingPositions := $FiringPositions
 onready var fireDelayTimer := $FireDelayTimer
@@ -65,5 +66,8 @@ func damage(amount: int):
 	anim.play("New Anim")
 	
 	if life <= 0:
+		var effect := plExplosion.instance()
+		effect.global_position = global_position
+		get_tree().current_scene.add_child(effect)
 		queue_free()
 	
