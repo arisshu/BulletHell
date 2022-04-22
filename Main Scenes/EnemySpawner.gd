@@ -3,11 +3,12 @@ extends Node2D
 var preloadedEnemies := [
 	preload("res://character/enemy/Enemy.tscn"),
 	preload("res://character/enemy/EnemyFast.tscn"),
-	preload("res://character/enemy/EnemySine.tscn")
+	preload("res://character/enemy/EnemySine.tscn"),
+	preload("res://character/enemy/ShootEnemy.tscn")
 ]
 onready var spawnTimer := $SpawnTimer
 
-export (int, 0, 4) var enemy = 0
+export (int, 0, 4) var enemy = 1
 export var spawnerSpeed = 100
 export var enemySpeed = 300
 export var enemyHealth = 5

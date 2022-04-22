@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://character/enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://character/enemy/ShootEnemy.gd" type="Script" id=2]
+
+[node name="ShootingEnemy" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+fireRate = 4
+
+[node name="maingun" type="Node2D" parent="FiringPositions" index="0"]
+position = Vector2( 0, 1 )
+
+[node name="FireTimer" type="Timer" parent="." index="5"]
+one_shot = true

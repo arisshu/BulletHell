@@ -23,7 +23,7 @@ var vel:= Vector2(0,0)
 func _ready():
 	invulTimer.start(invulTime)
 	anim.play("New Anim")
-	pass
+	Signals.emit_signal("on_player_life_changed", life)
 
 func _process(delta):
 	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
@@ -55,15 +55,15 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0, viewRect.size.y)
 	
 func damage(amount: int):
-	print("Life =" + str(life))
+	life -= amount
+	
+	Signals.emit_signal("on_player_life_changed", life)
 	if !invulTimer.is_stopped():
 		return
 	
 	invulTimer.start(invulTime)
 	anim.play("New Anim")
 	
-	life -= amount
-
 	if life <= 0:
 		queue_free()
 	

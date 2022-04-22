@@ -1,6 +1,9 @@
 extends Area2D
 class_name Enemy
 
+var plBullet := preload("res://Bullet/EnemyBullet.tscn")
+
+onready var firingPositions := $FiringPositions
 
 export var speed := 10.0
 export var health: int = 20
@@ -14,6 +17,12 @@ func _physics_process(delta):
 func _process(delta):
 	$ProgressBar.value = health
 	
+func fire():
+	for child in firingPositions.get_children():
+		var bullet := plBullet.instance()
+		bullet.global_position = child.global_position
+		get_tree().current_scene.add_child(bullet)
+		
 func damage(amount: int):
 	health -= amount
 	if health <= 0:
