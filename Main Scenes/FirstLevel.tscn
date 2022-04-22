@@ -31,4 +31,29 @@ position = Vector2( 257, 511 )
 speed = 300.0
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( 224, -120 )
+position = Vector2( 144, -88 )
+enemy = 2
+enemySpeed = 200
+enemyHealth = 4
+amount = 6
+sineAmplitude = 250.0
+sineDirection = -1
+spawnInterval = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+one_shot = true
+
+[node name="EnemySpawner2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 368, -88 )
+enemy = 2
+enemySpeed = 200
+enemyHealth = 1
+amount = 6
+sineAmplitude = 250.0
+spawnInterval = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner2"]
+one_shot = true
+
+[connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner2/SpawnTimer" to="EnemySpawner2" method="_on_SpawnTimer_timeout"]
