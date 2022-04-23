@@ -1,4 +1,5 @@
 extends Enemy
+class_name SineEnemy
 
 # Limits for the frequency and amplitude
 export (float, 1, 1000) var frequency = 5

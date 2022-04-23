@@ -1,0 +1,12 @@
+{
+    "LevelNumber": "1",
+    "SpawnEnemyArray": [
+       {
+          "Time": "20.0",
+          "LocationX": "0.0",
+          "Type": "SpacePirate",
+          "Amount": "5",
+          "Delay": "1.0"
+       }
+    ]
+ }
