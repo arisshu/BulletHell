@@ -5,13 +5,13 @@
 [ext_resource path="res://character/enemy/HealthBarTheme.tres" type="Theme" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16.5 )
+extents = Vector2( 29, 16.5 )
 
 [node name="Enemy" type="Area2D" groups=["damagable"]]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 0.5 )
+position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -20,7 +20,7 @@ texture = ExtResource( 1 )
 flip_v = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -3.8147e-06, 1 )
+position = Vector2( 0, 3.8147e-06 )
 scale = Vector2( 3.775, 2.23125 )
 
 [node name="ProgressBar" type="ProgressBar" parent="."]

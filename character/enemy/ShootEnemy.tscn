@@ -6,7 +6,12 @@
 [node name="ShootingEnemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 fireRate = 4
-fireRate = 4
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 1, 0.5 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+position = Vector2( 2, -0.999996 )
 
 [node name="maingun" type="Node2D" parent="FiringPositions" index="0"]
 position = Vector2( 0, 1 )

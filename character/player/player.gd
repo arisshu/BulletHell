@@ -71,3 +71,7 @@ func damage(amount: int):
 		get_tree().current_scene.add_child(effect)
 		queue_free()
 	
+func heal(amount: int):
+	life += amount
+	
+	Signals.emit_signal("on_player_life_changed", life)
