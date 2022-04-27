@@ -1,6 +1,3 @@
 extends Node
 
-var enemyOnCurrentScreen = []
-
-func getCurrentObjectOnScreen():
-	return enemyOnCurrentScreen
+var enemyOnCurrentScreen = {}

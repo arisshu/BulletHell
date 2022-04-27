@@ -19,6 +19,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Item_area_entered(area):
 	if area is Player:
-		for plane in GlobalVar.enemyOnCurrentScreen:
+		for plane in GlobalVar.enemyOnCurrentScreen.values():
 			plane.selfDestruction()
 		queue_free()

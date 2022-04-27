@@ -19,7 +19,6 @@ func _physics_process(delta):
 	
 func _process(delta):
 	$ProgressBar.value = health
-	#print(GlobalVar.enemyOnCurrentScreen.size())
 	
 func fire():
 	for child in firingPositions.get_children():
@@ -34,8 +33,8 @@ func damage(amount: int):
 		effect.global_position = global_position
 		get_tree().current_scene.add_child(effect)
 		
+		GlobalVar.enemyOnCurrentScreen.erase(self.name)
 		queue_free()
-		GlobalVar.enemyOnCurrentScreen.remove(self.name)
 
 func selfDestruction():
 	var effect := plExplosion.instance()
@@ -46,6 +45,7 @@ func selfDestruction():
 
 # Remove enemy when leaving the screen
 func _on_VisibilityNotifier2D_screen_exited():
+	GlobalVar.enemyOnCurrentScreen.erase(self.name)
 	queue_free()
 
 
@@ -54,4 +54,4 @@ func _on_Enemy_area_entered(area):
 		area.damage(1)
 
 func _on_VisibilityNotifier2D_screen_entered():	
-	GlobalVar.enemyOnCurrentScreen.append(self)
+	GlobalVar.enemyOnCurrentScreen[self.name] = self
