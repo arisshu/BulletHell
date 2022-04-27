@@ -4,6 +4,8 @@ class_name Enemy
 var plBullet := preload("res://Bullet/EnemyBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/DeathEffect.tscn")
 
+var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
+
 onready var firingPositions := $FiringPositions
 
 export var speed := 10.0
@@ -17,6 +19,7 @@ func _physics_process(delta):
 	
 func _process(delta):
 	$ProgressBar.value = health
+	#print(GlobalVar.enemyOnCurrentScreen.size())
 	
 func fire():
 	for child in firingPositions.get_children():
@@ -32,6 +35,14 @@ func damage(amount: int):
 		get_tree().current_scene.add_child(effect)
 		
 		queue_free()
+		GlobalVar.enemyOnCurrentScreen.remove(self.name)
+
+func selfDestruction():
+	var effect := plExplosion.instance()
+	effect.global_position = global_position
+	get_tree().current_scene.add_child(effect)
+	
+	queue_free()
 
 # Remove enemy when leaving the screen
 func _on_VisibilityNotifier2D_screen_exited():
@@ -41,4 +52,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Enemy_area_entered(area):
 	if area is Player:
 		area.damage(1)
-		#queue_free()
+
+func _on_VisibilityNotifier2D_screen_entered():	
+	GlobalVar.enemyOnCurrentScreen.append(self)

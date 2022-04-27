@@ -57,6 +57,14 @@ position = Vector2( -17, -4 )
 [node name="Right" type="Node2D" parent="FiringPositions"]
 position = Vector2( 17, -4 )
 
+[node name="PowerUp1" type="Node2D" parent="."]
+
+[node name="power1Left" type="Node2D" parent="PowerUp1"]
+position = Vector2( -6, -10 )
+
+[node name="power1Right" type="Node2D" parent="PowerUp1"]
+position = Vector2( 6, -10 )
+
 [node name="FireDelayTimer" type="Timer" parent="."]
 one_shot = true
 

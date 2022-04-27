@@ -4,7 +4,9 @@ class_name Player
 var plBullet := preload("res://Bullet/PlayerBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/DeathEffect.tscn")
 
+
 onready var firingPositions := $FiringPositions
+onready var powerupPosition := $PowerUp1
 onready var fireDelayTimer := $FireDelayTimer
 onready var invulTimer := $InvulTimer
 
@@ -21,6 +23,9 @@ export var invulTime:float = 0.5
 # the right side
 var vel:= Vector2(0,0)
 
+var powerUp = false
+
+
 func _ready():
 	invulTimer.start(invulTime)
 	anim.play("New Anim")
@@ -33,6 +38,11 @@ func _process(delta):
 			var bullet := plBullet.instance()
 			bullet.global_position = child.global_position
 			get_tree().current_scene.add_child(bullet)
+		if powerUp:
+			for child2 in powerupPosition.get_children():
+				var bullet2 := plBullet.instance()
+				bullet2.global_position = child2.global_position
+				get_tree().current_scene.add_child(bullet2)
 
 
 func _physics_process(delta):
@@ -75,3 +85,6 @@ func heal(amount: int):
 	life += amount
 	
 	Signals.emit_signal("on_player_life_changed", life)
+	
+func setPowerUp():
+	powerUp = true

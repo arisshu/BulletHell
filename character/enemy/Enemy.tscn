@@ -36,4 +36,5 @@ percent_visible = false
 position = Vector2( 0, 15 )
 
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
