@@ -2,11 +2,26 @@
     "LevelNumber": "1",
     "SpawnEnemyArray": [
        {
-          "Time": "20.0",
-          "LocationX": "0.0",
-          "Type": "SpacePirate",
+          "Time": "1.0",
+          "LocationX": "100.0",
+          "LocationY": "100.0",
+          "Type": "2",
           "Amount": "5",
-          "Delay": "1.0"
-       }
+          "Delay": "1.0",
+          "EnemyLines": "2",
+          "OffsetX": "100.0",
+          "OffsetY": "0.0"
+       },
+       {
+         "Time": "1.0",
+         "LocationX": "100.0",
+         "LocationY": "100.0",
+         "Type": "1",
+         "Amount": "1",
+         "Delay": "1.0",
+         "EnemyLines": "2",
+         "OffsetX": "100.0",
+         "OffsetY": "0.0"
+      }
     ]
  }
