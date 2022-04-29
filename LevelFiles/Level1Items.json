@@ -1,0 +1,11 @@
+{
+    "LevelNumber": "1",
+    "SpawnItemArray": [
+       {
+          "Time": "3.0",
+          "LocationX": "100.0",
+          "LocationY": "100.0",
+          "Type": "0"
+       }
+    ]
+ }
