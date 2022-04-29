@@ -22,3 +22,7 @@ func setLives(lives: int):
 
 func _on_player_life_changed(life: int):
 	setLives(life)
+
+
+func _on_Timer_timeout():
+	pass # Replace with function body.

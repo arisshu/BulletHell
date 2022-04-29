@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://character/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Background.tres" type="TileSet" id=3]
-[ext_resource path="res://character/enemy/Spawner/Spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Main Scenes/EnemySpawner.gd" type="Script" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
-[ext_resource path="res://character/enemy/Spawner.gd" type="Script" id=6]
 [ext_resource path="res://Items/MoreGun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Items/PlaneDestruction.tscn" type="PackedScene" id=9]
 
@@ -36,16 +35,6 @@ tile_data = PoolIntArray( 786461, 0, 0, 786462, 1, 0, 786463, 1, 0, 851970, 0, 0
 position = Vector2( 257, 511 )
 speed = 300.0
 
-[node name="EnemySpawner8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 118, -2401 )
-
-[node name="SpawnTimer" type="Timer" parent="EnemySpawner8"]
-one_shot = true
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 248, 136 )
-script = ExtResource( 6 )
-
 [node name="MoreGun" parent="." instance=ExtResource( 8 )]
 position = Vector2( 348, 63 )
 
@@ -53,4 +42,9 @@ position = Vector2( 348, 63 )
 position = Vector2( 20, 53 )
 speed = 5.0
 
-[connection signal="timeout" from="EnemySpawner8/SpawnTimer" to="EnemySpawner8" method="_on_SpawnTimer_timeout"]
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+
+[connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]

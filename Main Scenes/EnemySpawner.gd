@@ -36,22 +36,21 @@ func _on_SpawnTimer_timeout():
 	var positions = enemyPos
 	
 	while linesPlaceHolder > 0:
-		print("Line #", linesPlaceHolder)
 		place_enemies(type, positions)
 		positions += Vector2(offsetX, offsetY)
 		linesPlaceHolder -= 1
 		
 	amount -= 1
+	
 	if amount == 0:
+		spawnTimer.stop()
 		if ! pos >= arrayLength:
 			pos += 1
 			spawn_enemies(dict)
 		else: 
-			print("I AM HIT")
-			spawnTimer.stop()
 			return
-	
-	spawnTimer.start(delay)
+	else:
+		spawnTimer.start(delay)
 	
 
 func place_enemies(type, position):
@@ -70,6 +69,4 @@ func spawn_enemies(enemyArray):
 	enemyLines = int(enemyArray.result["SpawnEnemyArray"][pos]["EnemyLines"])
 	offsetX = float(enemyArray.result["SpawnEnemyArray"][pos]["OffsetX"])
 	offsetY = float(enemyArray.result["SpawnEnemyArray"][pos]["OffsetY"])
-	print("setting time", time)
 	spawnTimer.start(time)
-	
