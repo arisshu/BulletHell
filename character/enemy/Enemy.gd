@@ -2,7 +2,8 @@ extends Area2D
 class_name Enemy
 
 var plBullet := preload("res://Bullet/EnemyBullet.tscn")
-var plExplosion := preload("res://Resources/Animation/DeathEffect.tscn")
+var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
+var bonusScoreItem := preload("res://Items/BonusScore.tscn")
 
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
@@ -10,6 +11,8 @@ onready var firingPositions := $FiringPositions
 
 export var speed := 10.0
 export var health: int = 20
+export var scoreWorth: int = 100
+export var chanceItemDrop: int = 100
 
 func _ready():
 	$ProgressBar.max_value = health
@@ -27,6 +30,9 @@ func fire():
 		get_tree().current_scene.add_child(bullet)
 		
 func damage(amount: int):
+	if health <= 0:
+		return
+	
 	health -= amount
 	if health <= 0:
 		var effect := plExplosion.instance()
@@ -34,7 +40,19 @@ func damage(amount: int):
 		get_tree().current_scene.add_child(effect)
 		
 		GlobalVar.enemyOnCurrentScreen.erase(self.name)
+		Signals.emit_signal("on_score_add", scoreWorth)
+		
+		var randomChance = randi()%100+1
+		if randomChance <= chanceItemDrop:
+			dropBonus()
+		
 		queue_free()
+
+func dropBonus():
+	var bonusItem = bonusScoreItem.instance()
+	bonusItem.global_position = global_position
+	get_tree().get_root().add_child(bonusItem)
+
 
 func selfDestruction():
 	var effect := plExplosion.instance()

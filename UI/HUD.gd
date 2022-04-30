@@ -3,10 +3,14 @@ extends Control
 var pHealthIcon := preload("res://UI/Life.tscn")
 
 onready var healthContainer := $HealthContainer
+onready var scoreLabel := $Score
+
+var score: int = 0
 
 func _ready():
 	clearLives()
 	Signals.connect("on_player_life_changed", self, "_on_player_life_changed")
+	Signals.connect("on_score_add", self, "_on_score_add")
 	
 
 func clearLives():
@@ -23,6 +27,9 @@ func setLives(lives: int):
 func _on_player_life_changed(life: int):
 	setLives(life)
 
+func _on_score_add(amount: int):
+	score += amount
+	scoreLabel.text = str(score)
 
 func _on_Timer_timeout():
 	pass # Replace with function body.

@@ -9,6 +9,7 @@ export (int, -1, 1) var direction = 1
 var time = 0
 onready var anim = $AnimationPlayer
 
+
 func _physics_process(delta):
 	time += delta
 	var movement = cos(time * frequency)*amplitude 
@@ -22,4 +23,5 @@ func damage(amount: int):
 		get_tree().current_scene.add_child(effect)
 		
 		GlobalVar.enemyOnCurrentScreen.erase(self.name)
+		Signals.emit_signal("on_score_add", 200)
 		queue_free()

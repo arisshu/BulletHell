@@ -2,7 +2,8 @@ extends Area2D
 class_name Player
 
 var plBullet := preload("res://Bullet/PlayerBullet.tscn")
-var plExplosion := preload("res://Resources/Animation/DeathEffect.tscn")
+var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
+var deathMenu := preload("res://Main Menu.tscn")
 
 
 onready var firingPositions := $FiringPositions
@@ -17,7 +18,7 @@ onready var anim = $AnimationPlayer
 export var speed:float = 100.0
 export var fireDelay:float = 0.1
 export var life:int = 3
-export var invulTime:float = 0.5
+export var invulTime:float = 2
 # := is like above except
 # godot infers the type on
 # the right side
@@ -65,21 +66,41 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0, viewRect.size.x)
 	position.y = clamp(position.y, 0, viewRect.size.y)
 	
+#func damage(amount: int):
+#	life -= amount
+#	
+#	Signals.emit_signal("on_player_life_changed", life)
+#	if !invulTimer.is_stopped():
+#		life -= amount
+#		
+#	
+#	invulTimer.start(invulTime)
+#	anim.play("New Anim")
+#	
+#	if life <= 0:
+#		var effect := plExplosion.instance()
+#		effect.global_position = global_position
+#		get_tree().current_scene.add_child(effect)
+#		queue_free()
 func damage(amount: int):
-	life -= amount
-	
 	Signals.emit_signal("on_player_life_changed", life)
-	if !invulTimer.is_stopped():
-		return
 	
-	invulTimer.start(invulTime)
-	anim.play("New Anim")
+	if invulTimer.is_stopped():
+		Signals.emit_signal("on_player_life_changed", life)
+		life -= amount
+		
+		invulTimer.start(invulTime)
+		anim.play("New Anim")
+		
 	
 	if life <= 0:
+		Signals.emit_signal("on_player_life_changed", life)
 		var effect := plExplosion.instance()
 		effect.global_position = global_position
 		get_tree().current_scene.add_child(effect)
+		
 		queue_free()
+		
 	
 func heal(amount: int):
 	life += amount
