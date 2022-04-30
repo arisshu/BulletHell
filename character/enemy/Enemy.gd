@@ -63,9 +63,11 @@ func dropBonus():
 
 
 func selfDestruction():
-	var effect := plExplosion.instance()
-	effect.global_position = global_position
-	get_tree().current_scene.add_child(effect)
+	var explosionAnim = explosionScene.instance()
+	explosionAnim.position = self.global_position
+	#explosionAnim.scale = Vector2(rand_range(1,2),rand_range(1,2))
+	explosionAnim.start_anim()
+	get_parent().add_child(explosionAnim)
 	
 	queue_free()
 
