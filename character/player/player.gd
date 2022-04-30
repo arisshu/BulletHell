@@ -71,8 +71,8 @@ func damage(amount: int):
 	Signals.emit_signal("on_player_life_changed", life)
 	
 	if invulTimer.is_stopped():
-		Signals.emit_signal("on_player_life_changed", life)
 		life -= amount
+		Signals.emit_signal("on_player_life_changed", life)
 		
 		invulTimer.start(invulTime)
 		anim.play("New Anim")
@@ -83,6 +83,8 @@ func damage(amount: int):
 		var effect := plExplosion.instance()
 		effect.global_position = global_position
 		get_tree().current_scene.add_child(effect)
+		
+		SceneManager.change_scene("res://Main Menu.tscn")
 		
 		queue_free()
 		

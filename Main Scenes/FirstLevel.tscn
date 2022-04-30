@@ -39,15 +39,12 @@ position = Vector2( 257, 511 )
 speed = 300.0
 
 [node name="MoreGun" parent="." instance=ExtResource( 8 )]
-visible = false
 position = Vector2( 348, 63 )
 
 [node name="PlaneDestruction" parent="." instance=ExtResource( 9 )]
-visible = false
 position = Vector2( 20, 53 )
 
 [node name="BonusScore" parent="." instance=ExtResource( 7 )]
-visible = false
 position = Vector2( 264, 72 )
 
 [node name="ShootingEnemy2" parent="." instance=ExtResource( 10 )]
