@@ -2,37 +2,181 @@
     "LevelNumber": "1",
     "SpawnEnemyArray": [
        {
-          "Time": "3.0",
-          "LocationX": "100.0",
-          "LocationY": "100.0",
-          "Type": "2",
-          "Amount": "2",
-          "Delay": "0.7",
-          "EnemyLines": "2",
-          "OffsetX": "100.0",
-          "OffsetY": "0.0"
+			"Time": "1.0",
+			"LocationX": "100.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
        },
        {
-         "Time": "5.0",
-         "LocationX": "100.0",
-         "LocationY": "100.0",
-         "Type": "1",
-         "Amount": "1",
-         "Delay": "1.0",
-         "EnemyLines": "2",
-         "OffsetX": "100.0",
-         "OffsetY": "0.0"
-      },
-      {
-         "Time": "4.0",
-         "LocationX": "100.0",
-         "LocationY": "100.0",
-         "Type": "2",
-         "Amount": "2",
-         "Delay": "1",
-         "EnemyLines": "2",
-         "OffsetX": "100.0",
-         "OffsetY": "0.0"
-      }
+			"Time": "1.5",
+			"LocationX": "260.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2",
+			"LocationX": "348.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2.5",
+			"LocationX": "50.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "6",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "3",
+			"LocationX": "250.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+	   
+        {
+			"Time": "3.5",
+			"LocationX": "160.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+        {
+			"Time": "4.0",
+			"LocationX": "315.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+        {
+			"Time": "4.5",
+			"LocationX": "140.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+        {
+			"Time": "5.0",
+			"LocationX": "195.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+        {
+			"Time": "5.1",
+			"LocationX": "143.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+        {
+			"Time": "5.2",
+			"LocationX": "350.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+        {
+			"Time": "5.3",
+			"LocationX": "246.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "5.0",
+			"LocationX": "220.0",
+			"LocationY": "20.0",
+			"Type": "1",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "2",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "5.0",
+			"LocationX": "100.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "2",
+			"Delay": "0.1",
+			"EnemyLines": "2",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "5.0",
+			"LocationX": "100.0",
+			"LocationY": "20.0",
+			"Type": "2",
+			"Amount": "3",
+			"Delay": "0.1",
+			"EnemyLines": "2",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "5.0",
+			"LocationX": "200.0",
+			"LocationY": "20.0",
+			"Type": "2",
+			"Amount": "3",
+			"Delay": "0.1",
+			"EnemyLines": "2",
+			"OffsetX": "80.0",
+			"OffsetY": "0.0"
+		}
     ]
  }

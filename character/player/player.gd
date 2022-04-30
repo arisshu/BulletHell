@@ -66,22 +66,7 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0, viewRect.size.x)
 	position.y = clamp(position.y, 0, viewRect.size.y)
 	
-#func damage(amount: int):
-#	life -= amount
-#	
-#	Signals.emit_signal("on_player_life_changed", life)
-#	if !invulTimer.is_stopped():
-#		life -= amount
-#		
-#	
-#	invulTimer.start(invulTime)
-#	anim.play("New Anim")
-#	
-#	if life <= 0:
-#		var effect := plExplosion.instance()
-#		effect.global_position = global_position
-#		get_tree().current_scene.add_child(effect)
-#		queue_free()
+
 func damage(amount: int):
 	Signals.emit_signal("on_player_life_changed", life)
 	

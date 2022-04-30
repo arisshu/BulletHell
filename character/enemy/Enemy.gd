@@ -4,6 +4,7 @@ class_name Enemy
 var plBullet := preload("res://Bullet/EnemyBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
 var bonusScoreItem := preload("res://Items/BonusScore.tscn")
+var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")
 
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
@@ -35,9 +36,16 @@ func damage(amount: int):
 	
 	health -= amount
 	if health <= 0:
-		var effect := plExplosion.instance()
-		effect.global_position = global_position
-		get_tree().current_scene.add_child(effect)
+		#var effect := plExplosion.instance()
+		#effect.global_position = global_position
+		#get_tree().current_scene.add_child(effect)
+		
+		var explosionAnim = explosionScene.instance()
+		explosionAnim.position = self.global_position
+		#explosionAnim.scale = Vector2(rand_range(1,2),rand_range(1,2))
+		explosionAnim.start_anim()
+		get_parent().add_child(explosionAnim)
+
 		
 		GlobalVar.enemyOnCurrentScreen.erase(self.name)
 		Signals.emit_signal("on_score_add", scoreWorth)

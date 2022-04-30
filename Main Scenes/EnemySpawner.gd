@@ -4,7 +4,8 @@ var preloadedEnemies := [
 	preload("res://character/enemy/Enemy.tscn"),
 	preload("res://character/enemy/EnemyFast.tscn"),
 	preload("res://character/enemy/EnemySine.tscn"),
-	preload("res://character/enemy/ShootEnemy.tscn")
+	preload("res://character/enemy/ShootEnemy.tscn"),
+	preload("res://character/enemy/ShootEnemy2.tscn")
 ]
 
 onready var spawnTimer := $SpawnTimer

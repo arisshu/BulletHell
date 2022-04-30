@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://character/enemy/ShootEnemy2.gd" type="Script" id=1]
+[ext_resource path="res://character/enemy/ShootEnemy.tscn" type="PackedScene" id=2]
+
+[node name="ShootingEnemy2" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+chanceItemDrop = 100
+fireRate = 1
+hSpeed = 166.0

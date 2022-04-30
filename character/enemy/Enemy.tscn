@@ -9,6 +9,8 @@ extents = Vector2( 29, 16.5 )
 
 [node name="Enemy" type="Area2D" groups=["damagable"]]
 script = ExtResource( 2 )
+speed = 80.0
+chanceItemDrop = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.5 )
