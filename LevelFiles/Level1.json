@@ -13,7 +13,7 @@
 			"OffsetY": "0.0"
        },
        {
-			"Time": "1.5",
+			"Time": "0.5",
 			"LocationX": "260.0",
 			"LocationY": "20.0",
 			"Type": "0",
@@ -24,7 +24,7 @@
 			"OffsetY": "0.0"
        },
        {
-			"Time": "2",
+			"Time": "0.5",
 			"LocationX": "348.0",
 			"LocationY": "20.0",
 			"Type": "0",
@@ -35,7 +35,7 @@
 			"OffsetY": "0.0"
        },
        {
-			"Time": "2.5",
+			"Time": "0.5",
 			"LocationX": "50.0",
 			"LocationY": "20.0",
 			"Type": "0",
@@ -46,7 +46,7 @@
 			"OffsetY": "0.0"
        },
        {
-			"Time": "3",
+			"Time": "0.5",
 			"LocationX": "250.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -58,7 +58,7 @@
        },
 	   
         {
-			"Time": "3.5",
+			"Time": "0.5",
 			"LocationX": "160.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -69,7 +69,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "4.0",
+			"Time": "0.5",
 			"LocationX": "315.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -80,7 +80,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "4.5",
+			"Time": "0.1",
 			"LocationX": "140.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -91,7 +91,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "5.0",
+			"Time": "0.1",
 			"LocationX": "195.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -102,7 +102,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "5.1",
+			"Time": "0.1",
 			"LocationX": "143.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -113,7 +113,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "5.2",
+			"Time": "0.1",
 			"LocationX": "350.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -124,7 +124,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "5.3",
+			"Time": "0.1",
 			"LocationX": "246.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -135,7 +135,7 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "5.0",
+			"Time": "0.1",
 			"LocationX": "220.0",
 			"LocationY": "20.0",
 			"Type": "1",
@@ -146,7 +146,7 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "5.0",
+			"Time": "0.1",
 			"LocationX": "100.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -157,7 +157,7 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "5.0",
+			"Time": "0.1",
 			"LocationX": "100.0",
 			"LocationY": "20.0",
 			"Type": "2",
@@ -168,7 +168,7 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "5.0",
+			"Time": "0.1",
 			"LocationX": "200.0",
 			"LocationY": "20.0",
 			"Type": "2",

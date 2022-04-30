@@ -64,7 +64,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/SceneManager/addons/scene_manager/plugin.cfg", "res://addons/scene_manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/scene_manager/plugin.cfg" )
 
 [input]
 
