@@ -6,10 +6,10 @@
 [ext_resource path="res://Main Scenes/EnemySpawner.gd" type="Script" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Main Scenes/ItemSpawner.gd" type="Script" id=6]
-[ext_resource path="res://Items/BonusScore.tscn" type="PackedScene" id=7]
+[ext_resource path="res://character/enemy/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Items/MoreGun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Items/PlaneDestruction.tscn" type="PackedScene" id=9]
-[ext_resource path="res://character/enemy/ShootEnemy2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://character/enemy/EnemyFast.tscn" type="PackedScene" id=10]
 
 [node name="Gameplay" type="Node"]
 
@@ -34,22 +34,22 @@ tile_data = PoolIntArray( 786461, 0, 0, 786462, 1, 0, 786463, 1, 0, 851970, 0, 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 188, 100 )
+
+[node name="EnemyFast" parent="." instance=ExtResource( 10 )]
+position = Vector2( 287, -73 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 257, 511 )
 speed = 300.0
 
 [node name="MoreGun" parent="." instance=ExtResource( 8 )]
 position = Vector2( 348, 63 )
+speed = 200.0
 
 [node name="PlaneDestruction" parent="." instance=ExtResource( 9 )]
 position = Vector2( 20, 53 )
-
-[node name="BonusScore" parent="." instance=ExtResource( 7 )]
-position = Vector2( 264, 72 )
-
-[node name="ShootingEnemy2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 143, 87 )
-speed = 60.0
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 4 )
