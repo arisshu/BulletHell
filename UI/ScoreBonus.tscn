@@ -8,6 +8,7 @@
 script = ExtResource( 3 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 0.043
 margin_right = 126.0
 margin_bottom = 40.0
 

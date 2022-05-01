@@ -32,7 +32,7 @@ func _ready():
 	spawn_enemies(dict)
 	
 func _on_SpawnTimer_timeout():
-	place_enemies(type, enemyPos)
+	#place_enemies(type, enemyPos)
 	var linesPlaceHolder = enemyLines
 	var positions = enemyPos
 	
