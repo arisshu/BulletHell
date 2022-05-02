@@ -6,14 +6,14 @@
 			"LocationX": "100.0",
 			"LocationY": "20.0",
 			"Type": "0",
-			"Amount": "5",
+			"Amount": "1",
 			"Delay": "1.0",
 			"EnemyLines": "1",
 			"OffsetX": "100.0",
 			"OffsetY": "0.0"
        },
        {
-			"Time": "1.0",
+			"Time": "2.0",
 			"LocationX": "260.0",
 			"LocationY": "20.0",
 			"Type": "0",
@@ -24,8 +24,74 @@
 			"OffsetY": "0.0"
        },
        {
-			"Time": "1.5",
+			"Time": "2.0",
 			"LocationX": "348.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2.0",
+			"LocationX": "30.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2.0",
+			"LocationX": "75.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2.0",
+			"LocationX": "175.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2.0",
+			"LocationX": "100.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2.0",
+			"LocationX": "366.0",
+			"LocationY": "20.0",
+			"Type": "0",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+       {
+			"Time": "2.0",
+			"LocationX": "255.0",
 			"LocationY": "20.0",
 			"Type": "0",
 			"Amount": "1",
@@ -46,7 +112,7 @@
 			"OffsetY": "0.0"
        },
        {
-			"Time": "3.0",
+			"Time": "4.0",
 			"LocationX": "230.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -57,7 +123,7 @@
 			"OffsetY": "0.0"
        },
         {
-			"Time": "2.0",
+			"Time": "3.0",
 			"LocationX": "60.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -68,7 +134,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "2.0",
+			"Time": "3.0",
 			"LocationX": "300.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -79,7 +145,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "2.0",
+			"Time": "3.0",
 			"LocationX": "150.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -90,7 +156,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "2.0",
+			"Time": "3.0",
 			"LocationX": "215.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -101,8 +167,8 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "2.0",
-			"LocationX": "300.0",
+			"Time": "3.0",
+			"LocationX": "295.0",
 			"LocationY": "20.0",
 			"Type": "3",
 			"Amount": "1",
@@ -112,7 +178,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "2.0",
+			"Time": "3.0",
 			"LocationX": "350.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -123,7 +189,7 @@
 			"OffsetY": "0.0"
 		},
         {
-			"Time": "2.0",
+			"Time": "3.0",
 			"LocationX": "246.0",
 			"LocationY": "20.0",
 			"Type": "3",
@@ -134,8 +200,8 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "3.0",
-			"LocationX": "220.0",
+			"Time": "4.0",
+			"LocationX": "100.0",
 			"LocationY": "20.0",
 			"Type": "1",
 			"Amount": "1",
@@ -145,8 +211,8 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "0.5",
-			"LocationX": "80.0",
+			"Time": "1.5",
+			"LocationX": "250.0",
 			"LocationY": "20.0",
 			"Type": "1",
 			"Amount": "1",
@@ -156,8 +222,8 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "0.5",
-			"LocationX": "190.0",
+			"Time": "1.5",
+			"LocationX": "180.0",
 			"LocationY": "20.0",
 			"Type": "1",
 			"Amount": "1",
@@ -167,71 +233,125 @@
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "0.5",
+			"Time": "1.5",
 			"LocationX": "125.0",
 			"LocationY": "20.0",
 			"Type": "1",
 			"Amount": "1",
 			"Delay": "0.1",
-			"EnemyLines": "2",
+			"EnemyLines": "3",
 			"OffsetX": "100.0",
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "0.5",
-			"LocationX": "260.0",
+			"Time": "1.5",
+			"LocationX": "300.0",
 			"LocationY": "20.0",
 			"Type": "1",
 			"Amount": "1",
 			"Delay": "0.1",
-			"EnemyLines": "2",
+			"EnemyLines": "3",
 			"OffsetX": "100.0",
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "0.5",
-			"LocationX": "100.0",
+			"Time": "2.0",
+			"LocationX": "75.0",
 			"LocationY": "20.0",
 			"Type": "2",
-			"Amount": "2",
-			"Delay": "0.5",
-			"EnemyLines": "2",
-			"OffsetX": "100.0",
+			"Amount": "3",
+			"Delay": "0.8",
+			"EnemyLines": "3",
+			"OffsetX": "150.0",
 			"OffsetY": "0.0"
 		},
 		{
-			"Time": "1.0",
-			"LocationX": "250.0",
-			"LocationY": "20.0",
-			"Type": "2",
-			"Amount": "2",
-			"Delay": "0.5",
-			"EnemyLines": "2",
-			"OffsetX": "100.0",
-			"OffsetY": "0.0"
-		},
-		{
-			"Time": "3.0",
-			"LocationX": "50.0",
-			"LocationY": "20.0",
-			"Type": "0",
-			"Amount": "1",
-			"Delay": "0.1",
-			"EnemyLines": "6",
-			"OffsetX": "100.0",
-			"OffsetY": "0.0"
-		},		
-		{
-			"Time": "0.2",
-			"LocationX": "30.0",
+			"Time": "1.5",
+			"LocationX": "40.0",
 			"LocationY": "20.0",
 			"Type": "4",
-			"Amount": "1",
-			"Delay": "0.5",
+			"Amount": "3",
+			"Delay": "1.5",
 			"EnemyLines": "1",
 			"OffsetX": "100.0",
 			"OffsetY": "0.0"
 		},
-		
+		{
+			"Time": "2.0",
+			"LocationX": "100.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.5",
+			"EnemyLines": "2",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "2.0",
+			"LocationX": "250.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.5",
+			"EnemyLines": "2",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "2.0",
+			"LocationX": "20.0",
+			"LocationY": "20.0",
+			"Type": "2",
+			"Amount": "4",
+			"Delay": "1.42",
+			"EnemyLines": "4",
+			"OffsetX": "160.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "5.0",
+			"LocationX": "35.0",
+			"LocationY": "20.0",
+			"Type": "3",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "8",
+			"OffsetX": "60.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "4.0",
+			"LocationX": "20.0",
+			"LocationY": "20.0",
+			"Type": "4",
+			"Amount": "1",
+			"Delay": "0.5",
+			"EnemyLines": "3",
+			"OffsetX": "60.0",
+			"OffsetY": "0.0"
+		},
+		{
+			"Time": "1.0",
+			"LocationX": "325.0",
+			"LocationY": "20.0",
+			"Type": "4",
+			"Amount": "1",
+			"Delay": "0.5",
+			"EnemyLines": "3",
+			"OffsetX": "60.0",
+			"OffsetY": "0.0"
+		},	
+		{
+			"Time": "2.0",
+			"LocationX": "125.0",
+			"LocationY": "20.0",
+			"Type": "1",
+			"Amount": "1",
+			"Delay": "0.5",
+			"EnemyLines": "4",
+			"OffsetX": "80.0",
+			"OffsetY": "0.0"
+		}
     ]
  }

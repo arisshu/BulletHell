@@ -3,7 +3,8 @@ extends Node2D
 var preloadedItems := [
 	preload("res://Items/HealthPack.tscn"),
 	preload("res://Items/MoreGun.tscn"),
-	preload("res://Items/PlaneDestruction.tscn")
+	preload("res://Items/PlaneDestruction.tscn"),
+	preload("res://Items/BonusScore.tscn")
 ]
 
 onready var itemTimer := $ItemTimer

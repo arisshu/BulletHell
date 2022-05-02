@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://character/enemy/ShootEnemy2.gd" type="Script" id=1]
 [ext_resource path="res://character/enemy/ShootEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Textures/Ships/ship_0002.png" type="Texture" id=3]
 
 [node name="ShootingEnemy2" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
+health = 20
 chanceItemDrop = 100
 fireRate = 1
 hSpeed = 166.0
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 3 )

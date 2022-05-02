@@ -32,13 +32,11 @@ func fire():
 		
 func damage(amount: int):
 	if health <= 0:
-		health = 0
 		return
 		
 	health -= amount
 	
-	if health == 0 and $deathTimer.is_stopped():
-		$deathTimer.start(1)
+	if health <= 0 :
 		#var effect := plExplosion.instance()
 		#effect.global_position = global_position
 		#get_tree().current_scene.add_child(effect)
@@ -53,8 +51,7 @@ func damage(amount: int):
 		GlobalVar.enemyOnCurrentScreen.erase(self.name)
 		Signals.emit_signal("on_score_add", scoreWorth)
 		
-		var randomChance = rand_range(0,99)
-		print(randomChance)
+		var randomChance = (randi()%100)+1
 		if randomChance <= chanceItemDrop:
 			dropBonus()
 		

@@ -5,3 +5,13 @@
 
 [node name="EnemyBullet" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 0.360784, 1, 0.596078, 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, -1 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.5, 1.15 )
