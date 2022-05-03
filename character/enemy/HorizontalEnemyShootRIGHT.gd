@@ -7,6 +7,9 @@ onready var fireTimer := $FireTimer
 #export var fireChance := 5
 
 func _process(delta):
+	position.x -= speed * delta
+	position.y -= speed * delta
+	
 	if fireTimer.is_stopped():
 	#var randomChance = randi()%100+1
 	#if randomChance <= fireChance:

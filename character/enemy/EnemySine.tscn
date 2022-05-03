@@ -4,7 +4,7 @@
 [ext_resource path="res://Textures/Ships/ship_0022.png" type="Texture" id=2]
 [ext_resource path="res://character/enemy/sinEnemy.gd" type="Script" id=3]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 	
 uniform bool whiten = false;
@@ -22,11 +22,10 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+shader = SubResource( 3 )
 shader_param/whiten = false
 
-[sub_resource type="Animation" id=3]
-resource_name = "EnemyHitAnim"
+[sub_resource type="Animation" id=5]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:material:shader_param/whiten")
@@ -60,6 +59,7 @@ tracks/0/keys = {
 script = ExtResource( 3 )
 speed = 70.0
 health = 4
+scoreWorth = 10
 amplitude = 375.63
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -74,5 +74,5 @@ position = Vector2( -1, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 root_node = NodePath("../Sprite")
-anims/EnemyHitAnim = SubResource( 3 )
+anims/EnemyHitAnim = SubResource( 5 )
 anims/RESET = SubResource( 4 )
