@@ -19,5 +19,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Item_area_entered(area):
 	if area is Player:
-		area.setPowerUp()
+		area.setPowerUp(true)
 		queue_free()

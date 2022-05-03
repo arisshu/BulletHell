@@ -84,7 +84,7 @@ func damage(amount: int):
 		effect.global_position = global_position
 		get_tree().current_scene.add_child(effect)
 		
-		SceneManager.change_scene("res://Main Menu.tscn")
+		SceneManager.change_scene("res://Main Scenes//SecondLevel.tscn")
 		
 		queue_free()
 		
@@ -94,5 +94,5 @@ func heal(amount: int):
 	
 	Signals.emit_signal("on_player_life_changed", life)
 	
-func setPowerUp():
-	powerUp = true
+func setPowerUp(value):
+	powerUp = value
