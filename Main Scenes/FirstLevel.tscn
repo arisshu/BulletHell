@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://character/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Main Scenes/FirstLevel.gd" type="Script" id=8]
 [ext_resource path="res://character/enemy/HorizontalEnemyShoot.tscn" type="PackedScene" id=9]
 [ext_resource path="res://character/enemy/HorizontalEnemyShootRIGHT.tscn" type="PackedScene" id=10]
+[ext_resource path="res://character/enemy/EnemyCurve.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Items/PlaneDestruction.tscn" type="PackedScene" id=12]
 
 [node name="Gameplay" type="Node"]
 script = ExtResource( 8 )
@@ -54,8 +56,13 @@ script = ExtResource( 6 )
 [node name="HorizontalEnemyShoot" parent="." groups=["damagable"] instance=ExtResource( 9 )]
 position = Vector2( -24, 136 )
 
+[node name="CurveEnemy" parent="." instance=ExtResource( 11 )]
+
 [node name="HorizontalEnemyShootRIGHT" parent="." instance=ExtResource( 10 )]
 position = Vector2( 522, 362 )
+
+[node name="PlaneDestruction" parent="." instance=ExtResource( 12 )]
+position = Vector2( 161, 14 )
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="ItemSpawner/ItemTimer" to="ItemSpawner" method="_on_ItemTimer_timeout"]

@@ -11,6 +11,7 @@
 [ext_resource path="res://character/enemy/HorizontalEnemyShoot.tscn" type="PackedScene" id=9]
 [ext_resource path="res://character/enemy/HorizontalEnemyShootRIGHT.tscn" type="PackedScene" id=10]
 
+
 [node name="Gameplay" type="Node"]
 script = ExtResource( 8 )
 

@@ -4,6 +4,7 @@
 [ext_resource path="res://character/player/player.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Animation/invulAni.tres" type="Animation" id=3]
 
+
 [sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 	
