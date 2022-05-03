@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Enemy",
 "class": "ShootEnemy",
 "language": "GDScript",
-"path": "res://character/enemy/ShootEnemy.gd"
+"path": "res://character/enemy/ShootEnemy3.gd"
 }, {
 "base": "Enemy",
 "class": "SineEnemy",

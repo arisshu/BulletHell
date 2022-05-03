@@ -1,9 +1,15 @@
 extends Area2D
 
-export var speed:float = 500
+export var speed:float = 250
+var direction = Vector2.DOWN
+
+func _ready():
+	$AnimatedSprite.playing = true
 
 func _physics_process(delta):
-	position.y += speed * delta
+	#position.y += speed * delta
+	translate(direction.normalized() * speed * delta)
+
 	
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

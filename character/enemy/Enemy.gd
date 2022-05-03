@@ -30,6 +30,13 @@ func fire():
 		bullet.global_position = child.global_position
 		get_tree().current_scene.add_child(bullet)
 		
+func fireScatter():
+	for child in firingPositions.get_children():
+		var bullet := plBullet.instance()
+		bullet.direction = child.global_position - global_position
+		bullet.global_position = child.global_position
+		get_tree().current_scene.add_child(bullet)
+		
 func damage(amount: int):
 	if health <= 0:
 		return
