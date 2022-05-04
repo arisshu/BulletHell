@@ -5,7 +5,7 @@ var scoreBonus := preload("res://UI/ScoreBonus.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+export var scoreValue := 1000
 export var speed := 100.0
 
 # Called when the node enters the scene tree for the first time.
@@ -24,11 +24,11 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Item_area_entered(area):
 	if area is Player:
-		Signals.emit_signal("on_score_add", 1000)
+		Signals.emit_signal("on_score_add", scoreValue)
 		
 		var bonusItemEffect = scoreBonus.instance()
 		bonusItemEffect.global_position = global_position
-		bonusItemEffect.setValue(1)
+		bonusItemEffect.setValue(str(scoreValue))
 		get_tree().get_root().add_child(bonusItemEffect)
 		
 		queue_free()
