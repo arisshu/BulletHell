@@ -25,10 +25,14 @@ func show_arrows():
 	var center_x = rect_global_position.x + (rect_size.x / 2)
 	$leftPlane.global_position.x = center_x - arrowMarginFromCenter
 	$rightPlane.global_position.x = center_x + arrowMarginFromCenter
+	
+	$RichTextLabel.bbcode_text = "[center][color=yellow] %s [/color][/center]" % [text]
 
 func hide_arrows():
 	for arrow in [$leftPlane, $rightPlane]:
 		arrow.visible = false
+		
+	$RichTextLabel.bbcode_text = "[center] %s [/center]" % [text]
 
 
 func _on_TextureButton_focus_entered():
