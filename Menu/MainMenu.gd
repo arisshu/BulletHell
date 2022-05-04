@@ -1,9 +1,9 @@
-extends Control
+extends Node
 
 
 
 func _ready():
-	pass # Replace with function body.
+	$VBoxContainer/VBoxContainer/Start.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -11,8 +11,6 @@ func _ready():
 #	pass
 
 
-func _on_StartButton_pressed():
-	SceneManager.change_scene("res://Main Scenes/FirstLevel.tscn")
 
 
 func _on_Quit_pressed():
@@ -29,3 +27,7 @@ func _on_Control_pressed():
 
 func _on_Exit_pressed():
 	get_tree().quit()
+
+
+func _on_Start_pressed():
+	SceneManager.change_scene("res://Main Scenes/FirstLevel.tscn")

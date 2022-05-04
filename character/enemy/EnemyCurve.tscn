@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -6.04771, -93.8143, 0, 0, 0, 0, 39, 49, -59.7233, -173.131, 59.7233, 173.131, 186, 441, 0, 0, 0, 0, 304, 444, 0, 0, 0, 0, 514.876, -181.554 )
+"points": PoolVector2Array( 0, 0, 0, 0, -6.04771, -93.8143, 0, 0, 0, 0, 30.2958, 35.4243, 0, 0, 0, 0, 62.6012, 163.477, -59.7233, -173.131, 59.7233, 173.131, 133.269, 382.827, -78.8605, 84.403, 78.8605, -84.403, 377.578, 413.655, 0, 0, 0, 0, 514.876, -181.554 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -53,17 +53,14 @@ percent_visible = false
 position = Vector2( 0, 15 )
 
 [node name="Position2D2" type="Position2D" parent="Path2D/PathFollow2D/Enemy/FiringPositions"]
-scale = Vector2( 1, 1 )
 
 [node name="Position2D3" type="Position2D" parent="Path2D/PathFollow2D/Enemy/FiringPositions"]
 position = Vector2( -2, 9.53674e-07 )
 rotation = 0.436332
-scale = Vector2( 1, 1 )
 
 [node name="Position2D4" type="Position2D" parent="Path2D/PathFollow2D/Enemy/FiringPositions"]
 position = Vector2( 2, 0 )
 rotation = -0.436332
-scale = Vector2( 1, 1 )
 
 [node name="Position2D5" type="Position2D" parent="Path2D/PathFollow2D/Enemy/FiringPositions"]
 position = Vector2( 4, -1 )
@@ -72,7 +69,6 @@ rotation = -0.872665
 [node name="Position2D6" type="Position2D" parent="Path2D/PathFollow2D/Enemy/FiringPositions"]
 position = Vector2( -4, -1 )
 rotation = 0.872665
-scale = Vector2( 1, 1 )
 
 [node name="FireTimer" type="Timer" parent="Path2D/PathFollow2D/Enemy"]
 

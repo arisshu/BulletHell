@@ -26,7 +26,7 @@ func _process(delta):
 	$ProgressBar.value = health
 	#print(self.global_position.y)
 	#print(get_parent().get_unit_offset())
-	if (get_parent().get_unit_offset() >= 0.50):
+	if (get_parent().get_unit_offset() >= 0.47):
 		get_node("Sprite").set_flip_v(false)
 		if fireTimer.is_stopped():
 			fireScatter()
