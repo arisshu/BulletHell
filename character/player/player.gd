@@ -3,7 +3,7 @@ class_name Player
 
 var plBullet := preload("res://Bullet/PlayerBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
-var deathMenu := preload("res://Main Menu.tscn")
+var deathMenu := preload("res://Menu//Main Menu.tscn")
 
 
 onready var firingPositions := $FiringPositions
