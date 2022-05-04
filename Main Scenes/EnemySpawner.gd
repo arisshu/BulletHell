@@ -6,7 +6,10 @@ var preloadedEnemies := [
 	preload("res://character/enemy/EnemySine.tscn"),
 	preload("res://character/enemy/ShootEnemy.tscn"),
 	preload("res://character/enemy/ShootEnemy2.tscn"),
-	preload("res://character/enemy/ShootEnemy3.tscn")
+	preload("res://character/enemy/ShootEnemy3.tscn"),
+	preload("res://character/enemy/EnemyCurve.tscn"),
+	preload("res://character/enemy/HorizontalEnemyShoot.tscn"),
+	preload("res://character/enemy/HorizontalEnemyShootRIGHT.tscn")
 ]
 
 onready var spawnTimer := $SpawnTimer
@@ -25,7 +28,7 @@ var offsetY: float = 0.0
 	
 func _ready():
 	var file = File.new()
-	file.open("res://LevelFiles/Level1.json", File.READ)
+	file.open("res://LevelFiles/Level2.json", File.READ)
 	var text =  file.get_as_text()
 	dict = JSON.parse(text)
 	file.close()
@@ -57,7 +60,8 @@ func _on_SpawnTimer_timeout():
 
 func place_enemies(type, position):
 	var preloadEnemy = preloadedEnemies[type]
-	var myEnemy: Enemy = preloadEnemy.instance()
+	#var myEnemy: Enemy = preloadEnemy.instance()
+	var myEnemy = preloadEnemy.instance()
 	myEnemy.position = position
 	get_tree().current_scene.add_child(myEnemy)
 

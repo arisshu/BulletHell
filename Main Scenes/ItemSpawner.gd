@@ -18,7 +18,7 @@ var type: int = 0
 	
 func _ready():
 	var file = File.new()
-	file.open("res://LevelFiles/Level1Items.json", File.READ)
+	file.open("res://LevelFiles/Level2Items.json", File.READ)
 	var text =  file.get_as_text()
 	dict = JSON.parse(text)
 	file.close()

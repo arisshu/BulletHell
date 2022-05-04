@@ -6,7 +6,6 @@
 
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-speed = 10.0
 health = 20
 chanceItemDrop = 100
 
