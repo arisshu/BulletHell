@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BulletHell"
-run/main_scene="res://Menu/Main Menu.tscn"
+run/main_scene="res://Main Scenes//SecondLevel.tscn"
 config/icon="res://icon.png"
 
 [autoload]

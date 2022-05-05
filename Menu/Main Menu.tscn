@@ -71,7 +71,6 @@ margin_bottom = 104.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../Start2")
-focus_mode = 1
 text = "Start Classic"
 arrowMarginFromCenter = 150
 
@@ -81,7 +80,6 @@ margin_bottom = 148.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Start")
 focus_neighbour_bottom = NodePath("../Control")
-focus_mode = 1
 text = "Start Variant"
 arrowMarginFromCenter = 150
 
@@ -91,7 +89,6 @@ margin_bottom = 192.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Start2")
 focus_neighbour_bottom = NodePath("../Exit")
-focus_mode = 1
 text = "Controls"
 arrowMarginFromCenter = 121
 
@@ -101,7 +98,6 @@ margin_bottom = 236.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Control")
 focus_neighbour_bottom = NodePath("../Start")
-focus_mode = 1
 text = "Exit"
 arrowMarginFromCenter = 94
 
