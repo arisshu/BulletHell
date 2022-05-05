@@ -17,7 +17,7 @@ onready var anim = $AnimationPlayer
 # use colon to specify type
 export var speed:float = 100.0
 export var fireDelay:float = 0.1
-export var life:int = 3
+#var life = GlobalVar.currentLife
 export var invulTime:float = 2
 # := is like above except
 # godot infers the type on
@@ -29,8 +29,9 @@ var powerUp = false
 
 func _ready():
 	invulTimer.start(invulTime)
+	print(GlobalVar.currentLife)
 	anim.play("New Anim")
-	Signals.emit_signal("on_player_life_changed", life)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 
 func _process(delta):
 	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
@@ -68,18 +69,18 @@ func _physics_process(delta):
 	
 
 func damage(amount: int):
-	Signals.emit_signal("on_player_life_changed", life)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 	
 	if invulTimer.is_stopped():
-		life -= amount
-		Signals.emit_signal("on_player_life_changed", life)
+		GlobalVar.currentLife -= amount
+		Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 		
 		invulTimer.start(invulTime)
 		anim.play("New Anim")
 		
 	
-	if life <= 0:
-		Signals.emit_signal("on_player_life_changed", life)
+	if GlobalVar.currentLife <= 0:
+		Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 		var effect := plExplosion.instance()
 		effect.global_position = global_position
 		get_tree().current_scene.add_child(effect)
@@ -90,9 +91,9 @@ func damage(amount: int):
 		
 	
 func heal(amount: int):
-	life += amount
+	GlobalVar.currentLife += amount
 	
-	Signals.emit_signal("on_player_life_changed", life)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 	
 func setPowerUp(value):
 	powerUp = value

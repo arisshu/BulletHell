@@ -60,5 +60,15 @@ position = Vector2( -3, 5 )
 [node name="PlaneDestruction" parent="." instance=ExtResource( 12 )]
 position = Vector2( 161, 14 )
 
+[node name="Button" type="Button" parent="."]
+anchor_right = 0.024
+anchor_bottom = 0.025
+margin_left = 4.0
+margin_top = 68.0
+margin_right = 63.0
+margin_bottom = 68.0
+text = "Debug Change Level"
+
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="ItemSpawner/ItemTimer" to="ItemSpawner" method="_on_ItemTimer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed:float = 250
+export var speed:float = 185
 var direction = Vector2.DOWN
 
 func _ready():
