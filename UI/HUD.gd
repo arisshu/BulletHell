@@ -28,8 +28,8 @@ func _on_player_life_changed(life: int):
 	setLives(life)
 
 func _on_score_add(amount: int):
-	score += amount
-	scoreLabel.text = str(score)
+	GlobalVar.currentScore += amount
+	scoreLabel.text = str(GlobalVar.currentScore)
 
 func _on_Timer_timeout():
 	pass # Replace with function body.

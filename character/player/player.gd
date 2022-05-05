@@ -29,7 +29,7 @@ var powerUp = false
 
 func _ready():
 	invulTimer.start(invulTime)
-	print(GlobalVar.currentLife)
+	#print(GlobalVar.currentLife)
 	anim.play("New Anim")
 	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 

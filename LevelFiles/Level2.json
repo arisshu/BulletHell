@@ -210,7 +210,7 @@
 			"Time": "2.0",
 			"LocationX": "500.0",
 			"LocationY": "400.0",
-			"Type": "8",
+			"Type": "7",
 			"Amount": "1",
 			"Delay": "0.1",
 			"EnemyLines": "1",
