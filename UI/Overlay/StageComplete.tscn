@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Overlay/StageComplete.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Kenney/Kenney Future.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/Kenney/Kenney Future Narrow.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 27
+size = 30
 extra_spacing_top = 53
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 53
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -19,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -125.0
-margin_top = -200.0
-margin_right = 125.0
-margin_bottom = 200.0
+margin_left = -150.0
+margin_top = -50.0
+margin_right = 150.0
+margin_bottom = 250.0
 color = Color( 0, 0, 0, 0.243137 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
@@ -31,41 +37,56 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -125.0
-margin_top = -200.0
+margin_top = -147.0
 margin_right = 125.0
-margin_bottom = 200.0
+margin_bottom = 143.0
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer"]
 margin_right = 250.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 0, 120 )
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/CenterContainer"]
-margin_left = 6.0
-margin_top = 18.0
-margin_right = 243.0
-margin_bottom = 102.0
+visible = false
+margin_left = -4.0
+margin_top = -19.0
+margin_right = 254.0
+margin_bottom = 69.0
 custom_fonts/font = SubResource( 1 )
 text = "STAGE CLEAR"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
-margin_top = 124.0
+margin_top = 54.0
 margin_right = 250.0
-margin_bottom = 424.0
-rect_min_size = Vector2( 0, 300 )
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 150 )
 alignment = 1
 
 [node name="HS" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
-margin_top = 134.0
+margin_top = 59.0
 margin_right = 250.0
-margin_bottom = 148.0
+margin_bottom = 73.0
 text = "Show score here"
 align = 1
 
 [node name="BestHS" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
-margin_top = 152.0
+margin_top = 77.0
 margin_right = 250.0
-margin_bottom = 166.0
+margin_bottom = 91.0
 text = "Best High score"
 align = 1
+
+[node name="Test" type="RichTextLabel" parent="."]
+margin_left = -9.0
+margin_top = 127.0
+margin_right = 527.0
+margin_bottom = 427.0
+rect_min_size = Vector2( 300, 300 )
+rect_clip_content = false
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center][color=yellow] StAGE CLEARED! [/color][/center]"
+text = " StAGE CLEARED! "
+custom_effects = [ null ]

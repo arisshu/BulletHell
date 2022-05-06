@@ -14,6 +14,7 @@ script = ExtResource( 2 )
 Projectile = ExtResource( 4 )
 projectiles = 3
 speed = 10.0
+health = 1
 
 [node name="Sprite2" type="Sprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -42,28 +43,6 @@ position = Vector2( 0, 15 )
 
 [node name="Position2D" type="Position2D" parent="MainGun"]
 position = Vector2( 0, 12 )
-
-[node name="SecondaryGun" type="Node2D" parent="."]
-position = Vector2( -24, 7.5 )
-
-[node name="Position2D4" type="Position2D" parent="SecondaryGun"]
-position = Vector2( 3, 0 )
-rotation = -0.261799
-
-[node name="Position2D3" type="Position2D" parent="SecondaryGun"]
-position = Vector2( -3.5, 0.5 )
-rotation = 0.261799
-
-[node name="SecondaryGun2" type="Node2D" parent="."]
-position = Vector2( 23.5, 7.5 )
-
-[node name="Position2D" type="Position2D" parent="SecondaryGun2"]
-position = Vector2( -3, 0 )
-rotation = 0.261799
-
-[node name="Position2D2" type="Position2D" parent="SecondaryGun2"]
-position = Vector2( 4.5, 0 )
-rotation = -0.261799
 
 [node name="MainGunTimer" type="Timer" parent="."]
 one_shot = true

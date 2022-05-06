@@ -22,7 +22,6 @@ var scoreBonus := preload("res://UI/ScoreBonus.tscn")
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
 onready var firingPositions := $MainGun
-onready var secondaryFiringPositions := $SecondaryGun
 onready var mainGunTimer := $MainGunTimer
 onready var secondaryGunTimer := $SecondaryGunTimer
 
@@ -68,8 +67,8 @@ func _physics_process(delta):
 	
 func _process(delta):
 	$ProgressBar.value = health
-	#print("Enemy.gd: Current stage ", GlobalVar.currentStage)
 	shooting_direction = global_position.direction_to(Target.global_position)
+	
 	if mainGunTimer.is_stopped():
 		fire()
 		mainGunTimer.start(mainGunFireRate)
@@ -82,7 +81,6 @@ func fire():
 		
 	if (GlobalVar.currentStage == 2):
 		if (secondaryGunTimer.is_stopped()):
-			#fireScatter()
 			shoot()
 			secondaryGunTimer.start(secondaryFireRate)
 

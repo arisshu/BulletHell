@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://character/player/player.gd"
 }, {
+"base": "RichTextEffect",
+"class": "RichTextHover",
+"language": "GDScript",
+"path": "res://UI/Overlay/HoverEffect.gd"
+}, {
 "base": "Object",
 "class": "SceneManagerConstants",
 "language": "GDScript",
@@ -37,6 +42,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Enemy": "",
 "Player": "",
+"RichTextHover": "",
 "SceneManagerConstants": "",
 "ShootEnemy": "",
 "SineEnemy": ""
