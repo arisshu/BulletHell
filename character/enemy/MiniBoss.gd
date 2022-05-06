@@ -7,6 +7,8 @@ var bonusScoreItem := preload("res://Items/BonusScore.tscn")
 var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")
 var stageCompleteScene := preload("res://UI/Overlay/StageComplete.tscn")
 
+var scoreBonus := preload("res://UI/ScoreBonus.tscn")
+
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
 onready var firingPositions := $MainGun
@@ -14,7 +16,7 @@ onready var mainGunTimer := $MainGunTimer
 
 export var speed := 50.0
 export var health: int = 20
-export var scoreWorth: int = 100
+export var scoreWorth: int = 5000
 export var chanceItemDrop: int = 100
 export var hDirection: int = 1
 export var hSpeed: int = 100
@@ -90,9 +92,11 @@ func damage(amount: int):
 		GlobalVar.enemyOnCurrentScreen.erase(self.name)
 		Signals.emit_signal("on_score_add", scoreWorth)
 		
-		var randomChance = (randi()%100)+1
-		if randomChance <= chanceItemDrop:
-			dropBonus()
+		#Add score effect
+		var bonusItemEffect = scoreBonus.instance()
+		bonusItemEffect.global_position = global_position
+		bonusItemEffect.setValue(str(scoreWorth))
+		get_tree().get_root().add_child(bonusItemEffect)
 		
 		Signals.emit_signal("on_scoreboard_display")
 		#moveToNextStage()
