@@ -3,7 +3,7 @@ class_name Player
 
 var plBullet := preload("res://Bullet/PlayerBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
-var deathMenu := preload("res://UI//Overlay//StageComplete.tscn")
+var plGameOver := preload("res://UI//Overlay//GameOver.tscn")
 
 
 onready var firingPositions := $FiringPositions
@@ -85,7 +85,10 @@ func damage(amount: int):
 		effect.global_position = global_position
 		get_tree().current_scene.add_child(effect)
 		
-		SceneManager.change_scene("res://Main Scenes//SecondLevel.tscn")
+		var gameOverScene = plGameOver.instance()
+	#print(get_viewport_rect().size/2)
+		gameOverScene.offset = Vector2(0,0)
+		get_tree().get_root().add_child(gameOverScene)
 		
 		queue_free()
 		
