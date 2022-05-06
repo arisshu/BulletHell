@@ -10,5 +10,5 @@ func _process(delta):
 	if fireTimer.is_stopped():
 	#var randomChance = randi()%100+1
 	#if randomChance <= fireChance:
-			fire()
-			fireTimer.start(randi()%3+1)
+		fire()
+		fireTimer.start(randi()%3+1)

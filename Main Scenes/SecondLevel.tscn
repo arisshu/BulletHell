@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://character/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
@@ -9,9 +9,19 @@
 [ext_resource path="res://UI/Overlay/LevelDisplay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Main Scenes/SecondLevel.gd" type="Script" id=8]
 [ext_resource path="res://character/enemy/MiniBoss.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Overlay/StageComplete.tscn" type="PackedScene" id=10]
+[ext_resource path="res://character/enemy/ShootEnemy2.tscn" type="PackedScene" id=11]
 
 [node name="Gameplay2" type="Node"]
 script = ExtResource( 8 )
+
+[node name="ShootingEnemy2" parent="." groups=["damagable"] instance=ExtResource( 11 )]
+speed = 80.0
+chanceItemDrop = 10
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 10 )]
+offset = Vector2( 200, 450 )
+transform = Transform2D( 1, 0, 0, 1, 200, 450 )
 
 [node name="Boss" parent="." instance=ExtResource( 9 )]
 position = Vector2( 261, 117 )
@@ -45,8 +55,6 @@ margin_top = 51.0
 margin_right = 147.0
 margin_bottom = 71.0
 text = "Debug Change Level"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 257, 511 )

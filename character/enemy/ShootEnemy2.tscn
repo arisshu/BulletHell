@@ -6,10 +6,8 @@
 
 [node name="ShootingEnemy2" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
-speed = 90.0
 health = 10
-chanceItemDrop = 10
-hSpeed = 200.0
+hSpeed = 150.0
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 3 )

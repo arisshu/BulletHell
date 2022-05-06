@@ -1,6 +1,6 @@
 extends ShootEnemy
 
-export var hSpeed := 50.0
+export var hSpeed := 10.0
 
 var hDirection: int = 1
 
@@ -11,7 +11,7 @@ var hDirection: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta):
-	position.x += hSpeed * delta * hDirection
+	self.position.x += hSpeed * delta * hDirection
 	
 	var viewRect := get_viewport_rect()
 	if position.x < viewRect.position.x or position.x > viewRect.end.x:
