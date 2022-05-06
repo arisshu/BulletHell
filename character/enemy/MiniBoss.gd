@@ -9,22 +9,43 @@ var stageCompleteScene := preload("res://UI/Overlay/StageComplete.tscn")
 
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
-onready var firingPositions := $FiringPositions
+onready var firingPositions := $MainGun
+onready var mainGunTimer := $MainGunTimer
 
-export var speed := 10.0
+export var speed := 50.0
 export var health: int = 20
 export var scoreWorth: int = 100
 export var chanceItemDrop: int = 100
+export var hDirection: int = 1
+export var hSpeed: int = 100
+
+var timerToNext = Timer.new()
 
 func _ready():
 	$ProgressBar.max_value = health
+	Signals.connect("on_scoreboard_display", self, "_on_scoreboard_display")
+		
 
 func _physics_process(delta):
-	position.y += speed * delta
+	if (position.y <= 75):
+		position.y += speed * delta
+	else:
+		position.y = position.y
+		self.position.x += hSpeed * delta * hDirection
+		var viewRect := get_viewport_rect()
+		if position.x < viewRect.position.x or position.x > viewRect.end.x:
+			hDirection *= -1
+	#position.y += speed * delta
 	pass
 	
 func _process(delta):
 	$ProgressBar.value = health
+	
+	if mainGunTimer.is_stopped():
+	#var randomChance = randi()%100+1
+	#if randomChance <= fireChance:
+		fire()
+		mainGunTimer.start(2)
 	
 func fire():
 	for child in firingPositions.get_children():
@@ -63,7 +84,8 @@ func damage(amount: int):
 		if randomChance <= chanceItemDrop:
 			dropBonus()
 		
-		showScoreboard()
+		Signals.emit_signal("on_scoreboard_display")
+		#moveToNextStage()
 		queue_free()
 		return
 
@@ -73,20 +95,20 @@ func dropBonus():
 	get_tree().get_root().add_child(bonusItem)
 
 
-func selfDestruction():
-	var explosionAnim = explosionScene.instance()
-	explosionAnim.position = self.global_position
-	#explosionAnim.scale = Vector2(rand_range(1,2),rand_range(1,2))
-	explosionAnim.start_anim()
-	get_parent().add_child(explosionAnim)
+#func selfDestruction():
+#	var explosionAnim = explosionScene.instance()
+#	explosionAnim.position = self.global_position
+#	#explosionAnim.scale = Vector2(rand_range(1,2),rand_range(1,2))
+#	explosionAnim.start_anim()
+#	get_parent().add_child(explosionAnim)
 	
-	Signals.emit_signal("on_score_add", scoreWorth)
+#	Signals.emit_signal("on_score_add", scoreWorth)
 	
-	queue_free()
+#	queue_free()
 
 # Remove enemy when leaving the screen
 func _on_VisibilityNotifier2D_screen_exited():
-	GlobalVar.enemyOnCurrentScreen.erase(self.name)
+	#GlobalVar.enemyOnCurrentScreen.erase(self.name)
 	queue_free()
 
 
@@ -94,11 +116,29 @@ func _on_Boss_area_entered(area):
 	if area is Player:
 		area.damage(1)
 
-func _on_VisibilityNotifier2D_screen_entered():	
-	GlobalVar.enemyOnCurrentScreen[self.name] = self
+#func _on_VisibilityNotifier2D_screen_entered():	
+#	GlobalVar.enemyOnCurrentScreen[self.name] = self
 
-func showScoreboard():
+
+#onready var timerToNext = $TimerToNext
+func _on_scoreboard_display():
 	var scoreScene = stageCompleteScene.instance()
-	print(get_viewport_rect().size/2)
+	#print(get_viewport_rect().size/2)
 	scoreScene.offset = Vector2(0,0)
 	get_tree().get_root().add_child(scoreScene)
+	
+
+func moveToNextStage():
+	print("Create new timer?")
+	timerToNext.connect("timeout", self, "timeout")
+	print("Connected")
+	timerToNext.set_wait_time(6.0)
+	print("Set time")
+	timerToNext.start()
+	print("Start timer")
+	add_child(timerToNext)
+	print("add to child")
+	
+func timeout():
+	print("Call?")
+	SceneManager.change_scene("res://Main Scenes//SecondLevel.tscn")

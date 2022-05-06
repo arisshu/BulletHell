@@ -28,14 +28,37 @@ theme = ExtResource( 3 )
 value = 60.0
 percent_visible = false
 
-[node name="FiringPositions" type="Node2D" parent="."]
-position = Vector2( 0, 15 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.125, 1.125 )
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="." to="." method="_on_Boss_area_entered"]
+[node name="MainGun" type="Node2D" parent="."]
+position = Vector2( 0, 15 )
+
+[node name="Position2D" type="Position2D" parent="MainGun"]
+position = Vector2( 0, 12 )
+
+[node name="SecondaryGun" type="Node2D" parent="."]
+position = Vector2( 0, 15 )
+
+[node name="Position2D" type="Position2D" parent="SecondaryGun"]
+position = Vector2( 20, -2 )
+
+[node name="Position2D2" type="Position2D" parent="SecondaryGun"]
+position = Vector2( 28, -2 )
+
+[node name="SecondaryGun2" type="Node2D" parent="."]
+position = Vector2( 0, 15 )
+
+[node name="Position2D" type="Position2D" parent="SecondaryGun2"]
+position = Vector2( -27, -1 )
+
+[node name="Position2D2" type="Position2D" parent="SecondaryGun2"]
+position = Vector2( -20, -1 )
+
+[node name="MainGunTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_exited" from="." to="." method="_on_Boss_area_exited"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

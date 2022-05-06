@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BulletHell"
-run/main_scene="res://Main Scenes//SecondLevel.tscn"
+run/main_scene="res://Menu/Main Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -54,6 +54,7 @@ Signals="*res://AutoLoads/signals.gd"
 GlobalVar="*res://AutoLoads/globalVar.gd"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 Pause="*res://Menu/Pause.tscn"
+GameManager="*res://AutoLoads/GameManager.gd"
 
 [display]
 

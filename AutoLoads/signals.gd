@@ -8,3 +8,5 @@ signal on_score_add(amount)
 
 
 signal on_current_life_change(value)
+
+signal on_scoreboard_display()

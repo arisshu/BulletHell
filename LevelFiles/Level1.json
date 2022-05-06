@@ -1,7 +1,17 @@
 {
     "LevelNumber": "1",
     "SpawnEnemyArray": [
-
+		{
+			"Time": "1.0",
+			"LocationX": "200.0",
+			"LocationY": "0.0",
+			"Type": "8",
+			"Amount": "1",
+			"Delay": "0",
+			"EnemyLines": "1",
+			"OffsetX": "0.0",
+			"OffsetY": "0.0"
+		},	
        {
 			"Time": "6.0",
 			"LocationX": "100.0",
@@ -375,7 +385,19 @@
 			"EnemyLines": "6",
 			"OffsetX": "100.0",
 			"OffsetY": "0.0"
-		}
+		},
+		
+		{
+			"Time": "5.0",
+			"LocationX": "200.0",
+			"LocationY": "0.0",
+			"Type": "5",
+			"Amount": "1",
+			"Delay": "0.5",
+			"EnemyLines": "2",
+			"OffsetX": "200.0",
+			"OffsetY": "0.0"
+		},	
 
     ]
  }
