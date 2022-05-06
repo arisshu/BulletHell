@@ -26,4 +26,4 @@ func _process(delta):
 	#var randomChance = randi()%100+1
 	#if randomChance <= fireChance:
 			fireScatter()
-			fireTimer.start(randi()%3+1)
+			fireTimer.start(randi()%3+0.25)

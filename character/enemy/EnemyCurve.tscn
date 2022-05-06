@@ -15,6 +15,7 @@ extents = Vector2( 30.5, 17.5 )
 
 [node name="EnemyCurve" type="Node2D"]
 script = ExtResource( 4 )
+speed = 500.0
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 7.99055, 81.1231 )
@@ -30,6 +31,9 @@ loop = false
 [node name="Enemy" type="Area2D" parent="Path2D/PathFollow2D" groups=["damagable"]]
 rotation = -1.27409
 script = ExtResource( 1 )
+speed = 200.0
+health = 5
+chanceItemDrop = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy"]
 position = Vector2( -0.5, 0.5 )
