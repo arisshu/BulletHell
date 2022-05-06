@@ -13,6 +13,8 @@ func _on_Exit_pressed():
 
 func _on_Start_pressed():
 	SceneManager.change_scene("res://Main Scenes/FirstLevel.tscn", {"pattern": "scribbles"})
+	GlobalVar.currentLife = 3
+	GlobalVar.currentScore = 0
 	queue_free()
 
 
