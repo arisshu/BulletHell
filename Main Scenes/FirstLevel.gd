@@ -9,6 +9,7 @@ func _ready():
 	GlobalVar.currentStage = 1
 	print("FirstLevel.tscn ready: GlobalVar is stage ", GlobalVar.currentStage)
 	Signals.emit_signal("on_score_add", 0)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
