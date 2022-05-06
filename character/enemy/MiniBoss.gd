@@ -86,7 +86,7 @@ func damage(amount: int):
 		var explosionAnim = explosionScene.instance()
 		explosionAnim.position = self.global_position
 		explosionAnim.scale = Vector2(2.5,2.5)
-		explosionAnim.start_anim()
+		explosionAnim.play_animation()
 		get_parent().add_child(explosionAnim)
 		
 		GlobalVar.enemyOnCurrentScreen.erase(self.name)
@@ -142,17 +142,3 @@ func _on_scoreboard_display():
 	get_tree().get_root().add_child(scoreScene)
 	
 
-func moveToNextStage():
-	print("Create new timer?")
-	timerToNext.connect("timeout", self, "timeout")
-	print("Connected")
-	timerToNext.set_wait_time(6.0)
-	print("Set time")
-	timerToNext.start()
-	print("Start timer")
-	add_child(timerToNext)
-	print("add to child")
-	
-func timeout():
-	print("Call?")
-	SceneManager.change_scene("res://Main Scenes//SecondLevel.tscn")

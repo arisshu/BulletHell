@@ -8,6 +8,7 @@
 extents = Vector2( 38.875, 23.875 )
 
 [node name="Boss" type="Area2D" groups=["damagable"]]
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="."]
@@ -59,6 +60,7 @@ position = Vector2( -20, -1 )
 [node name="MainGunTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="area_entered" from="." to="." method="_on_Boss_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Boss_area_exited"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
