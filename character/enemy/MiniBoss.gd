@@ -86,7 +86,7 @@ func damage(amount: int):
 		var explosionAnim = explosionScene.instance()
 		explosionAnim.position = self.global_position
 		explosionAnim.scale = Vector2(2.5,2.5)
-		explosionAnim.play_animation()
+		explosionAnim.start_anim()
 		get_parent().add_child(explosionAnim)
 		
 		GlobalVar.enemyOnCurrentScreen.erase(self.name)

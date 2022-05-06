@@ -8,24 +8,26 @@
 size = 24
 font_data = ExtResource( 3 )
 
-[node name="HUD" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="HealthContainer" type="HBoxContainer" parent="."]
+[node name="HealthContainer" type="HBoxContainer" parent="HUD"]
 margin_left = 15.0
 margin_top = 15.0
 margin_right = 500.0
 margin_bottom = 16.0
 custom_constants/separation = 6
 
-[node name="Life" parent="HealthContainer" instance=ExtResource( 2 )]
+[node name="Life" parent="HUD/HealthContainer" instance=ExtResource( 2 )]
 margin_right = 16.0
 margin_bottom = 16.0
 rect_scale = Vector2( 1, 1 )
 
-[node name="Score" type="Label" parent="."]
+[node name="Score" type="Label" parent="HUD"]
 anchor_right = 1.0
 margin_top = 15.0
 margin_right = -15.0
