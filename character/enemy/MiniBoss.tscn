@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Textures/Ships/ship_0015.png" type="Texture" id=1]
 [ext_resource path="res://character/enemy/MiniBoss.gd" type="Script" id=2]
 [ext_resource path="res://character/enemy/HealthBarTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Bullet/BossBullet.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38.875, 23.875 )
@@ -10,6 +11,9 @@ extents = Vector2( 38.875, 23.875 )
 [node name="Boss" type="Area2D" groups=["damagable"]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
+Projectile = ExtResource( 4 )
+projectiles = 3
+speed = 10.0
 
 [node name="Sprite2" type="Sprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -40,24 +44,31 @@ position = Vector2( 0, 15 )
 position = Vector2( 0, 12 )
 
 [node name="SecondaryGun" type="Node2D" parent="."]
-position = Vector2( 0, 15 )
+position = Vector2( -24, 7.5 )
 
-[node name="Position2D" type="Position2D" parent="SecondaryGun"]
-position = Vector2( 20, -2 )
+[node name="Position2D4" type="Position2D" parent="SecondaryGun"]
+position = Vector2( 3, 0 )
+rotation = -0.261799
 
-[node name="Position2D2" type="Position2D" parent="SecondaryGun"]
-position = Vector2( 28, -2 )
+[node name="Position2D3" type="Position2D" parent="SecondaryGun"]
+position = Vector2( -3.5, 0.5 )
+rotation = 0.261799
 
 [node name="SecondaryGun2" type="Node2D" parent="."]
-position = Vector2( 0, 15 )
+position = Vector2( 23.5, 7.5 )
 
 [node name="Position2D" type="Position2D" parent="SecondaryGun2"]
-position = Vector2( -27, -1 )
+position = Vector2( -3, 0 )
+rotation = 0.261799
 
 [node name="Position2D2" type="Position2D" parent="SecondaryGun2"]
-position = Vector2( -20, -1 )
+position = Vector2( 4.5, 0 )
+rotation = -0.261799
 
 [node name="MainGunTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SecondaryGunTimer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_Boss_area_entered"]

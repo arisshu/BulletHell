@@ -2,34 +2,51 @@ extends Area2D
 #class_name Enemy
 
 var plBullet := preload("res://Bullet/EnemyBullet.tscn")
+var plBossBullet := preload("res://Bullet/BossBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
 var bonusScoreItem := preload("res://Items/BonusScore.tscn")
 var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")
 var stageCompleteScene := preload("res://UI/Overlay/StageComplete.tscn")
+
+export var Projectile : PackedScene = null
+export (int, 1, 10) var projectiles : int = 1
+export (float, 0.0, 180.0) var shooting_angle : float = 30.0
+export (float, 100.0, 1000.0) var projectile_velocity : float = 500.0
+export (float, 32.0, 128.0) var projectile_distance : float = 32.0
+
+onready var Target = get_node("../Player")
+var shooting_direction : Vector2 = Vector2.ZERO
 
 var scoreBonus := preload("res://UI/ScoreBonus.tscn")
 
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
 onready var firingPositions := $MainGun
+onready var secondaryFiringPositions := $SecondaryGun
 onready var mainGunTimer := $MainGunTimer
+onready var secondaryGunTimer := $SecondaryGunTimer
 
 export var speed := 50.0
-export var health: int = 20
+export var health: int = 150
 export var scoreWorth: int = 5000
 export var chanceItemDrop: int = 100
 export var hDirection: int = 1
 export var hSpeed: int = 100
 
+export var mainGunFireRate: float = 0.5
+export var secondaryFireRate: float = 2.25
+
 var timerToNext = Timer.new()
 
+
+
 func _ready():
-	if (GlobalVar.currentStage == 1):
-		hSpeed = 100
-		health = 100
-	elif (GlobalVar.currentStage == 2):
-		hSpeed = 200
-		health = 150
+	shooting_angle = deg2rad(shooting_angle)
+	#print(Target)
+	
+	if (GlobalVar.currentStage == 2):
+		hSpeed = hSpeed * 2
+		health = health * 1.5
 		
 	$ProgressBar.max_value = health
 	print("MinoBoss.gd: Current health of boss ", health)
@@ -52,12 +69,10 @@ func _physics_process(delta):
 func _process(delta):
 	$ProgressBar.value = health
 	#print("Enemy.gd: Current stage ", GlobalVar.currentStage)
-	
+	shooting_direction = global_position.direction_to(Target.global_position)
 	if mainGunTimer.is_stopped():
-	#var randomChance = randi()%100+1
-	#if randomChance <= fireChance:
 		fire()
-		mainGunTimer.start(2)
+		mainGunTimer.start(mainGunFireRate)
 	
 func fire():
 	for child in firingPositions.get_children():
@@ -65,12 +80,12 @@ func fire():
 		bullet.global_position = child.global_position
 		get_tree().current_scene.add_child(bullet)
 		
-func fireScatter():
-	for child in firingPositions.get_children():
-		var bullet := plBullet.instance()
-		bullet.direction = child.global_position - global_position
-		bullet.global_position = child.global_position
-		get_tree().current_scene.add_child(bullet)
+	if (GlobalVar.currentStage == 2):
+		if (secondaryGunTimer.is_stopped()):
+			#fireScatter()
+			shoot()
+			secondaryGunTimer.start(secondaryFireRate)
+
 		
 func damage(amount: int):
 	if health <= 0:
@@ -103,10 +118,10 @@ func damage(amount: int):
 		queue_free()
 		return
 
-func dropBonus():
-	var bonusItem = bonusScoreItem.instance()
-	bonusItem.global_position = global_position
-	get_tree().get_root().add_child(bonusItem)
+#func dropBonus():
+#	var bonusItem = bonusScoreItem.instance()
+#	bonusItem.global_position = global_position
+#	get_tree().get_root().add_child(bonusItem)
 
 
 #func selfDestruction():
@@ -130,9 +145,6 @@ func _on_Boss_area_entered(area):
 	if area is Player:
 		area.damage(1)
 
-#func _on_VisibilityNotifier2D_screen_entered():	
-#	GlobalVar.enemyOnCurrentScreen[self.name] = self
-
 
 #onready var timerToNext = $TimerToNext
 func _on_scoreboard_display():
@@ -142,3 +154,17 @@ func _on_scoreboard_display():
 	get_tree().get_root().add_child(scoreScene)
 	
 
+func spawnBullet(angle : float = 0.0) -> void:
+	var bullet = Projectile.instance()
+	bullet.init(global_position, shooting_direction.rotated(angle), projectile_velocity, projectile_distance)
+	get_parent().add_child(bullet)
+	
+func shoot() -> void:
+	if projectiles == 1:
+		spawnBullet()
+		return
+		
+	var stepAngle = shooting_angle / (projectiles - 1)
+	
+	for i in projectiles:
+		spawnBullet(-shooting_angle / 2.0 + stepAngle * i)
