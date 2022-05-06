@@ -93,7 +93,7 @@ func selfDestruction():
 # Remove enemy when leaving the screen
 func _on_VisibilityNotifier2D_screen_exited():
 	GlobalVar.enemyOnCurrentScreen.erase(self.name)
-	print("Curve Enemy Exit")
+	#print("Curve Enemy Exit")
 	queue_free()
 
 
@@ -103,4 +103,4 @@ func _on_Enemy_area_entered(area):
 
 func _on_VisibilityNotifier2D_screen_entered():	
 	GlobalVar.enemyOnCurrentScreen[self.name] = self
-	print("Curve Enemy Enter")
+	#print("Curve Enemy Enter")

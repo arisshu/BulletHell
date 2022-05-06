@@ -7,6 +7,7 @@ var plPauseScreen := preload("res://Menu/Pause.tscn")
 func _ready():
 	$Control.setValue("Level 1")
 	GlobalVar.currentStage = 1
+	print("FirstLevel.tscn ready: GlobalVar is stage ", GlobalVar.currentStage)
 	Signals.emit_signal("on_score_add", 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

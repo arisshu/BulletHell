@@ -20,6 +20,7 @@ func _ready():
 
 func _physics_process(delta):
 	position.y += speed * delta
+	#print("Enemy.gd: Current stage ", GlobalVar.currentStage)
 	pass
 	
 func _process(delta):

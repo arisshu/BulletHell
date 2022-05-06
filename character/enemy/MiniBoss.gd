@@ -22,7 +22,16 @@ export var hSpeed: int = 100
 var timerToNext = Timer.new()
 
 func _ready():
+	if (GlobalVar.currentStage == 1):
+		hSpeed = 100
+		health = 100
+	elif (GlobalVar.currentStage == 2):
+		hSpeed = 200
+		health = 150
+		
 	$ProgressBar.max_value = health
+	print("MinoBoss.gd: Current health of boss ", health)
+	print("MiniBoss.gd: Current Stage Number ", GlobalVar.currentStage)
 	Signals.connect("on_scoreboard_display", self, "_on_scoreboard_display")
 		
 
@@ -40,6 +49,7 @@ func _physics_process(delta):
 	
 func _process(delta):
 	$ProgressBar.value = health
+	#print("Enemy.gd: Current stage ", GlobalVar.currentStage)
 	
 	if mainGunTimer.is_stopped():
 	#var randomChance = randi()%100+1

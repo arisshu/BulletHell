@@ -6,6 +6,7 @@ var plDisplayLevel := preload("res://UI//Overlay/LevelDisplay.tscn")
 func _ready():
 	$Control.setValue("Level 2")
 	GlobalVar.currentStage = 2
+	print("SecondLevel.tscn ready: GlobalVar is stage ", GlobalVar.currentStage)
 	#$Player.setPowerUp(false)
 	Signals.emit_signal("on_score_add", 0)
 
