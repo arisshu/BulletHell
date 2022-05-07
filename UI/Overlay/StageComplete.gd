@@ -6,7 +6,7 @@ export(String) var text = "Stage Cleared"
 onready var timer = $Timer
 
 func _ready():
-	$ColorRect/VBoxContainer/VBoxContainer/HS.text = str(GlobalVar.currentScore)
+	$VBoxContainer/VBoxContainer/HS.text = "Highscore: " + str(GlobalVar.currentScore)
 	timer.connect("timeout", self, "timeout")
 	add_child(timer)
 	timer.start()
