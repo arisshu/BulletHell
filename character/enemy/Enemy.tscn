@@ -27,6 +27,7 @@ position = Vector2( -1, 1.00001 )
 scale = Vector2( 3.775, 2.23125 )
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 margin_left = -18.0
 margin_top = -24.0
 margin_right = 19.0

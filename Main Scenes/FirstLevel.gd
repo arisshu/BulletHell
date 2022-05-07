@@ -5,7 +5,7 @@ var plPauseScreen := preload("res://Menu/Pause.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Control.setValue("Level 1")
+	$LevelDisplayText.setValue("Level 1")
 	GlobalVar.currentStage = 1
 	print("FirstLevel.tscn ready: GlobalVar is stage ", GlobalVar.currentStage)
 	Signals.emit_signal("on_score_add", 0)

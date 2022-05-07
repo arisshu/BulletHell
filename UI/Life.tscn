@@ -5,5 +5,5 @@
 [node name="Life" type="TextureRect"]
 margin_right = 60.0
 margin_bottom = 60.0
-rect_scale = Vector2( 3, 3 )
+rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
