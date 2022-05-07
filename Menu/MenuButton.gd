@@ -45,4 +45,3 @@ func _on_TextureButton_focus_exited():
 
 func _on_TextureButton_mouse_entered():
 	grab_focus()
-

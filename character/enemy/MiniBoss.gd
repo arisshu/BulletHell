@@ -48,8 +48,8 @@ func _ready():
 		health = health * 1.5
 		
 	$ProgressBar.max_value = health
-	print("MinoBoss.gd: Current health of boss ", health)
-	print("MiniBoss.gd: Current Stage Number ", GlobalVar.currentStage)
+	#print("MinoBoss.gd: Current health of boss ", health)
+	#print("MiniBoss.gd: Current Stage Number ", GlobalVar.currentStage)
 	Signals.connect("on_scoreboard_display", self, "_on_scoreboard_display")
 		
 

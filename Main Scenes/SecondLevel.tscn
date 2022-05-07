@@ -50,6 +50,7 @@ script = ExtResource( 4 )
 pause_mode = 2
 
 [node name="Button" type="Button" parent="."]
+visible = false
 anchor_right = 0.024
 anchor_bottom = 0.025
 margin_left = 6.0

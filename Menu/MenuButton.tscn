@@ -40,10 +40,9 @@ rect_min_size = Vector2( 0, 20 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center][color=yellow] Text Button [/color][/center]"
-text = " Text Button "
+bbcode_text = "[center][color=yellow] Start Text [/color][/center]"
+text = " Start Text "
 
 [connection signal="focus_entered" from="." to="." method="_on_TextureButton_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_TextureButton_focus_exited"]
 [connection signal="mouse_entered" from="." to="." method="_on_TextureButton_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_TextureButton_mouse_exited"]
