@@ -66,8 +66,8 @@ rect_min_size = Vector2( 0, 300 )
 alignment = 1
 
 [node name="Start" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 64.0
-margin_bottom = 104.0
+margin_top = 42.0
+margin_bottom = 82.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../Start2")
@@ -75,26 +75,35 @@ text = "Start Classic"
 arrowMarginFromCenter = 150
 
 [node name="Start2" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 108.0
-margin_bottom = 148.0
+margin_top = 86.0
+margin_bottom = 126.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Start")
-focus_neighbour_bottom = NodePath("../Control")
+focus_neighbour_bottom = NodePath("../Highscores")
 text = "Start Variant"
 arrowMarginFromCenter = 150
 
-[node name="Control" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 152.0
-margin_bottom = 192.0
+[node name="Highscores" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 130.0
+margin_bottom = 170.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Start2")
+focus_neighbour_bottom = NodePath("../Control")
+text = "Highscores"
+arrowMarginFromCenter = 150
+
+[node name="Control" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 174.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 0, 40 )
+focus_neighbour_top = NodePath("../Highscores")
 focus_neighbour_bottom = NodePath("../Exit")
 text = "Controls"
 arrowMarginFromCenter = 121
 
 [node name="Exit" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 196.0
-margin_bottom = 236.0
+margin_top = 218.0
+margin_bottom = 258.0
 rect_min_size = Vector2( 0, 40 )
 focus_neighbour_top = NodePath("../Control")
 focus_neighbour_bottom = NodePath("../Start")
@@ -102,3 +111,4 @@ text = "Exit"
 arrowMarginFromCenter = 94
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Highscores" to="." method="_on_Highscores_pressed"]

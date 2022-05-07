@@ -86,6 +86,12 @@ func damage(amount: int):
 		get_tree().current_scene.add_child(effect)
 		
 		var gameOverScene = plGameOver.instance()
+		var scoresObject = loadScores("res://Highscores/highscores.json")
+		var listOfScores = scoresObject["score_list"]
+		listOfScores.append(GlobalVar.currentScore)
+		var newScores = { "score_list": listOfScores}
+		print(newScores)
+		save("res://Highscores/highscores.json", newScores)
 	#print(get_viewport_rect().size/2)
 		gameOverScene.offset = Vector2(0,0)
 		get_tree().get_root().add_child(gameOverScene)
@@ -100,3 +106,18 @@ func heal(amount: int):
 	
 func setPowerUp(value):
 	powerUp = value
+	
+func save(var path: String, var object):
+	var file = File.new()
+	file.open(path, File.WRITE)
+	file.store_line(to_json(object))
+	file.close()
+	pass
+	
+func loadScores(var path: String) -> Dictionary:
+	var file = File.new()
+	file.open(path, File.READ)
+	var text =  file.get_as_text()
+	var dict = JSON.parse(text)
+	file.close()
+	return dict.result

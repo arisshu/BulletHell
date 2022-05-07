@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://character/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Main Scenes/ItemSpawner.gd" type="Script" id=6]
 [ext_resource path="res://UI/Overlay/LevelDisplay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Main Scenes/FirstLevel.gd" type="Script" id=8]
-[ext_resource path="res://character/enemy/MiniBoss.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Items/PlaneDestruction.tscn" type="PackedScene" id=12]
 
 [node name="Gameplay1" type="Node"]
@@ -42,6 +41,7 @@ speed = 300.0
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 4 )
+level_file = "res://LevelFiles/Level1.json"
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 
@@ -63,9 +63,6 @@ margin_top = 68.0
 margin_right = 133.0
 margin_bottom = 68.0
 text = "Debug Change Level"
-
-[node name="Boss" parent="." instance=ExtResource( 9 )]
-position = Vector2( 265, 52 )
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="ItemSpawner/ItemTimer" to="ItemSpawner" method="_on_ItemTimer_timeout"]

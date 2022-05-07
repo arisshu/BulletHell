@@ -31,3 +31,7 @@ func _on_Exit_pressed():
 
 func _on_Start_pressed():
 	SceneManager.change_scene("res://Main Scenes/FirstLevel.tscn", {"pattern": "scribbles"})
+
+
+func _on_Highscores_pressed():
+	SceneManager.change_scene("res://Highscores/Scores.tscn", {"pattern": "scribbles"})

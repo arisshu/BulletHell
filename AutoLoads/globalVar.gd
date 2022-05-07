@@ -1,7 +1,7 @@
 extends Node
 
 var enemyOnCurrentScreen = {}
-var currentLife = 10
+var currentLife = 1
 var currentScore = 0
 
 

@@ -13,6 +13,7 @@ var preloadedEnemies := [
 ]
 
 onready var spawnTimer := $SpawnTimer
+export var level_file: String = ""
 
 var dict
 var pos: int = 0
@@ -28,7 +29,7 @@ var offsetY: float = 0.0
 	
 func _ready():
 	var file = File.new()
-	file.open("res://LevelFiles/Level1.json", File.READ)
+	file.open(level_file, File.READ)
 	var text =  file.get_as_text()
 	dict = JSON.parse(text)
 	file.close()
