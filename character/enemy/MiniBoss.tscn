@@ -25,9 +25,9 @@ position = Vector2( -1, 1.00001 )
 scale = Vector2( 3.775, 2.23125 )
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-margin_left = -35.0
+margin_left = -39.0
 margin_top = -26.0
-margin_right = 37.0
+margin_right = 40.0
 margin_bottom = -23.0
 theme = ExtResource( 3 )
 value = 60.0
@@ -50,5 +50,4 @@ one_shot = true
 one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_Boss_area_entered"]
-[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

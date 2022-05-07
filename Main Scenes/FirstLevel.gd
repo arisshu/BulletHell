@@ -5,9 +5,13 @@ var plPauseScreen := preload("res://Menu/Pause.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$LevelDisplayText.setValue("Level 1")
 	GlobalVar.currentStage = 1
-	print("FirstLevel.tscn ready: GlobalVar is stage ", GlobalVar.currentStage)
+	
+	var displaylevelPanel := plDisplayLevel.instance()
+	displaylevelPanel.offset = Vector2(0,0)
+	get_tree().get_root().add_child(displaylevelPanel)
+	
+	
 	Signals.emit_signal("on_score_add", 0)
 	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 

@@ -30,7 +30,7 @@ func timeout():
 	queue_free()
 	
 func setValue(value):
-	print(textureList[value])
+	#print(textureList[value])
 	$HBoxContainer/Head.texture = load((textureList[value]))
 
 
