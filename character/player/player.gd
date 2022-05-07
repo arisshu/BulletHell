@@ -93,6 +93,8 @@ func damage(amount: int):
 		var scoresObject = loadScores("res://Highscores/highscores.json")
 		var listOfScores = scoresObject["score_list"]
 		listOfScores.append(GlobalVar.currentScore)
+		listOfScores.sort()
+		listOfScores.invert()
 		var newScores = { "score_list": listOfScores}
 		print(newScores)
 		save("res://Highscores/highscores.json", newScores)

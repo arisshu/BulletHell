@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Highscores/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Resources/Background.tres" type="TileSet" id=2]
+[ext_resource path="res://Menu/MenuButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=4]
 [ext_resource path="res://Highscores/Scores.gd" type="Script" id=5]
+[ext_resource path="res://Highscores/Highscores.gd" type="Script" id=6]
 
 [sub_resource type="Theme" id=1]
 
 [node name="Highscores" type="Node"]
+script = ExtResource( 6 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource( 4 )
@@ -38,24 +41,34 @@ color = Color( 0, 0, 0, 0.556863 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="BackButton" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 0.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+text = "Back"
+arrowMarginFromCenter = 70
+
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 54.0
 margin_right = 500.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 0, 300 )
+margin_bottom = 254.0
+rect_min_size = Vector2( 0, 200 )
 
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
 margin_left = 69.0
-margin_top = 126.0
+margin_top = 76.0
 margin_right = 430.0
-margin_bottom = 174.0
+margin_bottom = 124.0
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "HIGHSCORES"
 
 [node name="Scores" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 304.0
+margin_top = 258.0
 margin_right = 500.0
-margin_bottom = 604.0
+margin_bottom = 558.0
 rect_min_size = Vector2( 0, 300 )
 alignment = 1
 script = ExtResource( 5 )
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

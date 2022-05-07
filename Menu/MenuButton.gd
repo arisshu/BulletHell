@@ -1,7 +1,7 @@
 tool
 extends TextureButton
 
-export(String) var text = "Text Button"
+export(String) var text = "Start Text"
 export(int) var arrowMarginFromCenter = 100
 
 func _ready():

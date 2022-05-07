@@ -11,11 +11,18 @@ func _ready():
 	var scoresObject = loadScores("res://Highscores/highscores.json")
 	var scoresList = scoresObject["score_list"]
 	
-	for score in scoresList:
+	for score in scoresList.size():
+		var place = str(score + 1)
+		var placeScore = str(scoresList[score])
+		var mc = MarginContainer.new()
+		mc.add_constant_override("margin_left", 60)
 		var score_label = Label.new()
-		score_label.text = str(score)
+		score_label.set_text(str(place, ". ", placeScore))
 		score_label.add_font_override("font", load("res://Highscores/Font.tres"))
-		add_child(score_label)
+		mc.add_child(score_label)
+		add_child(mc)
+		if score > 8:
+			break
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
