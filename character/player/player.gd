@@ -2,7 +2,7 @@ extends Area2D
 class_name Player
 
 var plBullet := preload("res://Bullet/PlayerBullet.tscn")
-var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
+var plExplosion := preload("res://Resources/Animation/PlayerExplosion.tscn")
 var plGameOver := preload("res://UI//Overlay//GameOver.tscn")
 
 
@@ -81,9 +81,13 @@ func damage(amount: int):
 	
 	if GlobalVar.currentLife <= 0:
 		Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
+		#Handle animation
 		var effect := plExplosion.instance()
-		effect.global_position = global_position
-		get_tree().current_scene.add_child(effect)
+		#effect.global_position = global_position
+		effect.position = self.global_position
+		effect.scale = Vector2(2,2)
+		effect.start_anim()
+		get_parent().add_child(effect)
 		
 		var gameOverScene = plGameOver.instance()
 		var scoresObject = loadScores("res://Highscores/highscores.json")
