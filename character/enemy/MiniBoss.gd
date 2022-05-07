@@ -41,15 +41,12 @@ var timerToNext = Timer.new()
 
 func _ready():
 	shooting_angle = deg2rad(shooting_angle)
-	#print(Target)
 	
 	if (GlobalVar.currentStage == 2):
 		hSpeed = hSpeed * 2
 		health = health * 1.5
 		
 	$ProgressBar.max_value = health
-	#print("MinoBoss.gd: Current health of boss ", health)
-	#print("MiniBoss.gd: Current Stage Number ", GlobalVar.currentStage)
 	Signals.connect("on_scoreboard_display", self, "_on_scoreboard_display")
 		
 
@@ -67,7 +64,8 @@ func _physics_process(delta):
 	
 func _process(delta):
 	$ProgressBar.value = health
-	shooting_direction = global_position.direction_to(Target.global_position)
+	if (is_instance_valid(Target)):
+		shooting_direction = global_position.direction_to(Target.global_position)
 	
 	if mainGunTimer.is_stopped():
 		fire()
@@ -140,7 +138,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Boss_area_entered(area):
-	if area is Player:
+	if area is Player and is_instance_valid(area):
 		area.damage(1)
 
 
@@ -158,6 +156,11 @@ func spawnBullet(angle : float = 0.0) -> void:
 	get_parent().add_child(bullet)
 	
 func shoot() -> void:
+	if (GlobalVar.currentStage == 1):
+		projectiles = 3
+	else:
+		projectiles = 5
+		
 	if projectiles == 1:
 		spawnBullet()
 		return

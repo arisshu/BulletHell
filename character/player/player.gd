@@ -13,6 +13,7 @@ onready var invulTimer := $InvulTimer
 
 onready var anim = $AnimationPlayer
 
+onready var deathEvent := $deathEventTimer
 
 # use colon to specify type
 export var speed:float = 100.0
@@ -79,7 +80,7 @@ func damage(amount: int):
 		anim.play("New Anim")
 		
 	
-	if GlobalVar.currentLife <= 0:
+	if GlobalVar.currentLife <= 0 and deathEvent.is_stopped():
 		Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 		#Handle animation
 		var effect := plExplosion.instance()
@@ -102,7 +103,9 @@ func damage(amount: int):
 		gameOverScene.offset = Vector2(0,0)
 		get_tree().get_root().add_child(gameOverScene)
 		
+		deathEvent.start(1)
 		queue_free()
+		
 		
 	
 func heal(amount: int):

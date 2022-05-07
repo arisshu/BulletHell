@@ -20,4 +20,6 @@ func _on_Start_pressed():
 
 func _on_Start2_pressed():
 	SceneManager.change_scene("res://Menu/Main Menu.tscn", {"pattern": "scribbles"})
+	GlobalVar.currentLife = 3
+	GlobalVar.currentScore = 0
 	queue_free()

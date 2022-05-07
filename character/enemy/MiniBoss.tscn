@@ -13,8 +13,7 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 Projectile = ExtResource( 4 )
 projectiles = 3
-speed = 10.0
-health = 1
+health = 200
 
 [node name="Sprite2" type="Sprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -26,10 +25,10 @@ position = Vector2( -1, 1.00001 )
 scale = Vector2( 3.775, 2.23125 )
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-margin_left = -18.0
-margin_top = -24.0
-margin_right = 19.0
-margin_bottom = -21.0
+margin_left = -35.0
+margin_top = -26.0
+margin_right = 37.0
+margin_bottom = -23.0
 theme = ExtResource( 3 )
 value = 60.0
 percent_visible = false
