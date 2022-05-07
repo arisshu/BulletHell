@@ -12,9 +12,9 @@ func _ready():
 	var scoresList = scoresObject["score_list"]
 	
 	for score in scoresList:
-		print(score)
 		var score_label = Label.new()
-		score_label.text = "test"
+		score_label.text = str(score)
+		score_label.add_font_override("font", load("res://Highscores/Font.tres"))
 		add_child(score_label)
 
 
