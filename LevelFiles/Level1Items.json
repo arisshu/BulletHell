@@ -2,7 +2,7 @@
     "LevelNumber": "1",
     "SpawnItemArray": [
        {
-          "Time": "35.0",
+          "Time": "40.0",
           "LocationX": "100.0",
           "LocationY": "20.0",
           "Type": "2"
@@ -14,7 +14,13 @@
           "Type": "2"
        },
        {
-          "Time": "15.0",
+          "Time": "25.0",
+          "LocationX": "288.0",
+          "LocationY": "20.0",
+          "Type": "2"
+       },
+       {
+          "Time": "5.0",
           "LocationX": "100.0",
           "LocationY": "20.0",
           "Type": "0"

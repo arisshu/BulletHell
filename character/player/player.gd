@@ -130,3 +130,9 @@ func loadScores(var path: String) -> Dictionary:
 	var dict = JSON.parse(text)
 	file.close()
 	return dict.result
+
+
+
+func startInvulnerable():
+	print("Called")
+	invulTimer.start(invulTime)

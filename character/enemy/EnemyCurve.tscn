@@ -45,6 +45,7 @@ texture = ExtResource( 2 )
 flip_v = true
 
 [node name="ProgressBar" type="ProgressBar" parent="Path2D/PathFollow2D/Enemy"]
+visible = false
 margin_left = -18.0
 margin_top = -24.0
 margin_right = 19.0

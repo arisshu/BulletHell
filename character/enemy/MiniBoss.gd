@@ -90,9 +90,9 @@ func damage(amount: int):
 	health -= amount
 	
 	if health <= 0 :
-		#var effect := plExplosion.instance()
-		#effect.global_position = global_position
-		#get_tree().current_scene.add_child(effect)
+		
+		#Upon boss die set invulnerable to player immediately to prevent game over and congrat scene pop up
+		Target.startInvulnerable()
 		
 		var explosionAnim = explosionScene.instance()
 		explosionAnim.position = self.global_position
