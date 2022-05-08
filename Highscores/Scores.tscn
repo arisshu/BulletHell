@@ -50,9 +50,9 @@ text = "Back"
 arrowMarginFromCenter = 70
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 25.0
+margin_top = 54.0
 margin_right = 500.0
-margin_bottom = 175.0
+margin_bottom = 204.0
 rect_min_size = Vector2( 0, 150 )
 
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]

@@ -49,6 +49,7 @@ script = ExtResource( 6 )
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="Button" type="Button" parent="."]
+visible = false
 anchor_right = 0.024
 anchor_bottom = 0.025
 margin_left = 4.0
