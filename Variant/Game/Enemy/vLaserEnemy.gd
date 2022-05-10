@@ -13,12 +13,18 @@ var targetPosY = 0
 var randomPosXToMove = 0
 var targetPosXThreshhold = 200
 export var widthBorderLaser = 100
-export var waitTime = 2
+export var waitTime = 1
 var locked = true
 var atRight = false
 
 func _ready():
+	
+	#Laser indicator turn off on spawn
+	$AnimatedSprite.playing = false
+	$AnimatedSprite.visible = false
 	activateLaser(false)
+	
+	
 	rng.randomize()
 	#print(self.position.x, get_viewport().size.x/2)
 	print("Self current posX: ", self.position.x)
@@ -45,6 +51,8 @@ func _physics_process(delta):
 		else:
 			enemyBehaviorStage += 1
 			delayTime = waitTime
+			$AnimatedSprite.playing = true
+			$AnimatedSprite.visible = true
 	elif(enemyBehaviorStage == 2):
 		delayTime -= delta
 		if delayTime < 0:
@@ -53,9 +61,13 @@ func _physics_process(delta):
 			locked = false
 			if (self.position.x <= randomPosXToMove and !atRight):
 				position.x += delta * speed
+				speed = 170
 			elif (self.position.x >= randomPosXToMove and atRight):
 				position.x -= delta * speed
+				speed = 170
 			else:
+				$AnimatedSprite.playing = false
+				$AnimatedSprite.visible = false
 				position.y += speed * delta
 				activateLaser(false)
 			
