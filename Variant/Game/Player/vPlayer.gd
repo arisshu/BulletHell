@@ -43,7 +43,7 @@ func _ready():
 	invulTimer.start(invulTime)
 	#print(GlobalVar.currentLife)
 	anim.play("New Anim")
-	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 
 func _process(delta):
 	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
@@ -104,18 +104,18 @@ func spawnBullet(angle : float = 0.0) -> void:
 	get_parent().add_child(bullet)
 
 func damage(amount: int):
-	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 	
 	if invulTimer.is_stopped():
-		GlobalVar.currentLife -= amount
-		Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
+		GlobalVar.vCurrentLife -= amount
+		Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 		
 		invulTimer.start(invulTime)
 		anim.play("New Anim")
 		
 	
-	if GlobalVar.currentLife <= 0 and deathEvent.is_stopped():
-		Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
+	if GlobalVar.vCurrentLife <= 0 and deathEvent.is_stopped():
+		Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 		#Handle animation
 		var effect := plExplosion.instance()
 		#effect.global_position = global_position
@@ -143,9 +143,9 @@ func damage(amount: int):
 		
 	
 func heal(amount: int):
-	GlobalVar.currentLife += amount
+	GlobalVar.vCurrentLife += amount
 	
-	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 	
 func incrementPowerLevel():
 	if (GlobalVar.powerLevel < 5):

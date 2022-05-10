@@ -5,7 +5,7 @@ var plPauseScreen := preload("res://Menu/Pause.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalVar.currentStage = 1
+	GlobalVar.vCurrentStage = 1
 	
 	var displaylevelPanel := plDisplayLevel.instance()
 	displaylevelPanel.offset = Vector2(0,0)
@@ -13,7 +13,7 @@ func _ready():
 	
 	
 	Signals.emit_signal("on_score_add", 0)
-	Signals.emit_signal("on_player_life_changed", GlobalVar.CurrentLife)
+	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -168,5 +168,4 @@ func loadScores(var path: String) -> Dictionary:
 
 
 func startInvulnerable():
-	print("Called")
 	invulTimer.start(invulTime)

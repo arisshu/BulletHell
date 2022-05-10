@@ -5,9 +5,9 @@
 [ext_resource path="res://Resources/Background.tres" type="TileSet" id=3]
 [ext_resource path="res://Variant/Game/Items/vMoreGun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Variant/Game/Enemy/vEnemyBomb.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Variant/Game/Enemy/vEnemyFireBall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Variant/Game/Enemy/vLaserEnemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Main Scenes/FirstLevel.gd" type="Script" id=8]
+[ext_resource path="res://Variant/MainScene/VariantFirst.gd" type="Script" id=8]
 
 [node name="Gameplay1" type="Node"]
 script = ExtResource( 8 )
@@ -37,9 +37,6 @@ position = Vector2( 266, 721 )
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 margin_top = 2.0
-
-[node name="Enemy" parent="HUD" instance=ExtResource( 6 )]
-position = Vector2( 273, 204 )
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -74,5 +71,8 @@ position = Vector2( 63, -252 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 316, -539 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 237, -7 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

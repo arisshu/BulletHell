@@ -2,12 +2,12 @@ extends vEnemy
 
 const plBullet2 = preload("res://Variant/Game/Bullet/vBaseEnemyBullet.tscn")
 
-export var speed = 75
+var speed = 120
 
-const rotateSpeed = 100
-const fireRate = 0.4
-const spawnPoint = 3
-const radius = 50
+var rotateSpeed = 100
+var fireRate = 0.2
+var spawnPoint = 3
+var radius = 50
 
 onready var rotater = $Rotater
 onready var shootTimer = $ShootTimer
@@ -30,6 +30,14 @@ func _process(delta):
 	rotater.rotation_degrees = fmod(newRotation, 360)
 	
 	position.y += speed * delta
+	
+	
+func init(argRotateSpeed, argFireRate, argSpawnPoint, argRadius, argSpeed):
+	rotateSpeed = argRotateSpeed
+	fireRate = argFireRate
+	spawnPoint = argSpawnPoint
+	radius = argRadius
+	speed = argSpeed
 	
 	
 
