@@ -35,6 +35,7 @@ var shooting_direction : Vector2 = Vector2.ZERO
 var powerUpExpiryTime : int = 30
 
 func _ready():
+	$AnimatedSprite.playing = true
 	var viewRect := get_viewport_rect()
 	shooting_angle = deg2rad(shooting_angle)
 	shooting_direction = global_position.direction_to(Vector2(viewRect.size.x/2,0))

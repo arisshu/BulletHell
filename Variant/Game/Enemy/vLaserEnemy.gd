@@ -13,6 +13,7 @@ var targetPosY = 0
 var randomPosXToMove = 0
 var targetPosXThreshhold = 200
 export var widthBorderLaser = 100
+export var waitTime = 2
 var locked = true
 var atRight = false
 
@@ -33,33 +34,43 @@ func _ready():
 		print("else branch randomPosXToMove: ", randomPosXToMove)
 		
 	
-
+var enemyBehaviorStage = 1
+var delayTime = waitTime
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta):
-	
-	if (position.y <= targetPosY and locked): #Go down
-		#print("Going down")
-		position.y += speed * delta
-	else: #Do something else once reach threshold
-		position.y = position.y
-		activateLaser(true)
-		locked = false
-		if (self.position.x <= randomPosXToMove and !atRight):
-			position.x += delta * speed
-		elif (self.position.x >= randomPosXToMove and atRight):
-			position.x -= delta * speed
-		else:
+	if (enemyBehaviorStage == 1):
+		if (position.y <= targetPosY and locked): #Go down
+			#print("Going down")
 			position.y += speed * delta
-			activateLaser(false)
-		#if (self.position.x <= viewRect.size.x/2):
+		else:
+			enemyBehaviorStage += 1
+			delayTime = waitTime
+	elif(enemyBehaviorStage == 2):
+		delayTime -= delta
+		if delayTime < 0:
+			position.y = position.y
+			activateLaser(true)
+			locked = false
+			if (self.position.x <= randomPosXToMove and !atRight):
+				position.x += delta * speed
+			elif (self.position.x >= randomPosXToMove and atRight):
+				position.x -= delta * speed
+			else:
+				position.y += speed * delta
+				activateLaser(false)
 			
-		#self.position.x += hSpeed * delta * hDirection
-		#var viewRect := get_viewport_rect()
-		#if position.x < viewRect.position.x or position.x > viewRect.end.x:
-			#hDirection *= -1
-	#position.y += speed * delta
-	#print("Enemy.gd: Current stage ", GlobalVar.currentStage)
-	#pass
+			
+	#else: #Do something else once reach threshold
+	#	position.y = position.y
+	#	activateLaser(true)
+	#	locked = false
+	#	if (self.position.x <= randomPosXToMove and !atRight):
+	#		position.x += delta * speed
+	#	elif (self.position.x >= randomPosXToMove and atRight):
+	#		position.x -= delta * speed
+	#	else:
+	#		position.y += speed * delta
+	#		activateLaser(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
