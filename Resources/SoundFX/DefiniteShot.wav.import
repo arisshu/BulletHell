@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DefiniteShot.wav-4f61337e6fad04557cf5f37f38d4e44f.sample"
+
+[deps]
+
+source_file="res://Resources/SoundFX/DefiniteShot.wav"
+dest_files=[ "res://.import/DefiniteShot.wav-4f61337e6fad04557cf5f37f38d4e44f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
