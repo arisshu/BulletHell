@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "SineEnemy",
 "language": "GDScript",
 "path": "res://character/enemy/sinEnemy.gd"
+}, {
+"base": "Area2D",
+"class": "vPlayer",
+"language": "GDScript",
+"path": "res://Variant/Game/Player/vPlayer.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "RichTextHover": "",
 "SceneManagerConstants": "",
 "ShootEnemy": "",
-"SineEnemy": ""
+"SineEnemy": "",
+"vPlayer": ""
 }
 
 [application]

@@ -29,3 +29,7 @@ func _on_Start_pressed():
 
 func _on_Highscores_pressed():
 	SceneManager.change_scene("res://Highscores/Scores.tscn", {"pattern": "scribbles"})
+
+
+func _on_Start2_pressed():
+	SceneManager.change_scene("res://Variant/MainScene/VariantFirst.tscn", {"pattern": "scribbles"})

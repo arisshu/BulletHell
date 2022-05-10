@@ -22,5 +22,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 #	pass
 
 func _on_Item_area_entered(area):
-	if area is vPlayer:
+	if area is Player:
 		queue_free()

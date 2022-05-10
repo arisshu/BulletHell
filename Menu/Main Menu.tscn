@@ -107,5 +107,6 @@ text = "Exit"
 arrowMarginFromCenter = 94
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Start2" to="." method="_on_Start2_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Highscores" to="." method="_on_Highscores_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

@@ -1,14 +1,13 @@
 extends Area2D
 
 var direction : Vector2 = Vector2.ZERO
-var velocity : float = 0.0
+var velocity : float = 9.0
 
 func _ready():
 	$AnimatedSprite.playing = true
 
 func _process(delta : float) -> void:
 	global_position += direction * velocity * delta
-	#position.y -= velocity * delta
 
 
 func init(pos : Vector2, dir : Vector2, velo : float, distance : float) -> void:

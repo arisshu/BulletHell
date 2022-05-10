@@ -23,4 +23,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Item_area_entered(area):
 	if area is vPlayer:
+		area.incrementPowerLevel()
 		queue_free()
