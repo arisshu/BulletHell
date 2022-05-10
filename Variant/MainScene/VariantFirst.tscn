@@ -67,4 +67,10 @@ position = Vector2( 308, -39 )
 position = Vector2( 451, -48 )
 speed = 150.0
 
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 63, -252 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 316, -539 )
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

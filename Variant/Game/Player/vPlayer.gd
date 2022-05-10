@@ -32,7 +32,7 @@ export var invulTime:float = 2
 var vel:= Vector2(0,0)
 var shooting_direction : Vector2 = Vector2.ZERO
 
-var powerUp = false
+var powerUpExpiryTime : int = 30
 
 func _ready():
 	var viewRect := get_viewport_rect()
@@ -148,10 +148,10 @@ func heal(amount: int):
 	
 func incrementPowerLevel():
 	if (GlobalVar.powerLevel < 5):
-		print("Created new timer")
+		#print("Created new timer")
 		
 		var timer = Timer.new()
-		timer.set_wait_time(5)
+		timer.set_wait_time(powerUpExpiryTime)
 		timer.set_one_shot(true)
 		timer.connect("timeout", self, "timeout")
 		add_child(timer)
