@@ -10,7 +10,7 @@ var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
 onready var firingPositions := $FiringPositions
 
-export var speed := 10.0
+#export var speed := 10.0
 export var health: int = 20
 export var scoreWorth: int = 100
 export var chanceItemDrop: int = 100

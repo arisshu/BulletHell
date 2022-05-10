@@ -77,7 +77,6 @@ animations = [ {
 
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-speed = 100.0
 
 [node name="LaserHitBox" type="Area2D" parent="." index="0"]
 

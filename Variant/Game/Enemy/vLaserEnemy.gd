@@ -6,6 +6,8 @@ extends vEnemy
 onready var laserHitBox = $LaserHitBox
 onready var laserCollisionBox = $LaserHitBox/CollisionShape2D
 
+export var speed = 100
+
 var viewRect := get_viewport()
 var rng = RandomNumberGenerator.new()
 
