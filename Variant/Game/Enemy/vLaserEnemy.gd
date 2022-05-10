@@ -12,21 +12,24 @@ var rng = RandomNumberGenerator.new()
 var targetPosY = 0
 var randomPosXToMove = 0
 var targetPosXThreshhold = 200
+export var widthBorderLaser = 100
 var locked = true
-var atLeft = false
+var atRight = false
 
 func _ready():
-	activateLaser(true)
+	activateLaser(false)
 	rng.randomize()
 	#print(self.position.x, get_viewport().size.x/2)
 	print("Self current posX: ", self.position.x)
+	targetPosY = rng.randf_range(120, get_viewport().size.y/2)
 	if (self.position.x <= get_viewport().size.x/2):
-		atLeft = false
-		randomPosXToMove = rng.randf_range(self.position.x, get_viewport().size.x/2)
+		atRight = false
+		randomPosXToMove = rng.randf_range(self.position.x, get_viewport().size.x - widthBorderLaser)
 		print("randomPosXToMove: ", randomPosXToMove)
 	else:
-		atLeft = true
-		randomPosXToMove = rng.randf_range(get_viewport().size.x/2 + self.position.x, get_viewport().size.x)
+		atRight = true
+		randomPosXToMove = rng.randf_range(widthBorderLaser, get_viewport().size.x/2)
+		#print("else branch size.x minus position.x: ", get_viewport().size.x-self.position.x)
 		print("else branch randomPosXToMove: ", randomPosXToMove)
 		
 	
@@ -34,16 +37,20 @@ func _ready():
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta):
 	
-	if (position.y <= 250 and locked): #Go down
+	if (position.y <= targetPosY and locked): #Go down
 		#print("Going down")
 		position.y += speed * delta
 	else: #Do something else once reach threshold
 		position.y = position.y
+		activateLaser(true)
 		locked = false
-		if (self.position.x <= randomPosXToMove):
+		if (self.position.x <= randomPosXToMove and !atRight):
 			position.x += delta * speed
+		elif (self.position.x >= randomPosXToMove and atRight):
+			position.x -= delta * speed
 		else:
 			position.y += speed * delta
+			activateLaser(false)
 		#if (self.position.x <= viewRect.size.x/2):
 			
 		#self.position.x += hSpeed * delta * hDirection
@@ -61,7 +68,7 @@ func _physics_process(delta):
 
 func _on_LaserHitBox_area_entered(area):
 	if area is vPlayer:
-		print("SD")
+		#print("SD")
 		area.damage(1)
 
 func activateLaser(value):
