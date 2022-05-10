@@ -22,7 +22,8 @@ func init(pos : Vector2, dir : Vector2, velo : float, distance : float) -> void:
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 	
-func _on_BossBullet_area_entered(area):
-	if area is Player:
+
+func _on_PlayerBullet_area_entered(area):
+	if area.is_in_group("damagable"):
 		area.damage(1)
 		queue_free()

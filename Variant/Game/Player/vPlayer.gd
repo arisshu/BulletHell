@@ -139,10 +139,40 @@ func heal(amount: int):
 	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 	
 func incrementPowerLevel():
-	if (GlobalVar.powerLevel <= 5):
+	if (GlobalVar.powerLevel < 5):
+		print("Created new timer")
+		
+		#LEFT OFF HERE
+		
+		#
+		#
+		#
+		#
+		#
+		#
+		#
+		#
+		#
+		#
+		#
+		
+		#
+		var timer = Timer.new()
+		timer.set_wait_time(5)
+		timer.set_one_shot(true)
+		timer.connect("timeout", timer, "onPowerUpExpiry")
+		add_child(timer)
+		timer.start()
+		
+		print(timer)
 		GlobalVar.powerLevel += 1
 	else:
 		GlobalVar.powerLevel = GlobalVar.maxPowerLevel
+
+func onPowerUpExpiry():
+	print("Timer expired")
+	GlobalVar.powerLevel -= 1
+	queue_free()
 	
 func save(var path: String, var object):
 	var file = File.new()
