@@ -12,7 +12,7 @@ onready var fireDelayTimer := $FireDelayTimer
 onready var invulTimer := $InvulTimer
 
 
-export (float, 0.0, 180.0) var shooting_angle : float = 5.0
+export (float, 0.0, 180.0) var shooting_angle : float = 25.0
 export (float, 100.0, 1000.0) var projectile_velocity : float = 500.0
 export (float, 32.0, 128.0) var projectile_distance : float = 32.0
 
@@ -83,6 +83,14 @@ func fire():
 	if GlobalVar.powerLevel == 1:
 		spawnBullet()
 		return
+	elif (GlobalVar.powerLevel == 2):
+		shooting_angle = deg2rad(5)
+	elif (GlobalVar.powerLevel == 3):
+		shooting_angle = deg2rad(15)
+	elif (GlobalVar.powerLevel == 4):
+		shooting_angle = deg2rad(20)
+	else:
+		shooting_angle = deg2rad(25)
 		
 	var stepAngle = shooting_angle / (GlobalVar.powerLevel - 1)
 	
