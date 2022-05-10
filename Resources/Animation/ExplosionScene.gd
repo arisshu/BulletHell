@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 func _ready():
-	pass
+	$AudioStreamPlayer2D.play()
 
 func start_anim():
 	self.playing = true

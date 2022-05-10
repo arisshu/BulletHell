@@ -40,6 +40,11 @@ _global_script_classes=[ {
 "path": "res://character/enemy/sinEnemy.gd"
 }, {
 "base": "Area2D",
+"class": "vEnemy",
+"language": "GDScript",
+"path": "res://Variant/Game/Enemy/vEnemy.gd"
+}, {
+"base": "Area2D",
 "class": "vPlayer",
 "language": "GDScript",
 "path": "res://Variant/Game/Player/vPlayer.gd"
@@ -51,6 +56,7 @@ _global_script_class_icons={
 "SceneManagerConstants": "",
 "ShootEnemy": "",
 "SineEnemy": "",
+"vEnemy": "",
 "vPlayer": ""
 }
 
@@ -64,9 +70,9 @@ config/icon="res://icon.png"
 
 Signals="*res://AutoLoads/signals.gd"
 GlobalVar="*res://AutoLoads/globalVar.gd"
-SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 Pause="*res://Menu/Pause.tscn"
 GameManager="*res://AutoLoads/GameManager.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [display]
 
