@@ -1,6 +1,6 @@
 extends Area2D
 
-
+var plSparkle := preload("res://Resources/Animation/SparkleEffect.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -23,5 +23,12 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Item_area_entered(area):
 	if area is vPlayer:
+		
+		var sparkleFX = plSparkle.instance()
+		sparkleFX.position = self.global_position
+		sparkleFX.scale = Vector2(2.5,2.5)
+		sparkleFX.start_anim()
+		get_parent().add_child(sparkleFX)
+		
 		area.incrementPowerLevel()
 		queue_free()

@@ -5,8 +5,8 @@ const plBullet2 = preload("res://Variant/Game/Bullet/vBaseEnemyBullet.tscn")
 export var speed = 75
 
 const rotateSpeed = 100
-const fireRate = 0.2
-const spawnPoint = 4
+const fireRate = 0.4
+const spawnPoint = 3
 const radius = 50
 
 onready var rotater = $Rotater

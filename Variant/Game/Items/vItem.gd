@@ -1,10 +1,9 @@
 extends Area2D
 
-
+var plSparkle := preload("res://Resources/Animation/SparkleEffect.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
 export var speed := 100.0
 
 # Called when the node enters the scene tree for the first time.
@@ -22,5 +21,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 #	pass
 
 func _on_Item_area_entered(area):
-	if area is Player:
+	if area is vPlayer:
+		
 		queue_free()
