@@ -2,14 +2,16 @@ extends Area2D
 
 var plBulletEffect := preload("res://Bullet/BulletHitEffect.tscn")
 
-export var speed:float = 500
+export var speed:float = 185
+var direction = Vector2.DOWN
 
 func _ready():
-	pass
-
+	$AnimatedSprite.playing = true
 
 func _physics_process(delta):
-	position.y -= speed * delta
+	#position.y += speed * delta
+	translate(direction.normalized() * speed * delta)
+
 	
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
@@ -19,11 +21,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_PlayerBullet_area_entered(area):
-	if area.is_in_group("damagable"):
-		
-		var bulletFX := plBulletEffect.instance()
-		bulletFX.position = position
-		get_parent().add_child(bulletFX)
+	if area is Player:
 		
 		area.damage(1)
 		queue_free()

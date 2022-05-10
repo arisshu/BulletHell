@@ -39,12 +39,22 @@ func fireScatter():
 		bullet.global_position = child.global_position
 		get_tree().current_scene.add_child(bullet)
 		
+##########################################
+#
+#  When enemy get damaged, this part fired
+#
+##########################################
 func damage(amount: int):
 	if health <= 0:
 		return
 		
 	health -= amount
 	
+##########################################
+#
+#  When enemy die, this part fired
+#
+##########################################
 	if health <= 0 :
 		#var effect := plExplosion.instance()
 		#effect.global_position = global_position

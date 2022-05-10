@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Variant/Game/Player/vPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Background.tres" type="TileSet" id=3]
 [ext_resource path="res://Variant/Game/Items/vMoreGun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Variant/Game/Enemy/vEnemyBomb.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Variant/Game/Enemy/vLaserEnemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Main Scenes/FirstLevel.gd" type="Script" id=8]
 
@@ -33,10 +34,12 @@ tile_data = PoolIntArray( 786461, 0, 0, 786462, 1, 0, 786463, 1, 0, 851970, 0, 0
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 266, 721 )
-speed = 200.0
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 margin_top = 2.0
+
+[node name="Enemy" parent="HUD" instance=ExtResource( 6 )]
+position = Vector2( 273, 204 )
 
 [node name="Button" type="Button" parent="."]
 visible = false

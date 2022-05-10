@@ -34,8 +34,15 @@ func _ready():
 	anim.play("New Anim")
 	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 
+
+##########################################
+#
+#  Everytime player shoot, this will constantly firing
+#
+########################################
 func _process(delta):
 	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
+		
 		fireDelayTimer.start(fireDelay)
 		for child in firingPositions.get_children():
 			var bullet := plBullet.instance()
@@ -47,7 +54,11 @@ func _process(delta):
 				bullet2.global_position = child2.global_position
 				get_tree().current_scene.add_child(bullet2)
 
-
+##########################################
+#
+#  Same as above but for movement
+#
+########################################
 func _physics_process(delta):
 	var dirVec := Vector2(0,0)
 	
@@ -68,9 +79,19 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0, viewRect.size.x)
 	position.y = clamp(position.y, 0, viewRect.size.y)
 	
-
+##########################################
+#
+#  Whenever playing take damage this will fire
+#
+##########################################
 func damage(amount: int):
 	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
+
+##########################################
+#
+#  Fired when lose health
+#
+##########################################
 	
 	if invulTimer.is_stopped():
 		GlobalVar.currentLife -= amount
@@ -79,7 +100,11 @@ func damage(amount: int):
 		invulTimer.start(invulTime)
 		anim.play("New Anim")
 		
-	
+##########################################
+#
+#  Fired when no more health
+#
+##########################################
 	if GlobalVar.currentLife <= 0 and deathEvent.is_stopped():
 		Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 		#Handle animation
@@ -107,12 +132,21 @@ func damage(amount: int):
 		queue_free()
 		
 		
-	
+##########################################
+#
+#  When player get a health pack, this will fired
+#
+##########################################
 func heal(amount: int):
 	GlobalVar.currentLife += amount
 	
 	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
 	
+##########################################
+#
+#  When player get moregun item, this will fired
+#
+##########################################	
 func setPowerUp(value):
 	powerUp = value
 	
