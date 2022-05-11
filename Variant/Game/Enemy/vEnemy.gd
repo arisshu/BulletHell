@@ -1,7 +1,7 @@
 extends Area2D
 class_name vEnemy
 
-var plBullet := preload("res://Bullet/EnemyBullet.tscn")
+var plBullet := preload("res://Variant/Game/Bullet/vEnemyBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
 var bonusScoreItem := preload("res://Variant/Game/Items/vBonusScore.tscn")
 var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")

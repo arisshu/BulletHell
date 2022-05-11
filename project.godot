@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "vPlayer",
 "language": "GDScript",
 "path": "res://Variant/Game/Player/vPlayer.gd"
+}, {
+"base": "vEnemy",
+"class": "vShootEnemy",
+"language": "GDScript",
+"path": "res://Variant/Game/Enemy/vShootEnemy.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
@@ -57,7 +62,8 @@ _global_script_class_icons={
 "ShootEnemy": "",
 "SineEnemy": "",
 "vEnemy": "",
-"vPlayer": ""
+"vPlayer": "",
+"vShootEnemy": ""
 }
 
 [application]

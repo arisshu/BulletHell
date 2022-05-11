@@ -2,7 +2,7 @@ extends Area2D
 
 var plBulletEffect := preload("res://Bullet/BulletHitEffect.tscn")
 
-export var speed:float = 185
+export var speed:float = 120
 var direction = Vector2.DOWN
 
 func _ready():
