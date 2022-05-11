@@ -33,7 +33,7 @@ func _on_Start2_pressed():
 	var levelText = get_node("../LevelDisplayLayer")
 	if (is_instance_valid(levelText)):
 		levelText.timeout()
-	
+#	
 	print(levelText)
 	get_tree().paused = false
 	SceneManager.change_scene("res://Menu//Main Menu.tscn", {"pattern": "scribbles"})

@@ -63,7 +63,7 @@ tracks/0/keys = {
 "values": [ 1.0 ]
 }
 
-[node name="Player" type="Area2D"]
+[node name="vPlayer" type="Area2D"]
 script = ExtResource( 2 )
 projectile_distance = 40.0
 fireDelay = 0.12

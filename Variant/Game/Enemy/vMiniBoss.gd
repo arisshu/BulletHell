@@ -14,7 +14,7 @@ export (float, 0.0, 180.0) var shooting_angle : float = 30.0
 export (float, 100.0, 1000.0) var projectile_velocity : float = 500.0
 export (float, 32.0, 128.0) var projectile_distance : float = 32.0
 
-onready var Target = get_node("../Player")
+onready var Target = get_node("../Player2")
 var shooting_direction : Vector2 = Vector2.ZERO
 
 var scoreBonus := preload("res://UI/ScoreBonus.tscn")
@@ -40,6 +40,7 @@ var timerToNext = Timer.new()
 
 
 func _ready():
+	print("What is target? ", Target)
 	shooting_angle = deg2rad(shooting_angle)
 	
 	if (GlobalVar.currentStage == 2):

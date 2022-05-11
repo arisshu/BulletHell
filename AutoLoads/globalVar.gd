@@ -9,7 +9,7 @@ var currentStage = 1
 
 #Variant Only
 var playingVariant = false
-var vCurrentLife = 2
+var vCurrentLife = 10
 var vCurrentScore = 0
 var vCurrentStage = 1
 
