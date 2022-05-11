@@ -25,7 +25,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Item_area_entered(area):
 	#powerUpSFX.play()
 	if area is Player:
-		powerUpSFX.play()
+		#powerUpSFX.play()
 		area.addBonusScore(scoreValue)
 		
 		var bonusItemEffect = scoreBonus.instance()

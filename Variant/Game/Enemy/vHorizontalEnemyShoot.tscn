@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://character/enemy/ShootEnemy3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Variant/Game/Enemy/vHorizontalEnemyShoot.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 18, 28 )
+
+[node name="HorizontalEnemyShoot" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+health = 20
+chanceItemDrop = 100
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 4 )
+
+[node name="Sprite" parent="." index="1"]
+rotation = 1.5708
+flip_v = false
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+position = Vector2( -4.76837e-07, -0.34375 )
+scale = Vector2( 1.9, 2.66562 )
+
+[node name="ProgressBar" parent="." index="3"]
+margin_left = -19.0
+margin_top = -34.0
+margin_right = 18.0
+margin_bottom = -31.0
+
+[node name="Position2D" parent="FiringPositions" index="0"]
+position = Vector2( -15, -17 )
+
+[node name="Position2D2" parent="FiringPositions" index="1"]
+position = Vector2( -10, -14 )
+rotation = -0.436332
+
+[node name="Position2D3" parent="FiringPositions" index="2"]
+position = Vector2( -22, -10 )
+rotation = 0.872665
+
+[node name="Position2D4" parent="FiringPositions" index="3"]
+position = Vector2( -6, -10 )
+
+[node name="Position2D5" parent="FiringPositions" index="4"]
+position = Vector2( -18, -14 )
+rotation = 0.436332
+
+[node name="deathTimer" type="Timer" parent="." index="5"]

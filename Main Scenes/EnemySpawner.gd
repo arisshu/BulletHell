@@ -14,7 +14,9 @@ var preloadedEnemies := [
 	#Start index 9 is variant mob
 	preload("res://Variant/Game/Enemy/vEnemy.tscn"),
 	preload("res://Variant/Game/Enemy/vEnemyFireBall.tscn"),
-	preload("res://Variant/Game/Enemy/vLaserEnemy.tscn")
+	preload("res://Variant/Game/Enemy/vLaserEnemy.tscn"),
+	preload("res://Variant/Game/Enemy/vHorizontalEnemyShoot.tscn"),
+	preload("res://Variant/Game/Bullet/vEnemySpiralBullet.tscn")
 ]
 
 onready var spawnTimer := $SpawnTimer
