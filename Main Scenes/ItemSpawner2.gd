@@ -8,6 +8,7 @@ var preloadedItems := [
 ]
 
 onready var itemTimer := $ItemTimer
+export var level_file: String = ""
 
 var dict
 var pos: int = 0
@@ -18,7 +19,8 @@ var type: int = 0
 	
 func _ready():
 	var file = File.new()
-	file.open("res://LevelFiles/Level2Items.json", File.READ)
+	#file.open("res://LevelFiles/Level2Items.json", File.READ)
+	file.open(level_file, File.READ)
 	var text =  file.get_as_text()
 	dict = JSON.parse(text)
 	file.close()

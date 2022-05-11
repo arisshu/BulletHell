@@ -43,6 +43,7 @@ level_file = "res://LevelFiles/Level1.json"
 
 [node name="ItemSpawner" type="Node2D" parent="."]
 script = ExtResource( 6 )
+level_file = "res://LevelFiles/Level1Items.json"
 
 [node name="ItemTimer" type="Timer" parent="ItemSpawner"]
 

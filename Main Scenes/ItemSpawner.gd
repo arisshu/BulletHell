@@ -4,10 +4,18 @@ var preloadedItems := [
 	preload("res://Items/HealthPack.tscn"),
 	preload("res://Items/MoreGun.tscn"),
 	preload("res://Items/PlaneDestruction.tscn"),
-	preload("res://Items/BonusScore.tscn")
+	preload("res://Items/BonusScore.tscn"),
+	
+	#Starting index 4 will be variant item type
+	preload("res://Variant/Game/Items/vBonusScore.tscn"),
+	preload("res://Variant/Game/Items/vHealthPack.tscn"),
+	preload("res://Variant/Game/Items/vMoreGun.tscn"),
+	preload("res://Variant/Game/Items/vSpeedup.tscn")
+	#
 ]
 
 onready var itemTimer := $ItemTimer
+export var level_file: String = ""
 
 var dict
 var pos: int = 0
@@ -18,7 +26,8 @@ var type: int = 0
 	
 func _ready():
 	var file = File.new()
-	file.open("res://LevelFiles/Level1Items.json", File.READ)
+	#file.open("res://LevelFiles/Level1Items.json", File.READ)
+	file.open(level_file, File.READ)
 	var text =  file.get_as_text()
 	dict = JSON.parse(text)
 	file.close()
