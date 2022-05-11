@@ -9,6 +9,7 @@ func _ready():
 	hide_arrows()
 	set_focus_mode(true)
 	
+	
 func _process(delta):
 	if Engine.editor_hint:
 		setup_text()
