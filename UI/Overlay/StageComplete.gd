@@ -23,29 +23,20 @@ func timeout():
 			SceneManager.change_scene("res://Variant/MainScene//VariantSecond.tscn")
 		elif (GlobalVar.vCurrentStage == 2):
 			SceneManager.change_scene("res://Menu//Main Menu.tscn")
-			
-			var scoresObject = loadScores("res://Highscores/highscores.json")
-			var listOfScores = scoresObject["score_list"]
-			listOfScores.append(GlobalVar.currentScore)
-			listOfScores.sort()
-			listOfScores.invert()
-			var newScores = { "score_list": listOfScores}
-			print(newScores)
-			save("res://Highscores/highscores.json", newScores)
 	else: 		
 		if (GlobalVar.currentStage == 1):
 			SceneManager.change_scene("res://Main Scenes//SecondLevel.tscn")
 		elif (GlobalVar.currentStage == 2):
 			SceneManager.change_scene("res://Menu//Main Menu.tscn")
-			
-			var scoresObject = loadScores("res://Highscores/highscores.json")
-			var listOfScores = scoresObject["score_list"]
-			listOfScores.append(GlobalVar.currentScore)
-			listOfScores.sort()
-			listOfScores.invert()
-			var newScores = { "score_list": listOfScores}
-			print(newScores)
-			save("res://Highscores/highscores.json", newScores)
+	
+	var scoresObject = loadScores("res://Highscores/highscores.json")
+	var listOfScores = scoresObject["score_list"]
+	listOfScores.append(GlobalVar.currentScore)
+	listOfScores.sort()
+	listOfScores.invert()
+	var newScores = { "score_list": listOfScores}
+	print(newScores)
+	save("res://Highscores/highscores.json", newScores)
 		
 	queue_free()
 
