@@ -8,8 +8,9 @@ var currentStage = 1
 
 
 #Variant Only
-var vCurrentLife = 10
-var vCurrentSore = 0
+var playingVariant = false
+var vCurrentLife = 2
+var vCurrentScore = 0
 var vCurrentStage = 1
 
 var powerLevel : int = 1

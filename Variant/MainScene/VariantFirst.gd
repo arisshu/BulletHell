@@ -7,6 +7,7 @@ var plPauseScreen := preload("res://Menu/Pause.tscn")
 func _ready():
 	GlobalVar.vCurrentStage = 1
 	GlobalVar.powerLevel = 1
+	GlobalVar.playingVariant = true
 	
 	var displaylevelPanel := plDisplayLevel.instance()
 	displaylevelPanel.offset = Vector2(0,0)

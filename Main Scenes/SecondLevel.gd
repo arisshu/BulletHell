@@ -5,6 +5,7 @@ var plDisplayLevel := preload("res://UI//Overlay/LevelDisplay.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalVar.currentStage = 2
+	GlobalVar.playingVariant = false
 	
 	var displaylevelPanel := plDisplayLevel.instance()
 	displaylevelPanel.offset = Vector2(0,0)

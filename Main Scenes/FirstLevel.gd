@@ -6,6 +6,7 @@ var plPauseScreen := preload("res://Menu/Pause.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalVar.currentStage = 1
+	GlobalVar.playingVariant = false
 	
 	var displaylevelPanel := plDisplayLevel.instance()
 	displaylevelPanel.offset = Vector2(0,0)

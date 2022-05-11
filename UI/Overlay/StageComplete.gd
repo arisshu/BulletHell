@@ -7,7 +7,7 @@ export (String) var nextLevelMsg = "Stage clear!"
 onready var timer = $Timer
 
 func _ready():	
-	if (GlobalVar.currentStage == 2):
+	if (GlobalVar.currentStage == 2 or GlobalVar.vCurrentStage == 2):
 		$stageClearMsg.bbcode_text = "[center][example freq=1.5][color=yellow] %s [/color][/example][/center]" % finalMsg
 	else:
 		$stageClearMsg.bbcode_text = "[center][example freq=1.5][color=yellow] %s [/color][/example][/center]" % nextLevelMsg
@@ -18,19 +18,34 @@ func _ready():
 	timer.start()
 	
 func timeout():
-	if (GlobalVar.currentStage == 1):
-		SceneManager.change_scene("res://Main Scenes//SecondLevel.tscn")
-	elif (GlobalVar.currentStage == 2):
-		SceneManager.change_scene("res://Menu//Main Menu.tscn")
-		
-		var scoresObject = loadScores("res://Highscores/highscores.json")
-		var listOfScores = scoresObject["score_list"]
-		listOfScores.append(GlobalVar.currentScore)
-		listOfScores.sort()
-		listOfScores.invert()
-		var newScores = { "score_list": listOfScores}
-		print(newScores)
-		save("res://Highscores/highscores.json", newScores)
+	if (GlobalVar.playingVariant):
+		if (GlobalVar.vCurrentStage == 1):
+			SceneManager.change_scene("res://Variant/MainScene//VariantSecond.tscn")
+		elif (GlobalVar.vCurrentStage == 2):
+			SceneManager.change_scene("res://Menu//Main Menu.tscn")
+			
+			var scoresObject = loadScores("res://Highscores/highscores.json")
+			var listOfScores = scoresObject["score_list"]
+			listOfScores.append(GlobalVar.currentScore)
+			listOfScores.sort()
+			listOfScores.invert()
+			var newScores = { "score_list": listOfScores}
+			print(newScores)
+			save("res://Highscores/highscores.json", newScores)
+	else: 		
+		if (GlobalVar.currentStage == 1):
+			SceneManager.change_scene("res://Main Scenes//SecondLevel.tscn")
+		elif (GlobalVar.currentStage == 2):
+			SceneManager.change_scene("res://Menu//Main Menu.tscn")
+			
+			var scoresObject = loadScores("res://Highscores/highscores.json")
+			var listOfScores = scoresObject["score_list"]
+			listOfScores.append(GlobalVar.currentScore)
+			listOfScores.sort()
+			listOfScores.invert()
+			var newScores = { "score_list": listOfScores}
+			print(newScores)
+			save("res://Highscores/highscores.json", newScores)
 		
 	queue_free()
 
