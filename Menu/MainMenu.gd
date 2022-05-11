@@ -4,6 +4,7 @@ extends Node
 
 func _ready():
 	$VBoxContainer/VBoxContainer/Start.grab_focus()
+	$AudioStreamPlayer2D.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

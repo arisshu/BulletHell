@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Juhani Junkala [Retro Game Music Pack] Title Screen.wav-ba6cd0877e1e7c6c6b05fc38017a1e1a.sample"
+
+[deps]
+
+source_file="res://Resources/Music/Juhani Junkala [Retro Game Music Pack] Title Screen.wav"
+dest_files=[ "res://.import/Juhani Junkala [Retro Game Music Pack] Title Screen.wav-ba6cd0877e1e7c6c6b05fc38017a1e1a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
