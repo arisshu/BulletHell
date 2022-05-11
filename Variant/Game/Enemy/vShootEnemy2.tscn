@@ -6,9 +6,7 @@
 
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-health = 20
-chanceItemDrop = 100
-speed = 100
+speed = 120
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 0.25, 0.25 )

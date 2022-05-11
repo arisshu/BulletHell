@@ -1,12 +1,18 @@
 extends Area2D
 #class_name Enemy
 
-var plBullet := preload("res://Bullet/EnemyBullet.tscn")
+var plBullet := preload("res://Variant/Game/Bullet/vEnemySpiralBullet.tscn")
 var plBossBullet := preload("res://Bullet/BossBullet.tscn")
 #var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
 var bonusScoreItem := preload("res://Items/BonusScore.tscn")
 var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")
 var stageCompleteScene := preload("res://UI/Overlay/StageComplete.tscn")
+
+var rotateSpeed = 100
+var bulletFireRate : float = 0.1
+var bulletSpawnPoint : int = 4
+var radiusSpawnBullet : int = 50
+var emitterSpeed : float = 50.0
 
 export var Projectile : PackedScene = null
 export (int, 1, 10) var projectiles : int = 1
@@ -32,7 +38,7 @@ export var chanceItemDrop: int = 100
 export var hDirection: int = 1
 export var hSpeed: int = 100
 
-export var mainGunFireRate: float = 0.5
+export var mainGunFireRate: float = 6.89
 export var secondaryFireRate: float = 2.25
 
 var timerToNext = Timer.new()
@@ -75,13 +81,13 @@ func _process(delta):
 func fire():
 	for child in firingPositions.get_children():
 		var bullet := plBullet.instance()
+		bullet.init(rotateSpeed, bulletFireRate, bulletSpawnPoint, radiusSpawnBullet, emitterSpeed)
 		bullet.global_position = child.global_position
 		get_tree().current_scene.add_child(bullet)
 		
-	if (GlobalVar.currentStage == 2):
-		if (secondaryGunTimer.is_stopped()):
-			shoot()
-			secondaryGunTimer.start(secondaryFireRate)
+	if (secondaryGunTimer.is_stopped()):
+		shoot()
+		secondaryGunTimer.start(secondaryFireRate)
 
 		
 func damage(amount: int):

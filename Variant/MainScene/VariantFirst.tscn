@@ -3,7 +3,7 @@
 [ext_resource path="res://Variant/Game/Player/vPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Background.tres" type="TileSet" id=3]
-[ext_resource path="res://Variant/Game/Items/vMoreGun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Variant/Game/Enemy/vMiniBoss.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Variant/MainScene/VariantFirst.gd" type="Script" id=8]
 [ext_resource path="res://Variant/Game/Items/vSpeedup.tscn" type="PackedScene" id=9]
@@ -49,21 +49,6 @@ margin_right = 133.0
 margin_bottom = 68.0
 text = "Debug Change Level"
 
-[node name="vMoreGun5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 373, 118 )
-
-[node name="vMoreGun" parent="." instance=ExtResource( 4 )]
-position = Vector2( 85, -61 )
-
-[node name="vMoreGun2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 150, -19 )
-
-[node name="vMoreGun3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 222, -46 )
-
-[node name="vMoreGun4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 308, -39 )
-
 [node name="Speedup" parent="." instance=ExtResource( 9 )]
 position = Vector2( 250, 16 )
 
@@ -78,6 +63,9 @@ script = ExtResource( 11 )
 level_file = "res://LevelFiles/vLevel1Items.json"
 
 [node name="ItemTimer" type="Timer" parent="ItemSpawner"]
+
+[node name="Boss" parent="." instance=ExtResource( 4 )]
+position = Vector2( 246, -49 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]

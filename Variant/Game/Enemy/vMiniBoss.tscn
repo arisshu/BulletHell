@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Textures/Ships/ship_0015.png" type="Texture" id=1]
 [ext_resource path="res://Variant/Game/Enemy/vMiniBoss.gd" type="Script" id=2]
 [ext_resource path="res://character/enemy/HealthBarTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Bullet/BossBullet.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38.875, 23.875 )
@@ -10,6 +11,7 @@ extents = Vector2( 38.875, 23.875 )
 [node name="Boss" type="Area2D" groups=["damagable"]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
+Projectile = ExtResource( 4 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
