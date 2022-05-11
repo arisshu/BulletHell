@@ -104,12 +104,20 @@ func spawnBullet(angle : float = 0.0) -> void:
 	get_parent().add_child(bullet)
 
 func damage(amount: int):
+	#var cam = get_tree().current_scene.find_node("Cam", true)
+	
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 	
 	if invulTimer.is_stopped():
 		GlobalVar.vCurrentLife -= amount
+		
+		#Shake cam
+		#cam.shake(10)
+		
+		#Update HUD
 		Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 		
+		#Start invulnerable timer
 		invulTimer.start(invulTime)
 		anim.play("New Anim")
 		

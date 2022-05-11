@@ -20,8 +20,11 @@ func _on_VisibilityNotifier2D_screen_exited():
 #	pass
 
 
-func _on_PlayerBullet_area_entered(area):
-	if area is Player:
+
+
+func _on_EnemyBullet_area_entered(area):
+	if area is vPlayer:
 		
 		area.damage(1)
 		queue_free()
+

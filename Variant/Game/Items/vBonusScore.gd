@@ -1,7 +1,7 @@
 extends Area2D
 
 var scoreBonus := preload("res://UI/ScoreBonus.tscn")
-
+var plSparkle := preload("res://Resources/Animation/SparkleEffect.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -23,12 +23,18 @@ func _on_VisibilityNotifier2D_screen_exited():
 #	pass
 
 func _on_Item_area_entered(area):
-	if area is Player:
+	if area is vPlayer:
 		Signals.emit_signal("on_score_add", scoreValue)
 		
 		var bonusItemEffect = scoreBonus.instance()
 		bonusItemEffect.global_position = global_position
 		bonusItemEffect.setValue(str(scoreValue))
 		get_tree().get_root().add_child(bonusItemEffect)
+		
+		var sparkleFX = plSparkle.instance()
+		sparkleFX.position = self.global_position
+		sparkleFX.scale = Vector2(2.5,2.5)
+		sparkleFX.start_anim()
+		get_parent().add_child(sparkleFX)
 		
 		queue_free()

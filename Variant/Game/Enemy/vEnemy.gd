@@ -3,7 +3,7 @@ class_name vEnemy
 
 var plBullet := preload("res://Bullet/EnemyBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
-var bonusScoreItem := preload("res://Items/BonusScore.tscn")
+var bonusScoreItem := preload("res://Variant/Game/Items/vBonusScore.tscn")
 var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")
 
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
