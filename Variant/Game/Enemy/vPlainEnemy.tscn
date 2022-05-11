@@ -9,6 +9,8 @@ extents = Vector2( 30.75, 17.75 )
 
 [node name="Enemy" type="Area2D" groups=["damagable"]]
 script = ExtResource( 2 )
+health = 5
+chanceItemDrop = 10
 speed = 125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

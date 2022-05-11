@@ -4,6 +4,8 @@ extends vEnemy
 onready var fireTimer := $FireTimer
 onready var speed = 100
 
+var rng = RandomNumberGenerator.new()
+
 var startPosX
 
 #export var fireRate := 2
@@ -28,4 +30,5 @@ func _process(delta):
 	#var randomChance = randi()%100+1
 	#if randomChance <= fireChance:
 			fireScatter()
-			fireTimer.start(randi()%3+0.25)
+			#fireTimer.start(randi()%3+0.25)
+			fireTimer.start(rng.randf_range(2,4))
