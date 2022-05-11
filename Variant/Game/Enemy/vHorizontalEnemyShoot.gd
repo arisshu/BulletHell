@@ -2,7 +2,7 @@ extends vEnemy
 #class_name ShootEnemy
 
 onready var fireTimer := $FireTimer
-onready var speed = 100
+export var speed = 100
 
 var rng = RandomNumberGenerator.new()
 
@@ -30,5 +30,6 @@ func _process(delta):
 	#var randomChance = randi()%100+1
 	#if randomChance <= fireChance:
 			fireScatter()
+			rng.randomize()
 			#fireTimer.start(randi()%3+0.25)
 			fireTimer.start(rng.randf_range(2,4))

@@ -10,6 +10,7 @@ extents = Vector2( 18, 28 )
 script = ExtResource( 2 )
 health = 20
 chanceItemDrop = 100
+speed = 10
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 4 )

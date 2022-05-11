@@ -80,8 +80,29 @@ level_file = "res://LevelFiles/vLevel1Items.json"
 
 [node name="ItemTimer" type="Timer" parent="ItemSpawner"]
 
+[node name="HorizontalEnemyShoot7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 453, 473 )
+
 [node name="HorizontalEnemyShoot" parent="." instance=ExtResource( 6 )]
-position = Vector2( 64, 144 )
+position = Vector2( -2, 136 )
+
+[node name="HorizontalEnemyShoot2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 497, 227 )
+
+[node name="HorizontalEnemyShoot3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 48, 414 )
+
+[node name="HorizontalEnemyShoot6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 508, 603 )
+
+[node name="HorizontalEnemyShoot4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 484, 96 )
+
+[node name="HorizontalEnemyShoot5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 76, 289 )
+
+[node name="HorizontalEnemyShoot8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 30, 554 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
