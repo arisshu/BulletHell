@@ -20,7 +20,8 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_PlayerBullet_area_entered(area):
 	if area.is_in_group("damagable"):
-		$AudioStreamPlayer2D2.play() #no sound
+		#$AudioStreamPlayer2D2.play() #no sound
+		
 		var bulletFX := plBulletEffect.instance()
 		bulletFX.position = position
 		get_parent().add_child(bulletFX)

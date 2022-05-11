@@ -45,6 +45,8 @@ func fireScatter():
 #
 ##########################################
 func damage(amount: int):
+	$HurtSound.play()
+	
 	if health <= 0:
 		return
 		
