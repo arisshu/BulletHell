@@ -12,7 +12,7 @@ var preloadedEnemies := [
 	preload("res://character/enemy/MiniBoss.tscn"),
 	
 	#Start index 9 is variant mob
-	preload("res://Variant/Game/Enemy/vEnemy.tscn"),
+	preload("res://Variant/Game/Enemy/vPlainEnemy.tscn"),
 	preload("res://Variant/Game/Enemy/vEnemyFireBall.tscn"),
 	preload("res://Variant/Game/Enemy/vLaserEnemy.tscn"),
 	preload("res://Variant/Game/Enemy/vHorizontalEnemyShoot.tscn"),
