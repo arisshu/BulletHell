@@ -25,21 +25,22 @@ scale = Vector2( 3.4, 2.66562 )
 rotation = 1.5708
 
 [node name="Position2D" type="Position2D" parent="FiringPositions" index="0"]
+position = Vector2( 9, -3.25799e-05 )
 
 [node name="Position2D2" type="Position2D" parent="FiringPositions" index="1"]
-position = Vector2( -3.99998, 4.00002 )
+position = Vector2( -0.999964, 10 )
 rotation = 0.436332
 
 [node name="Position2D3" type="Position2D" parent="FiringPositions" index="2"]
-position = Vector2( -4.00001, -3.99998 )
+position = Vector2( -1.00004, -10 )
 rotation = -0.436332
 
 [node name="Position2D4" type="Position2D" parent="FiringPositions" index="3"]
-position = Vector2( -6.00002, -5.99998 )
+position = Vector2( -4.00007, -19 )
 rotation = -0.872665
 
 [node name="Position2D5" type="Position2D" parent="FiringPositions" index="4"]
-position = Vector2( -5.99998, 6.00002 )
+position = Vector2( -3.99993, 20 )
 rotation = 0.872665
 
 [node name="FireTimer" type="Timer" parent="." index="5"]

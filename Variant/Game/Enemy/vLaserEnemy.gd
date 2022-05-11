@@ -33,7 +33,7 @@ func _ready():
 	targetPosY = rng.randf_range(120, get_viewport().size.y/2)
 	if (self.position.x <= get_viewport().size.x/2):
 		atRight = false
-		randomPosXToMove = rng.randf_range(self.position.x, get_viewport().size.x - widthBorderLaser)
+		randomPosXToMove = rng.randf_range(get_viewport().size.x/2, get_viewport().size.x - widthBorderLaser)
 		print("randomPosXToMove: ", randomPosXToMove)
 	else:
 		atRight = true
