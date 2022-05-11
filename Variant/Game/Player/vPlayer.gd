@@ -22,7 +22,7 @@ onready var anim = $AnimationPlayer
 onready var deathEvent := $deathEventTimer
 
 # use colon to specify type
-export var speed:float = 100.0
+var speed:float = 250.0
 export var fireDelay:float = 0.1
 #var life = GlobalVar.currentLife
 export var invulTime:float = 2
@@ -46,6 +46,7 @@ func _ready():
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 
 func _process(delta):
+	#print("My current speed: ", speed)
 	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
 		fireDelayTimer.start(fireDelay)
 		#for child in firingPositions.get_children():
@@ -155,6 +156,28 @@ func heal(amount: int):
 	
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 	
+var speedUpStatus : bool = false
+export var speedUpTimer : int = 5
+var ogSpeed = speed
+
+func speedUp(amount: float):
+	if (!speedUpStatus):
+		print("Speed timer created: ")
+		var timer = Timer.new()
+		timer.set_wait_time(speedUpTimer)
+		timer.set_one_shot(true)
+		timer.connect("timeout", self, "speedUpTimeout")
+		add_child(timer)
+		timer.start()
+		
+		speed *= amount
+		print("Current speed: ", speed)
+	
+func speedUpTimeout():
+	print("Speedup expired")
+	speed = ogSpeed
+	
+	
 func incrementPowerLevel():
 	if (GlobalVar.powerLevel < 5):
 		#print("Created new timer")
@@ -193,5 +216,4 @@ func loadScores(var path: String) -> Dictionary:
 
 
 func startInvulnerable():
-	print("Called")
 	invulTimer.start(invulTime)
