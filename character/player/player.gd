@@ -5,6 +5,9 @@ var plBullet := preload("res://Bullet/PlayerBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/PlayerExplosion.tscn")
 var plGameOver := preload("res://UI//Overlay//GameOver.tscn")
 
+# Sound Effect
+onready var itemSoundFX = AudioStreamPlayer.new()
+
 
 onready var firingPositions := $FiringPositions
 onready var powerupPosition := $PowerUp1
@@ -29,6 +32,12 @@ var powerUp = false
 
 
 func _ready():
+	self.add_child(itemSoundFX)
+	itemSoundFX.stream = load("res://Resources/SoundFX/powerup.wav")
+	itemSoundFX.volume_db = -10
+	
+	
+	
 	invulTimer.start(invulTime)
 	#print(GlobalVar.currentLife)
 	anim.play("New Anim")
@@ -138,6 +147,9 @@ func damage(amount: int):
 #
 ##########################################
 func heal(amount: int):
+	#SFX
+	itemSoundFX.play()
+	
 	GlobalVar.currentLife += amount
 	
 	Signals.emit_signal("on_player_life_changed", GlobalVar.currentLife)
@@ -148,7 +160,16 @@ func heal(amount: int):
 #
 ##########################################	
 func setPowerUp(value):
+	#SFX
+	itemSoundFX.play()
+	
 	powerUp = value
+	
+func addBonusScore(value):
+	itemSoundFX.play()
+	
+	Signals.emit_signal("on_score_add", value)
+	GlobalVar.currentScore += value	
 	
 func save(var path: String, var object):
 	var file = File.new()

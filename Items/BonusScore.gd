@@ -1,7 +1,7 @@
 extends Area2D
 
 var scoreBonus := preload("res://UI/ScoreBonus.tscn")
-
+onready var powerUpSFX = $powerup
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -23,8 +23,10 @@ func _on_VisibilityNotifier2D_screen_exited():
 #	pass
 
 func _on_Item_area_entered(area):
+	#powerUpSFX.play()
 	if area is Player:
-		Signals.emit_signal("on_score_add", scoreValue)
+		powerUpSFX.play()
+		area.addBonusScore(scoreValue)
 		
 		var bonusItemEffect = scoreBonus.instance()
 		bonusItemEffect.global_position = global_position

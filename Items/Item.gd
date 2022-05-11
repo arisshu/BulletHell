@@ -6,6 +6,8 @@ var plSparkle := preload("res://Resources/Animation/SparkleEffect.tscn")
 # var b = "text"
 export var speed := 100.0
 
+onready var powerUpSFX = $powerup
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,6 +24,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Item_area_entered(area):
 	if area is Player:
+		powerUpSFX.play()
 		
 		var sparkleFX = plSparkle.instance()
 		sparkleFX.position = self.global_position
