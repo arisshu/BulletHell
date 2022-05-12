@@ -7,15 +7,15 @@
 [ext_resource path="res://Resources/sprite/desert-backgorund-looped.png" type="Texture" id=6]
 [ext_resource path="res://Variant/MainScene/RNGItemSpawner.gd" type="Script" id=7]
 [ext_resource path="res://Variant/MainScene/VariantFirst.gd" type="Script" id=8]
-[ext_resource path="res://Variant/Game/Items/vSpeedup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Main Scenes/EnemySpawner.gd" type="Script" id=10]
 [ext_resource path="res://Main Scenes/ItemSpawner.gd" type="Script" id=11]
 [ext_resource path="res://Variant/Game/Items/vMoreGun.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Variant/MainScene/Camera2D.gd" type="Script" id=13]
 
 [node name="Gameplay1" type="Node"]
 script = ExtResource( 8 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 799.0 ]
+"_edit_horizontal_guides_": [ 799.0, 278.0, 279.0, 818.0 ]
 }
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -37,6 +37,10 @@ position = Vector2( 235, 148.709 )
 scale = Vector2( 3.96094, 1.41748 )
 texture = ExtResource( 3 )
 
+[node name="Cam" type="Camera2D" parent="ParallaxBackground/ParallaxLayer2"]
+anchor_mode = 0
+script = ExtResource( 13 )
+
 [node name="Player2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 266, 721 )
 
@@ -52,9 +56,6 @@ margin_top = 68.0
 margin_right = 133.0
 margin_bottom = 68.0
 text = "Debug Change Level"
-
-[node name="Speedup" parent="." instance=ExtResource( 9 )]
-position = Vector2( 250, 16 )
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 10 )
@@ -72,21 +73,6 @@ level_file = "res://LevelFiles/vLevel1Items.json"
 script = ExtResource( 7 )
 
 [node name="spawnTimer" type="Timer" parent="RNGItemSpawner"]
-
-[node name="vMoreGun" parent="." instance=ExtResource( 12 )]
-position = Vector2( 57, 90 )
-
-[node name="vMoreGun2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 195, 54 )
-
-[node name="vMoreGun3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 124, 113 )
-
-[node name="vMoreGun4" parent="." instance=ExtResource( 12 )]
-position = Vector2( 370, 65 )
-
-[node name="vMoreGun5" parent="." instance=ExtResource( 12 )]
-position = Vector2( 284, 124 )
 
 [node name="vMoreGun6" parent="." instance=ExtResource( 12 )]
 position = Vector2( 314, -637 )

@@ -34,7 +34,7 @@ var powerUp = false
 func _ready():
 	self.add_child(itemSoundFX)
 	itemSoundFX.stream = load("res://Resources/SoundFX/powerup.wav")
-	itemSoundFX.volume_db = -10
+	itemSoundFX.volume_db = -20
 	
 	
 	

@@ -34,7 +34,14 @@ var shooting_direction : Vector2 = Vector2.ZERO
 
 export var powerUpExpiryTime : int = 30
 
+onready var itemSoundFX = AudioStreamPlayer.new()
+
 func _ready():
+	self.add_child(itemSoundFX)
+	itemSoundFX.stream = load("res://Resources/SoundFX/powerup.wav")
+	itemSoundFX.volume_db = -20
+	
+	
 	$AnimatedSprite.playing = true
 	var viewRect := get_viewport_rect()
 	shooting_angle = deg2rad(shooting_angle)
@@ -105,7 +112,8 @@ func spawnBullet(angle : float = 0.0) -> void:
 	get_parent().add_child(bullet)
 
 func damage(amount: int):
-	#var cam = get_tree().current_scene.find_node("Cam", true)
+	var cam = get_tree().current_scene.find_node("Cam", true)
+	print(cam)
 	
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 	
@@ -113,7 +121,7 @@ func damage(amount: int):
 		GlobalVar.vCurrentLife -= amount
 		
 		#Shake cam
-		#cam.shake(10)
+		cam.shake(10)
 		
 		#Update HUD
 		Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
@@ -152,6 +160,7 @@ func damage(amount: int):
 		
 	
 func heal(amount: int):
+	itemSoundFX.play()
 	GlobalVar.vCurrentLife += amount
 	
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
@@ -161,6 +170,7 @@ export var speedUpTimer : int = 5
 var ogSpeed = speed
 
 func speedUp(amount: float):
+	itemSoundFX.play()
 	if (!speedUpStatus):
 		print("Speed timer created: ")
 		var timer = Timer.new()
@@ -180,6 +190,7 @@ func speedUpTimeout():
 	
 	
 func incrementPowerLevel():
+	itemSoundFX.play()
 	var timer = Timer.new()
 	if (GlobalVar.powerLevel < 5):
 		#print("Created new timer")

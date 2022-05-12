@@ -8,8 +8,8 @@
 			"LocationX": "100.0",
 			"LocationY": "20.0",
 			"Type": "9",
-			"Amount": "1",
-			"Delay": "1.0",
+			"Amount": "3",
+			"Delay": "0.1",
 			"EnemyLines": "1",
 			"OffsetX": "100.0",
 			"OffsetY": "0.0"
@@ -324,7 +324,7 @@
 	
 	
 	
-	{
+	   {
 			"Time": "10.0",
 			"LocationX": "250.0",
 			"LocationY": "20.0",

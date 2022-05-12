@@ -12,13 +12,13 @@ var preloadedEnemies := [
 	preload("res://character/enemy/MiniBoss.tscn"),
 	
 	#Start index 9 is variant mob
-	preload("res://Variant/Game/Enemy/vPlainEnemy.tscn"),
-	preload("res://Variant/Game/Enemy/vShootEnemy.tscn"),
-	preload("res://Variant/Game/Enemy/vShootEnemy2.tscn"),
-	preload("res://Variant/Game/Enemy/vEnemyFireBall.tscn"),
-	preload("res://Variant/Game/Enemy/vLaserEnemy.tscn"),
-	preload("res://Variant/Game/Enemy/vHorizontalEnemyShoot.tscn"),
-	preload("res://Variant/Game/Bullet/vEnemySpiralBullet.tscn")
+	preload("res://Variant/Game/Enemy/vPlainEnemy.tscn"), #9
+	preload("res://Variant/Game/Enemy/vShootEnemy.tscn"), #10
+	preload("res://Variant/Game/Enemy/vShootEnemy2.tscn"), #11
+	preload("res://Variant/Game/Enemy/vEnemyFireBall.tscn"), #12
+	preload("res://Variant/Game/Enemy/vLaserEnemy.tscn"), #13
+	preload("res://Variant/Game/Enemy/vHorizontalEnemyShoot.tscn"), #14
+	preload("res://Variant/Game/Bullet/vEnemySpiralBullet.tscn") #15
 ]
 
 onready var spawnTimer := $SpawnTimer

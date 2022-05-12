@@ -2,7 +2,7 @@ extends Area2D
 #class_name Enemy
 
 var plBullet := preload("res://Variant/Game/Bullet/vEnemySpiralBullet.tscn")
-var plBossBullet := preload("res://Bullet/BossBullet.tscn")
+var plBossBullet := preload("res://Variant/Game/Bullet/vBossBullet.tscn")
 #var plExplosion := preload("res://Resources/Animation/NewExplosionEffect.tscn")
 var bonusScoreItem := preload("res://Items/BonusScore.tscn")
 var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")
@@ -11,7 +11,7 @@ var stageCompleteScene := preload("res://UI/Overlay/StageComplete.tscn")
 var rotateSpeed = 100
 var bulletFireRate : float = 0.1
 var bulletSpawnPoint : int = 4
-var radiusSpawnBullet : int = 50
+var radiusSpawnBullet : int = 30
 var emitterSpeed : float = 50.0
 
 export var Projectile : PackedScene = null
@@ -49,9 +49,9 @@ func _ready():
 	print("What is target? ", Target)
 	shooting_angle = deg2rad(shooting_angle)
 	
-	if (GlobalVar.currentStage == 2):
+	if (GlobalVar.vCurrentStage == 2 or GlobalVar.currentStage == 2):
 		hSpeed = hSpeed * 2
-		health = health * 1.5
+		health = health * 1.75
 		
 	$ProgressBar.max_value = health
 	Signals.connect("on_scoreboard_display", self, "_on_scoreboard_display")
@@ -77,6 +77,10 @@ func _process(delta):
 	if mainGunTimer.is_stopped():
 		fire()
 		mainGunTimer.start(mainGunFireRate)
+		
+	if (secondaryGunTimer.is_stopped()):
+		shoot()
+		secondaryGunTimer.start(secondaryFireRate)
 	
 func fire():
 	for child in firingPositions.get_children():
@@ -84,10 +88,6 @@ func fire():
 		bullet.init(rotateSpeed, bulletFireRate, bulletSpawnPoint, radiusSpawnBullet, emitterSpeed)
 		bullet.global_position = child.global_position
 		get_tree().current_scene.add_child(bullet)
-		
-	if (secondaryGunTimer.is_stopped()):
-		shoot()
-		secondaryGunTimer.start(secondaryFireRate)
 
 		
 func damage(amount: int):
@@ -163,7 +163,7 @@ func spawnBullet(angle : float = 0.0) -> void:
 	get_parent().add_child(bullet)
 	
 func shoot() -> void:
-	if (GlobalVar.currentStage == 1):
+	if (GlobalVar.vCurrentStage == 1):
 		projectiles = 3
 	else:
 		projectiles = 5
