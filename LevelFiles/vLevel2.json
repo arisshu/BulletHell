@@ -444,14 +444,39 @@
 			"OffsetY": "0.0"
        },
 	   
-	   {
-			"Time": "3.0",
-			"LocationX": "70.0",
+	   
+	   
+	    {
+			"Time": "5.0",
+			"LocationX": "250.0",
 			"LocationY": "20.0",
-			"Type": "15",
-			"Amount": "2",
+			"Type": "16",
+			"Amount": "1",
 			"Delay": "2.5",
-			"EnemyLines": "4",
+			"EnemyLines": "",
+			"OffsetX": "120.0",
+			"OffsetY": "0.0"
+   		},
+
+	    {
+			"Time": "5.0",
+			"LocationX": "50.0",
+			"LocationY": "20.0",
+			"Type": "13",
+			"Amount": "1",
+			"Delay": "2.5",
+			"EnemyLines": "",
+			"OffsetX": "120.0",
+			"OffsetY": "0.0"
+   		},
+	    {
+			"Time": "5.0",
+			"LocationX": "425.0",
+			"LocationY": "20.0",
+			"Type": "13",
+			"Amount": "1",
+			"Delay": "2.5",
+			"EnemyLines": "",
 			"OffsetX": "120.0",
 			"OffsetY": "0.0"
    		},
