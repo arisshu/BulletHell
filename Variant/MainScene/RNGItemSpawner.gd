@@ -10,7 +10,7 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
-	spawnTimer.start(rng.randf_range(nextSpawnTime, 30))
+	spawnTimer.start(rng.randf_range(nextSpawnTime, 20))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
