@@ -182,7 +182,12 @@ func speedUp(amount: float):
 		
 		speed *= amount
 		print("Current speed: ", speed)
-		
+
+func addBonusScore(value):
+	itemSoundFX.play()
+	
+	Signals.emit_signal("on_score_add", value)
+	GlobalVar.currentScore += value	
 	
 func speedUpTimeout():
 	print("Speedup expired")

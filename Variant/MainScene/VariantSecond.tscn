@@ -59,7 +59,7 @@ text = "Debug Change Level"
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 10 )
-level_file = "res://LevelFiles/vLevel1.json"
+level_file = "res://LevelFiles/vLevel2.json"
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 

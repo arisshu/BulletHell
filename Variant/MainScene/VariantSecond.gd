@@ -5,7 +5,7 @@ var plPauseScreen := preload("res://Menu/Pause.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalVar.vCurrentStage = 1
+	GlobalVar.vCurrentStage = 2
 	GlobalVar.powerLevel = 1
 	GlobalVar.playingVariant = true
 	
@@ -21,4 +21,4 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_Button_pressed():
-	SceneManager.change_scene("res://Variant/Game/MainScene/VariantSecond.tscn")
+	SceneManager.change_scene("res://Variant/Game/MainScene/VariantFirst.tscn")
