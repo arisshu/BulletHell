@@ -172,6 +172,7 @@ func speedUp(amount: float):
 		
 		speed *= amount
 		print("Current speed: ", speed)
+		
 	
 func speedUpTimeout():
 	print("Speedup expired")
@@ -179,10 +180,11 @@ func speedUpTimeout():
 	
 	
 func incrementPowerLevel():
+	var timer = Timer.new()
 	if (GlobalVar.powerLevel < 5):
 		#print("Created new timer")
 		
-		var timer = Timer.new()
+		#var timer = Timer.new()
 		timer.set_wait_time(powerUpExpiryTime)
 		timer.set_one_shot(true)
 		timer.connect("timeout", self, "timeout")

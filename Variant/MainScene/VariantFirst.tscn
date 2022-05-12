@@ -3,7 +3,6 @@
 [ext_resource path="res://Variant/Game/Player/vPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
 [ext_resource path="res://Textures/Variant/Background/clouds-transparent.png" type="Texture" id=3]
-[ext_resource path="res://Variant/Game/Enemy/vMiniBoss.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/sprite/desert-backgorund-looped.png" type="Texture" id=6]
 [ext_resource path="res://Variant/MainScene/RNGItemSpawner.gd" type="Script" id=7]
@@ -11,6 +10,7 @@
 [ext_resource path="res://Variant/Game/Items/vSpeedup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Main Scenes/EnemySpawner.gd" type="Script" id=10]
 [ext_resource path="res://Main Scenes/ItemSpawner.gd" type="Script" id=11]
+[ext_resource path="res://Variant/Game/Items/vMoreGun.tscn" type="PackedScene" id=12]
 
 [node name="Gameplay1" type="Node"]
 script = ExtResource( 8 )
@@ -68,13 +68,28 @@ level_file = "res://LevelFiles/vLevel1Items.json"
 
 [node name="ItemTimer" type="Timer" parent="ItemSpawner"]
 
-[node name="Boss" parent="." instance=ExtResource( 4 )]
-position = Vector2( 246, -49 )
-
 [node name="RNGItemSpawner" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
 [node name="spawnTimer" type="Timer" parent="RNGItemSpawner"]
+
+[node name="vMoreGun" parent="." instance=ExtResource( 12 )]
+position = Vector2( 57, 90 )
+
+[node name="vMoreGun2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 195, 54 )
+
+[node name="vMoreGun3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 124, 113 )
+
+[node name="vMoreGun4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 370, 65 )
+
+[node name="vMoreGun5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 284, 124 )
+
+[node name="vMoreGun6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 314, -637 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
