@@ -18,7 +18,7 @@ export var scoreWorth: int = 100
 export var chanceItemDrop: int = 100
 
 func _ready():
-	print(hurtSoundFX)
+	#print(hurtSoundFX)
 	$ProgressBar.max_value = health
 
 #func _physics_process(delta):

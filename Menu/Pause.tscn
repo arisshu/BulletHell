@@ -50,21 +50,21 @@ margin_bottom = 604.0
 rect_min_size = Vector2( 0, 300 )
 alignment = 1
 
-[node name="Start" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Continue" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 108.0
 margin_bottom = 148.0
 rect_min_size = Vector2( 0, 40 )
-focus_neighbour_bottom = NodePath("../Start2")
+focus_neighbour_bottom = NodePath("../Pause")
 text = "CONTINUE"
 arrowMarginFromCenter = 150
 
-[node name="Start2" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Pause" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 152.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 40 )
-focus_neighbour_top = NodePath("../Start")
+focus_neighbour_top = NodePath("../Continue")
 text = "BACK TO MENU"
 arrowMarginFromCenter = 150
 
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/Start2" to="." method="_on_Start2_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Continue" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Pause" to="." method="_on_Start2_pressed"]

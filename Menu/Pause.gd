@@ -12,7 +12,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		print(get_tree())
+		print(self.get_name())
+
 		set_visible(!get_tree().paused)
 		get_tree().paused = !get_tree().paused
 # Called every frame. 'delta' is the elapsed time since the previous frame.

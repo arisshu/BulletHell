@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Variant/Game/Player/vPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
 [ext_resource path="res://Textures/Variant/Background/clouds-transparent.png" type="Texture" id=3]
+[ext_resource path="res://Variant/Game/Enemy/vLaserEnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/sprite/desert-backgorund-looped.png" type="Texture" id=6]
 [ext_resource path="res://Variant/MainScene/RNGItemSpawner.gd" type="Script" id=7]
@@ -71,6 +72,18 @@ script = ExtResource( 7 )
 [node name="Cam" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource( 13 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 460, -68 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 402, -40 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 25, -55 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 114, 78 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Background.tres" type="TileSet" id=1]
 [ext_resource path="res://Menu/MenuButton.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Highscores/Font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Resources/Music/Juhani Junkala [Retro Game Music Pack] Title Screen.wav" type="AudioStream" id=6]
 [ext_resource path="res://Resources/SoundFX/SelectAnOption.wav" type="AudioStream" id=7]
+[ext_resource path="res://Resources/sprite/desert-backgorund-looped.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Variant/Background/clouds-transparent.png" type="Texture" id=9]
 
 [sub_resource type="Theme" id=1]
 
@@ -97,6 +99,25 @@ volume_db = -20.0
 stream = ExtResource( 7 )
 volume_db = 10.0
 
+[node name="vParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 4 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="vParallaxBackground"]
+motion_mirroring = Vector2( 0, 793 )
+
+[node name="Sprite" type="Sprite" parent="vParallaxBackground/ParallaxLayer"]
+position = Vector2( 250.25, 401 )
+scale = Vector2( 1.9668, 1.3125 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="vParallaxBackground"]
+motion_mirroring = Vector2( 0, 1050 )
+
+[node name="Sprite" type="Sprite" parent="vParallaxBackground/ParallaxLayer2"]
+position = Vector2( 235, 148.709 )
+scale = Vector2( 3.96094, 1.41748 )
+texture = ExtResource( 9 )
+
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 script = ExtResource( 4 )
 
@@ -108,10 +129,10 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+[node name="ParallaxLayerOld" type="ParallaxLayer" parent="ParallaxBackground2"]
 motion_mirroring = Vector2( 0, 2000 )
 
-[node name="TileMap" type="TileMap" parent="ParallaxBackground2/ParallaxLayer"]
+[node name="TileMap" type="TileMap" parent="ParallaxBackground2/ParallaxLayerOld"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1

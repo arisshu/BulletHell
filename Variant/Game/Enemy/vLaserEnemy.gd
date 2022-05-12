@@ -41,6 +41,7 @@ func _ready():
 	else:
 		atRight = true
 		randomPosXToMove = rng.randf_range(widthBorderLaser, get_viewport().size.x/2)
+	print(randomPosXToMove)
 		#print("else branch size.x minus position.x: ", get_viewport().size.x-self.position.x)
 		#print("else branch randomPosXToMove: ", randomPosXToMove)
 		

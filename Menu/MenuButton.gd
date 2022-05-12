@@ -37,10 +37,21 @@ func hide_arrows():
 		
 	$RichTextLabel.bbcode_text = "[center] %s [/center]" % [text]
 
-
 func _on_TextureButton_focus_entered():
 	show_arrows()
 	selectSound.play()
+	var getBGNode = get_node("/root/MainMenu/ParallaxBackground2")
+	var newBGNode = get_node("/root/MainMenu/vParallaxBackground")
+	var menuBackground = self.get_name()
+	if (menuBackground == "Start2"):
+		if getBGNode.get_child_count() != 0:
+			for i in getBGNode.get_children():
+				i.visible = false
+			for x in newBGNode.get_children():
+				x.visible = true
+	elif (menuBackground == "Start" or menuBackground == "Highscores" or menuBackground == "Exit"):
+		for i in getBGNode.get_children():
+			i.visible = true
 
 
 func _on_TextureButton_focus_exited():

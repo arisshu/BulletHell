@@ -152,7 +152,7 @@
        },
 	   {
 			"Time": "5.0",
-			"LocationX": "270.0",
+			"LocationX": "420.0",
 			"LocationY": "20.0",
 			"Type": "13",
 			"Amount": "1",
@@ -266,7 +266,7 @@
        },
 	   {
 			"Time": "2",
-			"LocationX": "200.0",
+			"LocationX": "60.0",
 			"LocationY": "20.0",
 			"Type": "13",
 			"Amount": "1",
@@ -392,7 +392,7 @@
 	   
 	   {
 			"Time": "0.01",
-			"LocationX": "80.0",
+			"LocationX": "75.0",
 			"LocationY": "20.0",
 			"Type": "13",
 			"Amount": "1",
@@ -477,6 +477,19 @@
 			"Amount": "1",
 			"Delay": "0.1",
 			"EnemyLines": "3",
+			"OffsetX": "100.0",
+			"OffsetY": "0.0"
+       },
+	   
+	   
+	   {
+			"Time": "5",
+			"LocationX": "250.0",
+			"LocationY": "-25.0",
+			"Type": "16",
+			"Amount": "1",
+			"Delay": "0.1",
+			"EnemyLines": "1",
 			"OffsetX": "100.0",
 			"OffsetY": "0.0"
        },
