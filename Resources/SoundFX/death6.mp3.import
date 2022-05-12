@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/death6.mp3-fae44f042878f073d0124d5a3daa2651.mp3str"
+
+[deps]
+
+source_file="res://Resources/SoundFX/death6.mp3"
+dest_files=[ "res://.import/death6.mp3-fae44f042878f073d0124d5a3daa2651.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

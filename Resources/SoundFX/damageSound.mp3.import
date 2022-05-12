@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/damageSound.mp3-d99ce38d1cfd0f5ad12b69883acfd68f.mp3str"
+
+[deps]
+
+source_file="res://Resources/SoundFX/damageSound.mp3"
+dest_files=[ "res://.import/damageSound.mp3-d99ce38d1cfd0f5ad12b69883acfd68f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

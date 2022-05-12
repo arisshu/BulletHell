@@ -36,13 +36,13 @@ var shooting_direction : Vector2 = Vector2.ZERO
 export var powerUpExpiryTime : int = 30
 
 onready var itemSoundFX = AudioStreamPlayer.new()
+onready var damagedSFX = $hurtSound
 
 func _ready():
 	self.add_child(itemSoundFX)
 	itemSoundFX.stream = load("res://Resources/SoundFX/powerup.wav")
 	itemSoundFX.volume_db = -20
-	
-	
+
 	$AnimatedSprite.playing = true
 	var viewRect := get_viewport_rect()
 	shooting_angle = deg2rad(shooting_angle)
@@ -120,9 +120,9 @@ func damage(amount: int):
 	if invulTimer.is_stopped():
 		GlobalVar.vCurrentLife -= amount
 		hurtAnimationNode.play("hurtFX")
+		damagedSFX.play()
 		
-		#Shake cam
-		#cam.shake(10)
+		
 		
 		#Update HUD
 		Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
