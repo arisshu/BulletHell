@@ -6,6 +6,7 @@
 
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+chanceItemDrop = 5
 speed = 120
 
 [node name="CollisionShape2D" parent="." index="0"]

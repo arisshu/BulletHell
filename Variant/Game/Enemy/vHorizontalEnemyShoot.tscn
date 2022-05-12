@@ -9,8 +9,8 @@ extents = Vector2( 18, 28 )
 [node name="HorizontalEnemyShoot" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 health = 12
-chanceItemDrop = 100
-speed = 100
+chanceItemDrop = 5
+speed = 80
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 4 )

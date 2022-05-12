@@ -5,7 +5,7 @@
 
 [node name="vShootingEnemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-chanceItemDrop = 100
+chanceItemDrop = 5
 speed = 100
 
 [node name="CollisionShape2D" parent="." index="0"]
