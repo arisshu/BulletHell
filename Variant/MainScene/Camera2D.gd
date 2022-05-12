@@ -3,7 +3,7 @@ extends Camera2D
 export var shakeBaseAmt := 1.0
 export var shakeDampening := 0.070
 
-var shakeAmt := 3.0
+var shakeAmt := 0.0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +12,7 @@ func _process(delta):
 		position.x = rand_range(-shakeBaseAmt, shakeBaseAmt) * shakeAmt
 		position.y = rand_range(-shakeBaseAmt, shakeBaseAmt) * shakeAmt
 	else:
-		position = Vector2(position.x,position.y)
+		position = Vector2(0,0)
 		
 func shake(magnitude: float):
 	shakeAmt += magnitude
