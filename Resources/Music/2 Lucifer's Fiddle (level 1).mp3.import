@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2 Lucifer's Fiddle (level 1).mp3-ac9dace0bac31af154151d52c2ff5994.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/2 Lucifer's Fiddle (level 1).mp3"
+dest_files=[ "res://.import/2 Lucifer's Fiddle (level 1).mp3-ac9dace0bac31af154151d52c2ff5994.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
