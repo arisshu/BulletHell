@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Variant/Game/Player/vPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
@@ -10,7 +10,63 @@
 [ext_resource path="res://Main Scenes/EnemySpawner.gd" type="Script" id=10]
 [ext_resource path="res://Main Scenes/ItemSpawner.gd" type="Script" id=11]
 [ext_resource path="res://Variant/Game/Items/vMoreGun.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Variant/MainScene/Camera2D.gd" type="Script" id=13]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Camera2D
+
+export var shakeBaseAmt := 1.0
+export var shakeDampening := 0.070
+
+var shakeAmt := 0.0
+
+
+# Called when the node enters the scene tree for the first time.
+func _process(delta):
+	if shakeAmt > 0:
+		position.x = rand_range(-shakeBaseAmt, shakeBaseAmt) * shakeAmt
+		position.y = rand_range(-shakeBaseAmt, shakeBaseAmt) * shakeAmt
+	else:
+		position = Vector2(0,0)
+		
+func shake(magnitude: float):
+	shakeAmt += magnitude
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "hurtFX"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Gameplay1" type="Node"]
 script = ExtResource( 4 )
@@ -39,7 +95,7 @@ texture = ExtResource( 3 )
 
 [node name="Cam" type="Camera2D" parent="ParallaxBackground/ParallaxLayer2"]
 anchor_mode = 0
-script = ExtResource( 13 )
+script = SubResource( 3 )
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 266, 721 )
@@ -76,6 +132,17 @@ script = ExtResource( 7 )
 
 [node name="vMoreGun6" parent="." instance=ExtResource( 12 )]
 position = Vector2( 314, -637 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 502.0
+margin_bottom = 800.0
+color = Color( 1, 0, 0, 0.423529 )
+
+[node name="HurtAni" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+anims/RESET = SubResource( 1 )
+anims/hurtFX = SubResource( 2 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]

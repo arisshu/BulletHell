@@ -5,6 +5,7 @@ var plBullet := preload("res://Variant/Game/Bullet/vPlayerBullet.tscn")
 var plExplosion := preload("res://Resources/Animation/PlayerExplosion.tscn")
 var plGameOver := preload("res://UI//Overlay//GameOver.tscn")
 
+onready var hurtAnimationNode = get_node("../HurtAni")
 
 onready var firingPositions := $FiringPositions
 onready var powerupPosition := $PowerUp1
@@ -112,16 +113,16 @@ func spawnBullet(angle : float = 0.0) -> void:
 	get_parent().add_child(bullet)
 
 func damage(amount: int):
-	var cam = get_tree().current_scene.find_node("Cam", true)
-	print(cam)
+	#var cam = get_tree().current_scene.find_node("Cam", true)
 	
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
 	
 	if invulTimer.is_stopped():
 		GlobalVar.vCurrentLife -= amount
+		hurtAnimationNode.play("hurtFX")
 		
 		#Shake cam
-		cam.shake(10)
+		#cam.shake(10)
 		
 		#Update HUD
 		Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)

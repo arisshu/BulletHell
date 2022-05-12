@@ -11,7 +11,7 @@ onready var laserSound = $laser
 
 export var speed = 100
 
-var viewRect := get_viewport()
+#var viewRect := get_viewport()
 var rng = RandomNumberGenerator.new()
 
 var targetPosY = 0
@@ -29,18 +29,18 @@ func _ready():
 	$AnimatedSprite.visible = false
 	activateLaser(false)
 	
-	
+	var viewRect := get_viewport_rect()
 	rng.randomize()
 	#print(self.position.x, get_viewport().size.x/2)
 	#print("Self current posX: ", self.position.x)
 	targetPosY = rng.randf_range(325, 500)
 	if (self.position.x <= get_viewport().size.x/2):
 		atRight = false
-		randomPosXToMove = rng.randf_range(get_viewport().size.x/2, get_viewport().size.x - widthBorderLaser)
+		randomPosXToMove = rng.randf_range(viewRect.size.x/2, viewRect.size.x - widthBorderLaser)
 		#print("randomPosXToMove: ", randomPosXToMove)
 	else:
 		atRight = true
-		randomPosXToMove = rng.randf_range(widthBorderLaser, get_viewport().size.x/2)
+		randomPosXToMove = rng.randf_range(widthBorderLaser, viewRect.size.x/2)
 	print(randomPosXToMove)
 		#print("else branch size.x minus position.x: ", get_viewport().size.x-self.position.x)
 		#print("else branch randomPosXToMove: ", randomPosXToMove)

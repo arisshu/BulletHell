@@ -49,31 +49,31 @@ margin_bottom = 504.0
 rect_min_size = Vector2( 0, 300 )
 alignment = 1
 
-[node name="Start" parent="Node2D/VBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+[node name="PlayAgain" parent="Node2D/VBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 86.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 0, 40 )
-focus_neighbour_top = NodePath("../Exit")
-focus_neighbour_bottom = NodePath("../Start2")
+focus_neighbour_top = NodePath("../ExitFromGameOver")
+focus_neighbour_bottom = NodePath("../BackToMenu")
 text = "PLAY AGAIN"
 arrowMarginFromCenter = 150
 
-[node name="Start2" parent="Node2D/VBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+[node name="BackToMenu" parent="Node2D/VBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 130.0
 margin_bottom = 170.0
 rect_min_size = Vector2( 0, 40 )
-focus_neighbour_top = NodePath("../Start")
+focus_neighbour_top = NodePath("../PlayAgain")
 text = "BACK TO MENU"
 arrowMarginFromCenter = 150
 
-[node name="Exit" parent="Node2D/VBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+[node name="ExitFromGameOver" parent="Node2D/VBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 174.0
 margin_bottom = 214.0
 rect_min_size = Vector2( 0, 40 )
-focus_neighbour_bottom = NodePath("../Start")
+focus_neighbour_bottom = NodePath("../PlayAgain")
 text = "Exit"
 arrowMarginFromCenter = 94
 
-[connection signal="pressed" from="Node2D/VBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/VBoxContainer/Start2" to="." method="_on_Start2_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/VBoxContainer/PlayAgain" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/VBoxContainer/BackToMenu" to="." method="_on_Start2_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/VBoxContainer/ExitFromGameOver" to="." method="_on_Exit_pressed"]

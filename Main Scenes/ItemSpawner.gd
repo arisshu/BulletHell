@@ -7,10 +7,10 @@ var preloadedItems := [
 	preload("res://Items/BonusScore.tscn"),
 	
 	#Starting index 4 will be variant item type
-	preload("res://Variant/Game/Items/vBonusScore.tscn"),
-	preload("res://Variant/Game/Items/vHealthPack.tscn"),
-	preload("res://Variant/Game/Items/vMoreGun.tscn"),
-	preload("res://Variant/Game/Items/vSpeedup.tscn")
+	preload("res://Variant/Game/Items/vBonusScore.tscn"), #4
+	preload("res://Variant/Game/Items/vHealthPack.tscn"), #5
+	preload("res://Variant/Game/Items/vMoreGun.tscn"), #6
+	preload("res://Variant/Game/Items/vSpeedup.tscn") #7
 	#
 ]
 
