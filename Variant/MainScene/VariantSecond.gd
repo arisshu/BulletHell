@@ -16,6 +16,7 @@ func _ready():
 	
 	Signals.emit_signal("on_score_add", 0)
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
+	$AudioStreamPlayer2D.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
