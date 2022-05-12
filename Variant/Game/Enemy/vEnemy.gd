@@ -9,6 +9,8 @@ var explosionScene := preload("res://Resources/Animation/ExplosionScene.tscn")
 var plGlobalArray := preload("res://AutoLoads/globalVar.gd")
 
 onready var firingPositions := $FiringPositions
+onready var hurtSoundFX := $HurtSound
+
 
 #export var speed := 10.0
 export var health: int = 20
@@ -16,6 +18,7 @@ export var scoreWorth: int = 100
 export var chanceItemDrop: int = 100
 
 func _ready():
+	print(hurtSoundFX)
 	$ProgressBar.max_value = health
 
 #func _physics_process(delta):
@@ -40,6 +43,8 @@ func fireScatter():
 		get_tree().current_scene.add_child(bullet)
 		
 func damage(amount: int):
+	hurtSoundFX.play()
+	
 	if health <= 0:
 		return
 		

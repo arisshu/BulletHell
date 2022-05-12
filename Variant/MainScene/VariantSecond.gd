@@ -21,4 +21,4 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_Button_pressed():
-	SceneManager.change_scene("res://Variant/Game/MainScene/VariantFirst.tscn")
+	SceneManager.change_scene("res://Variant/MainScene/VariantFirst.tscn")

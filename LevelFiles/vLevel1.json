@@ -1,14 +1,13 @@
 {
     "LevelNumber": "1",
     "SpawnEnemyArray": [
-	
-	
+
        {
 			"Time": "6.0",
 			"LocationX": "100.0",
 			"LocationY": "20.0",
 			"Type": "9",
-			"Amount": "3",
+			"Amount": "1",
 			"Delay": "0.1",
 			"EnemyLines": "1",
 			"OffsetX": "100.0",

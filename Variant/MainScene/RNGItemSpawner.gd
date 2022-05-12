@@ -22,7 +22,7 @@ func _on_spawnTimer_timeout():
 	
 	
 	var plItem = plMoreGun.instance()
-	plItem.position = Vector2(rng.randf_range(0, get_viewport().size.x), 0)
+	plItem.position = Vector2(rng.randf_range(50, get_viewport().size.x), 0)
 	
 	get_tree().current_scene.add_child(plItem)
 	

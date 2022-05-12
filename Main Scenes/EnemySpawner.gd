@@ -18,7 +18,8 @@ var preloadedEnemies := [
 	preload("res://Variant/Game/Enemy/vEnemyFireBall.tscn"), #12
 	preload("res://Variant/Game/Enemy/vLaserEnemy.tscn"), #13
 	preload("res://Variant/Game/Enemy/vHorizontalEnemyShoot.tscn"), #14
-	preload("res://Variant/Game/Bullet/vEnemySpiralBullet.tscn") #15
+	preload("res://Variant/Game/Bullet/vEnemySpiralBullet.tscn"), #15
+	preload("res://Variant/Game/Enemy/vMiniBoss.tscn") #16
 ]
 
 onready var spawnTimer := $SpawnTimer
