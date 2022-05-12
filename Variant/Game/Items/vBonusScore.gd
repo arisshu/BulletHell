@@ -6,7 +6,7 @@ var plSparkle := preload("res://Resources/Animation/SparkleEffect.tscn")
 # var a = 2
 # var b = "text"
 export var scoreValue := 1000
-export var speed := 100.0
+export var speed := 150.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +25,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Item_area_entered(area):
 	if area is vPlayer:
 		area.addBonusScore(scoreValue)
-		Signals.emit_signal("on_score_add", scoreValue)
+		#Signals.emit_signal("on_score_add", scoreValue)
 		
 		var bonusItemEffect = scoreBonus.instance()
 		bonusItemEffect.global_position = global_position
