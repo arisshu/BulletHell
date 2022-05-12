@@ -3,6 +3,8 @@ extends Node
 var plDisplayLevel := preload("res://UI//Overlay/LevelDisplay.tscn")
 var plPauseScreen := preload("res://Menu/Pause.tscn")
 
+onready var BGM := $AudioStreamPlayer2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalVar.vCurrentStage = 1
@@ -16,7 +18,7 @@ func _ready():
 	
 	Signals.emit_signal("on_score_add", 0)
 	Signals.emit_signal("on_player_life_changed", GlobalVar.vCurrentLife)
-	$AudioStreamPlayer2D.play()
+	BGM.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
