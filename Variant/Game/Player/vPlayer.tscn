@@ -7,7 +7,7 @@
 [ext_resource path="res://Textures/Variant/Ship/ship4.png" type="Texture" id=5]
 [ext_resource path="res://Textures/Variant/Ship/ship3.png" type="Texture" id=6]
 [ext_resource path="res://Textures/Variant/Ship/ship2.png" type="Texture" id=7]
-[ext_resource path="res://Resources/SoundFX/damageSound.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Resources/SoundFX/damageSound.wav" type="AudioStream" id=8]
 
 [sub_resource type="Shader" id=8]
 code = "shader_type canvas_item;
