@@ -32,7 +32,7 @@ export var invulTime:float = 2
 var vel:= Vector2(0,0)
 var shooting_direction : Vector2 = Vector2.ZERO
 
-var powerUpExpiryTime : int = 30
+export var powerUpExpiryTime : int = 30
 
 func _ready():
 	$AnimatedSprite.playing = true

@@ -67,6 +67,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 projectile_distance = 40.0
 fireDelay = 0.12
+powerUpExpiryTime = 45
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 9 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Variant/Game/Player/vPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Scenes/ParallaxBackground.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Variant/Game/Enemy/vMiniBoss.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/sprite/desert-backgorund-looped.png" type="Texture" id=6]
+[ext_resource path="res://Variant/MainScene/RNGItemSpawner.gd" type="Script" id=7]
 [ext_resource path="res://Variant/MainScene/VariantFirst.gd" type="Script" id=8]
 [ext_resource path="res://Variant/Game/Items/vSpeedup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Main Scenes/EnemySpawner.gd" type="Script" id=10]
@@ -70,6 +71,12 @@ level_file = "res://LevelFiles/vLevel1Items.json"
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 position = Vector2( 246, -49 )
 
+[node name="RNGItemSpawner" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="spawnTimer" type="Timer" parent="RNGItemSpawner"]
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="ItemSpawner/ItemTimer" to="ItemSpawner" method="_on_ItemTimer_timeout"]
+[connection signal="timeout" from="RNGItemSpawner/spawnTimer" to="RNGItemSpawner" method="_on_spawnTimer_timeout"]
