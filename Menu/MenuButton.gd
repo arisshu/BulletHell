@@ -4,6 +4,8 @@ extends TextureButton
 export(String) var text = "Start Text"
 export(int) var arrowMarginFromCenter = 100
 
+onready var selectSound := $selectSound
+
 func _ready():
 	setup_text()
 	hide_arrows()
@@ -38,6 +40,7 @@ func hide_arrows():
 
 func _on_TextureButton_focus_entered():
 	show_arrows()
+	selectSound.play()
 
 
 func _on_TextureButton_focus_exited():
