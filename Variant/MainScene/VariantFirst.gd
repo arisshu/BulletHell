@@ -8,6 +8,7 @@ onready var BGM := $AudioStreamPlayer2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalVar.vCurrentStage = 1
+	GlobalVar.vCurrentLife = 5
 	GlobalVar.powerLevel = 1
 	GlobalVar.playingVariant = true
 	
