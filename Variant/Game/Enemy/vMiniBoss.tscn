@@ -13,9 +13,9 @@ extents = Vector2( 38.875, 23.875 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 Projectile = ExtResource( 4 )
-health = 10
+health = 250
 chanceItemDrop = 0
-mainGunFireRate = 13.65
+mainGunFireRate = 14.65
 secondaryFireRate = 2.0
 
 [node name="Sprite2" type="Sprite" parent="."]

@@ -3,6 +3,7 @@ extends Node
 var plDisplayLevel := preload("res://UI//Overlay/LevelDisplay.tscn")
 var plPauseScreen := preload("res://Menu/Pause.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalVar.currentStage = 1
